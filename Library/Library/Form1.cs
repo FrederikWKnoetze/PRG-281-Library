@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace Library
 {
@@ -19,7 +20,37 @@ namespace Library
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //test
+            SQLiteConnection.CreateFile("admin.sqlite");
+
+            string connectionstring = "Data Source=admin.sqlite;Version=3;Encryption=SQLiteCrypt";
+            SQLiteConnection myconn= new SQLiteConnection(connectionstring);
+            myconn.Open();
+
+            string sql = "Create table test (name varchar(20), numbers int)";
+            SQLiteCommand mycmd = new SQLiteCommand(sql,myconn);
+            mycmd.ExecuteNonQuery();
+
+            sql = "Insert into test (name,numbers) values ('testname',9000)";
+            mycmd = new SQLiteCommand(sql,myconn);
+            mycmd.ExecuteNonQuery();
+            sql = "Insert into test (name,numbers) values ('testname1',9001)";
+            mycmd = new SQLiteCommand(sql, myconn);
+            mycmd.ExecuteNonQuery();
+            sql = "Insert into test (name,numbers) values ('testname2',9002)";
+            mycmd = new SQLiteCommand(sql, myconn);
+            mycmd.ExecuteNonQuery();
+            sql = "Insert into test (name,numbers) values ('testname3',9003)";
+            mycmd = new SQLiteCommand(sql, myconn);
+            mycmd.ExecuteNonQuery();
+
+            sql = "select * from test";
+            mycmd= new SQLiteCommand(sql, myconn);
+            SQLiteDataReader reader = mycmd.ExecuteReader();
+            while (reader.Read())
+            {
+                MessageBox.Show("Name: " + reader["name"] + "\tScore: " + reader["numbers"]);
+            }
+            dataGridView1.DataSource = reader;
         }
 
         private void button1_Click(object sender, EventArgs e)
