@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.IO;
+using System.Net.NetworkInformation;
 
 namespace Library
 {
@@ -20,15 +22,46 @@ namespace Library
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            SQLiteConnection.CreateFile("admin.sqlite");
 
+            //check to see if database admin exsists if not create it
+            if (File.Exists("admin.sqlite"))
+            {
+                MessageBox.Show("file exsisst");
+            }else
+            {
+                SQLiteConnection.CreateFile("admin.sqlite");
+            }
+            //open connection to database so it can be accsesed
             string connectionstring = "Data Source=admin.sqlite;Version=3;Encryption=SQLiteCrypt";
-            SQLiteConnection myconn= new SQLiteConnection(connectionstring);
+            SQLiteConnection myconn = new SQLiteConnection(connectionstring);
             myconn.Open();
 
-            string sql = "Create table test (name varchar(20), numbers int)";
-            SQLiteCommand mycmd = new SQLiteCommand(sql,myconn);
-            mycmd.ExecuteNonQuery();
+
+            string sql = "";
+            SQLiteCommand mycmd = new SQLiteCommand(sql, myconn);
+
+
+
+            //try
+            //{
+            //    sql = "Create table test (name varchar(20), numbers int)";
+            //    mycmd = new SQLiteCommand(sql, myconn);
+            //    mycmd.ExecuteNonQuery();
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("table exsisted");
+            //    throw;
+            //}
+            //for this to work will need more code.
+
+            
+            
+
+            
+
+            
+
 
             sql = "Insert into test (name,numbers) values ('testname',9000)";
             mycmd = new SQLiteCommand(sql,myconn);
