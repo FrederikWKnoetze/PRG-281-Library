@@ -75,5 +75,31 @@ namespace Library
                 }
             }
         }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "ID")
+            {
+                textBox1.Text = "";
+            }
+            textBox1.ForeColor = Color.Black;
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "ID";
+                textBox1.ForeColor = Color.Silver;
+            }
+            else
+            {
+                textBox1.ForeColor= Color.Black;
+            }
+
+            
+
+        }
+
     }
 }
