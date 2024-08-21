@@ -8,25 +8,40 @@ namespace Library
 {
     internal class Book
     {
-        private string ISBN;
-        private string Title;
-        private string Author;
-        private bool Borrowed;
-        private List<string> Genres;
+        private string isbn;
+        private string title;
+        private string author;
+        private bool borrowed;
+        private List<string> genres;
 
-        public string isbn { get { return ISBN; } set { ISBN = value; } }
-        public string title { get { return Title; } set { Title = value; } }
-        public string author { get { return Author; } set { Author = value; } }
-        public bool borrowed { get { return Borrowed; } set { Borrowed = value; } }
-        public List<string> genres { get { return Genres; } set { Genres = value; } }
+        public string ISBN
+        {   get { return isbn; } 
+            set { isbn = value; } 
+        }
+        public string Title
+        {   get { return title; } 
+            set { title = value; } 
+        }
+        public string Author
+        {   get { return author; }
+            set { author = value; } 
+        }
+        public bool Borrowed
+        {   get { return borrowed; }
+            set { borrowed = value; } 
+        }
+        public List<string> Genres
+        {   get { return genres; } 
+            set { genres = value; } 
+        }
 
         Book(string _ISBN, string _Author, string _Title, bool _Borrowed, List<string> _Genres)
         {
-            this.ISBN = _ISBN;
-            this.Title = _Title;
-            this.Author = _Author;
-            this.Borrowed = _Borrowed;
-            this.Genres = _Genres;
+            this.isbn = _ISBN;
+            this.title = _Title;
+            this.author = _Author;
+            this.borrowed = _Borrowed;
+            this.genres = _Genres;
         }
     }
 }
