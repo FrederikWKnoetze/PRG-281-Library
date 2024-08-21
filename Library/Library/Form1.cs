@@ -26,7 +26,8 @@ namespace Library
             //check to see if database admin exsists if not create it
             if (File.Exists("admin.sqlite"))
             {
-                MessageBox.Show("file exsisst");
+               // MessageBox.Show("file exsisst");
+               //test mesage
             }else
             {
                 SQLiteConnection.CreateFile("admin.sqlite");
@@ -55,14 +56,23 @@ namespace Library
             //}
             //for this to work will need more code.
 
-            
-            
-
-            
-
-            
+            //creates table is it does not exsist
 
 
+             
+
+            sql = "Create table if not exists test (name varchar(20), numbers int)";
+            mycmd = new SQLiteCommand(sql, myconn);
+            mycmd.ExecuteNonQuery();
+
+
+
+
+
+
+
+
+            //there is enough dummy data
             sql = "Insert into test (name,numbers) values ('testname',9000)";
             mycmd = new SQLiteCommand(sql,myconn);
             mycmd.ExecuteNonQuery();
@@ -76,14 +86,22 @@ namespace Library
             mycmd = new SQLiteCommand(sql, myconn);
             mycmd.ExecuteNonQuery();
 
+
+            // SQLiteDataReader reader = mycmd.ExecuteReader();
+            //get data into datagrid
             sql = "select * from test";
             mycmd= new SQLiteCommand(sql, myconn);
-            SQLiteDataReader reader = mycmd.ExecuteReader();
-            while (reader.Read())
-            {
-                MessageBox.Show("Name: " + reader["name"] + "\tScore: " + reader["numbers"]);
-            }
-            dataGridView1.DataSource = reader;
+            SQLiteDataAdapter adapter=new SQLiteDataAdapter(mycmd);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            dataGridView1.DataSource = data;
+
+            //display dummy data to test
+            //while (reader.Read())
+            //{
+            //    MessageBox.Show("Name: " + reader["name"] + "\tScore: " + reader["numbers"]);
+            //}
+
         }
 
         private void button1_Click(object sender, EventArgs e)
