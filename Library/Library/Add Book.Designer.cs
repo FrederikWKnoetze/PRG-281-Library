@@ -44,8 +44,16 @@ namespace Library
             this.lblMainMenu = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.lblAdded = new System.Windows.Forms.Label();
+            this.pnlAuthor = new System.Windows.Forms.Panel();
+            this.pnlBookName = new System.Windows.Forms.Panel();
+            this.pnlGenre = new System.Windows.Forms.Panel();
+            this.pnlISBN = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlAuthor.SuspendLayout();
+            this.pnlBookName.SuspendLayout();
+            this.pnlGenre.SuspendLayout();
+            this.pnlISBN.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAddBook
@@ -62,8 +70,10 @@ namespace Library
             // 
             // edtBookName
             // 
+            this.edtBookName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.edtBookName.ForeColor = System.Drawing.Color.Silver;
-            this.edtBookName.Location = new System.Drawing.Point(326, 137);
+            this.edtBookName.Location = new System.Drawing.Point(1, 1);
+            this.edtBookName.Margin = new System.Windows.Forms.Padding(1);
             this.edtBookName.Name = "edtBookName";
             this.edtBookName.Size = new System.Drawing.Size(121, 20);
             this.edtBookName.TabIndex = 1;
@@ -74,7 +84,7 @@ namespace Library
             // edtAuthor
             // 
             this.edtAuthor.ForeColor = System.Drawing.Color.Silver;
-            this.edtAuthor.Location = new System.Drawing.Point(326, 181);
+            this.edtAuthor.Location = new System.Drawing.Point(1, 1);
             this.edtAuthor.Name = "edtAuthor";
             this.edtAuthor.Size = new System.Drawing.Size(121, 20);
             this.edtAuthor.TabIndex = 2;
@@ -85,7 +95,7 @@ namespace Library
             // edtISBN
             // 
             this.edtISBN.ForeColor = System.Drawing.Color.Silver;
-            this.edtISBN.Location = new System.Drawing.Point(326, 272);
+            this.edtISBN.Location = new System.Drawing.Point(1, 1);
             this.edtISBN.Name = "edtISBN";
             this.edtISBN.Size = new System.Drawing.Size(121, 20);
             this.edtISBN.TabIndex = 3;
@@ -115,12 +125,13 @@ namespace Library
             "Children’s Literature",
             "Graphic Novels/Comics",
             "Poetry"});
-            this.cmbGenre.Location = new System.Drawing.Point(326, 226);
+            this.cmbGenre.Location = new System.Drawing.Point(1, 1);
             this.cmbGenre.Name = "cmbGenre";
             this.cmbGenre.Size = new System.Drawing.Size(121, 21);
             this.cmbGenre.TabIndex = 4;
             this.cmbGenre.DropDown += new System.EventHandler(this.cmbGenre_DropDown);
             this.cmbGenre.SelectedValueChanged += new System.EventHandler(this.cmbGenre_SelectedValueChanged);
+            this.cmbGenre.SelectedIndex = 0;
             // 
             // panel1
             // 
@@ -199,18 +210,54 @@ namespace Library
             this.lblAdded.Size = new System.Drawing.Size(0, 16);
             this.lblAdded.TabIndex = 7;
             // 
+            // pnlAuthor
+            // 
+            this.pnlAuthor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlAuthor.Controls.Add(this.edtAuthor);
+            this.pnlAuthor.Location = new System.Drawing.Point(327, 234);
+            this.pnlAuthor.Name = "pnlAuthor";
+            this.pnlAuthor.Size = new System.Drawing.Size(123, 22);
+            this.pnlAuthor.TabIndex = 8;
+            // 
+            // pnlBookName
+            // 
+            this.pnlBookName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlBookName.Controls.Add(this.edtBookName);
+            this.pnlBookName.Location = new System.Drawing.Point(327, 206);
+            this.pnlBookName.Name = "pnlBookName";
+            this.pnlBookName.Size = new System.Drawing.Size(123, 22);
+            this.pnlBookName.TabIndex = 9;
+            // 
+            // pnlGenre
+            // 
+            this.pnlGenre.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlGenre.Controls.Add(this.cmbGenre);
+            this.pnlGenre.Location = new System.Drawing.Point(326, 262);
+            this.pnlGenre.Name = "pnlGenre";
+            this.pnlGenre.Size = new System.Drawing.Size(123, 23);
+            this.pnlGenre.TabIndex = 9;
+            // 
+            // pnlISBN
+            // 
+            this.pnlISBN.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlISBN.Controls.Add(this.edtISBN);
+            this.pnlISBN.Location = new System.Drawing.Point(326, 290);
+            this.pnlISBN.Name = "pnlISBN";
+            this.pnlISBN.Size = new System.Drawing.Size(123, 22);
+            this.pnlISBN.TabIndex = 9;
+            // 
             // frmAdd_Book
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pnlBookName);
+            this.Controls.Add(this.pnlGenre);
+            this.Controls.Add(this.pnlISBN);
+            this.Controls.Add(this.pnlAuthor);
             this.Controls.Add(this.lblAdded);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.cmbGenre);
-            this.Controls.Add(this.edtISBN);
-            this.Controls.Add(this.edtAuthor);
-            this.Controls.Add(this.edtBookName);
             this.Controls.Add(this.btnAddBook);
             this.Name = "frmAdd_Book";
             this.Text = " ";
@@ -218,6 +265,13 @@ namespace Library
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlAuthor.ResumeLayout(false);
+            this.pnlAuthor.PerformLayout();
+            this.pnlBookName.ResumeLayout(false);
+            this.pnlBookName.PerformLayout();
+            this.pnlGenre.ResumeLayout(false);
+            this.pnlISBN.ResumeLayout(false);
+            this.pnlISBN.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,5 +291,9 @@ namespace Library
         private Label lblMainMenu;
         private Button btnBack;
         private Label lblAdded;
+        private Panel pnlAuthor;
+        private Panel pnlBookName;
+        private Panel pnlGenre;
+        private Panel pnlISBN;
     }
 }

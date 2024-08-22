@@ -124,15 +124,90 @@ namespace Library
         }
 
         private void btnAddBook_Click(object sender, EventArgs e)
+        { 
+            Validate();
+        }
+        private void Validate()
         {
-            if (edtBookName.Text != "Book Name" && edtAuthor.Text != "Author" && edtISBN.Text != "ISBN" && cmbGenre.Text != "Genre")
+            bool nameCorrect = false;
+            bool authorCorrect = false;
+            bool isbnCorrect = false;
+            bool genreCorrect = false;
+            bool genreBlank = true;
+            int countTrue = 0;
+            string TempISBN = "";
+            string nums = "0123456789";
+            TempISBN = edtISBN.Text;
+            int countCorrectNums = 0;
+
+            if (edtBookName.Text != "Book Name")
             {
-                lblAdded.Text = "Book Added!";
+                nameCorrect = true;
+                countTrue += 1;
             }
-            else
+            if(edtAuthor.Text != "Author")
             {
-                lblAdded.Text = "Please fill in all the fields";
+                authorCorrect = true;
+                countTrue += 1;
             }
+            if (TempISBN.Length == 13)//loop to check if if all 13 characters is a number
+            {
+                for (int i = 0; i < TempISBN.Length; i++)
+                {
+                    if (nums.Contains(TempISBN[i]))
+                    {
+                        countCorrectNums += 1;
+                    }
+                }
+                if (countCorrectNums == 13) // Check if all characters are digits
+                {
+                    isbnCorrect = true;
+                    countTrue += 1;
+                }
+            }
+            if (cmbGenre.Text != "")
+            {
+                genreBlank = false;
+                countTrue += 1;
+            }
+            if(cmbGenre.Text != "Genre")
+            {
+                genreCorrect = true;
+                countTrue += 1;
+            }
+
+
+            if (nameCorrect == false)
+            {
+                pnlBookName.BackColor = Color.Red;
+            }
+            if (authorCorrect == false)
+            {
+                pnlAuthor.BackColor = Color.Red;
+            }
+            if (isbnCorrect == false)
+            {
+                pnlISBN.BackColor = Color.Red;
+            }
+            if (genreBlank == true)
+            {
+                pnlGenre.BackColor = Color.Red;
+            }
+            if (genreCorrect == false) 
+            {
+                pnlGenre.BackColor = Color.Red;
+            }
+
+            if (countTrue == 5)
+            {
+                MessageBox.Show("Book Added");
+                pnlBookName.BackColor = Color.White;
+                pnlAuthor.BackColor = Color.White;
+                pnlISBN.BackColor = Color.White;
+                pnlGenre.BackColor = Color.White;
+            }
+
+
         }
     }
 }
