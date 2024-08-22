@@ -14,16 +14,20 @@ using System.Data.SqlClient;
 
 namespace Library
 {
-    public partial class Form1 : Form
+    public partial class frmSignIn : Form
     {
-        public Form1()
+        public frmSignIn()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+
+            //Database code Start
+            //
             //check to see if database admin exsists if not create it
             if (File.Exists("admin.sqlite"))
             {
@@ -85,7 +89,6 @@ namespace Library
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(mycmd);
             DataTable data = new DataTable();
             adapter.Fill(data);
-            dataGridView1.DataSource = data;
 
             //display dummy data to test
             //while (reader.Read())
@@ -99,7 +102,7 @@ namespace Library
             using (SQLiteCommand cmdDeleteTable = new SQLiteCommand(sql, myconn))
             {
                 cmdDeleteTable.ExecuteNonQuery();
-                MessageBox.Show("TBL deleted");
+              //  MessageBox.Show("TBL deleted");
             }
 
 
@@ -127,14 +130,22 @@ namespace Library
                 cmdInsertReader.ExecuteNonQuery();
             }
             // Fetch data from 'tblReaders' table and display in DataGridView2
+            //datagrid 2 is gone
             sql = "SELECT * FROM tblReadersTest";
             using (SQLiteCommand cmdSelectReaders = new SQLiteCommand(sql, myconn)) // Renamed to cmdSelectReaders
             {
                 SQLiteDataAdapter adapterReaders = new SQLiteDataAdapter(cmdSelectReaders);
                 DataTable readerData = new DataTable();
                 adapterReaders.Fill(readerData);
-                dataGridView1.DataSource = readerData;
+             //   dataGridView1.DataSource = readerData;
             }
+
+            //
+            //Database code End
+
+
+
+
         }
 
 
@@ -144,15 +155,15 @@ namespace Library
             string connectionString = "Data Source=admin.sqlite;Version=3;";
 
             // SQL query with parameters
-            string query = "SELECT COUNT(*) FROM tblReadersTest WHERE ID = @EnteredID AND ReaderName = @EnteredName";
+            string query = "SELECT COUNT(*) FROM tblReadersTest WHERE ID = @EnteredID AND ReaderName = @EnteredPassword";
 
             // Use SQLiteConnection instead of SqlConnection
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
                 // Add parameters with the entered values
-                command.Parameters.AddWithValue("@EnteredID", textBox1.Text);
-                command.Parameters.AddWithValue("@EnteredName", textBox2.Text);
+                command.Parameters.AddWithValue("@EnteredID", edtID.Text);
+                command.Parameters.AddWithValue("@EnteredPassword", edtPassword.Text);
 
                 try
                 {
@@ -164,12 +175,12 @@ namespace Library
                     if (userCount > 0)
                     {
                         // Authentication successful
-                        MessageBox.Show("ID and Name are correct.");
+                        MessageBox.Show("ID and Password are correct.");
                     }
                     else
                     {
                         // Authentication failed
-                        MessageBox.Show("Invalid ID or Name.");
+                        MessageBox.Show("Invalid Password or Name.");
                     }
                 }
                 catch (Exception ex)
@@ -178,50 +189,61 @@ namespace Library
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
-        }
 
+
+
+
+        }
+        
+        //textbox edtID
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            if (textBox1.Text == "ID")
+            if (edtID.Text == "ID")
             {
-                textBox1.Text = "";
-                textBox1.ForeColor = Color.Black;
+                edtID.Text = "";
+                edtID.ForeColor = Color.Black;
             }
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (edtID.Text == "")
             {
-                textBox1.Text = "ID";
-                textBox1.ForeColor = Color.Silver;
+                edtID.Text = "ID";
+                edtID.ForeColor = Color.Silver;
             }
             else
             {
-                textBox1.ForeColor = Color.Black;
+                edtID.ForeColor = Color.Black;
             }
         }
 
+        //textbox password
         private void textBox2_Enter(object sender, EventArgs e)
         {
-            if (textBox2.Text == "Name")
+            if (edtPassword.Text == "Password")
             {
-                textBox2.Text = "";
-                textBox2.ForeColor = Color.Black;
+                edtPassword.Text = "";
+                edtPassword.ForeColor = Color.Black;
             }
         }
 
         private void textBox2_Leave(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
+            if (edtPassword.Text == "")
             {
-                textBox2.Text = "Name";
-                textBox2.ForeColor = Color.Silver;
+                edtPassword.Text = "Password";
+                edtPassword.ForeColor = Color.Silver;
             }
             else
             {
-                textBox2.ForeColor = Color.Black;
+                edtPassword.ForeColor = Color.Black;
             }
+        }
+
+        private void frmSignIn_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 } 
