@@ -41,7 +41,6 @@
             this.MinimizeBox = false;
             this.Name = "frmSplash";
             this.Text = "frmSplash";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.frmSplash_Load);
             this.ResumeLayout(false);
 
