@@ -111,5 +111,28 @@ namespace Library
         {
             cmbGenre.ForeColor = Color.Black;
         }
+
+        private void lblMainMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmAdd_Book_Load(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToShortDateString();
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void btnAddBook_Click(object sender, EventArgs e)
+        {
+            if (edtBookName.Text != "Book Name" && edtAuthor.Text != "Author" && edtISBN.Text != "ISBN" && cmbGenre.Text != "Genre")
+            {
+                lblAdded.Text = "Book Added!";
+            }
+            else
+            {
+                lblAdded.Text = "Please fill in all the fields";
+            }
+        }
     }
 }
