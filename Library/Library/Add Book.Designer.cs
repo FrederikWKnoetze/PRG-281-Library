@@ -31,6 +31,7 @@ namespace Library
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdd_Book));
             this.btnAddBook = new System.Windows.Forms.Button();
             this.edtBookName = new System.Windows.Forms.TextBox();
@@ -48,6 +49,8 @@ namespace Library
             this.pnlBookName = new System.Windows.Forms.Panel();
             this.pnlGenre = new System.Windows.Forms.Panel();
             this.pnlISBN = new System.Windows.Forms.Panel();
+
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlAuthor.SuspendLayout();
@@ -245,6 +248,11 @@ namespace Library
             this.pnlISBN.Name = "pnlISBN";
             this.pnlISBN.Size = new System.Drawing.Size(123, 22);
             this.pnlISBN.TabIndex = 9;
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmAdd_Book
             // 
@@ -295,5 +303,6 @@ namespace Library
         private Panel pnlBookName;
         private Panel pnlGenre;
         private Panel pnlISBN;
+        private Timer timer1;
     }
 }

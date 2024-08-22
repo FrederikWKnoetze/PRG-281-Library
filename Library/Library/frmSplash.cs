@@ -24,7 +24,7 @@ namespace Library
 
             //show form for 1.5 secs then show sign in form
             timer = new System.Windows.Forms.Timer();
-            timer.Interval = 1500;
+            timer.Interval = 3000;
             timer.Tick += ontimeout;
             timer.Start();
         }
@@ -42,6 +42,17 @@ namespace Library
             f.Show();
             
             
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            panel2.Width += 3;
+
+            if (panel2.Width >= 805)
+            {
+                timer1.Stop();
+
+            }
         }
     }
 }

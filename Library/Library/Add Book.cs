@@ -209,5 +209,11 @@ namespace Library
 
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToShortDateString();
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
     }
 }
