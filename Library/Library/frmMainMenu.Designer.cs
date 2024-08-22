@@ -28,69 +28,150 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMenu));
+            this.btnBook = new System.Windows.Forms.Button();
+            this.btnReader = new System.Windows.Forms.Button();
+            this.btnData = new System.Windows.Forms.Button();
+            this.btnBorrow = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblMainMenu = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnBook
             // 
-            this.button1.Location = new System.Drawing.Point(328, 221);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 38);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Add Book";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnBook.Location = new System.Drawing.Point(331, 274);
+            this.btnBook.Name = "btnBook";
+            this.btnBook.Size = new System.Drawing.Size(129, 38);
+            this.btnBook.TabIndex = 0;
+            this.btnBook.Text = "Add Book";
+            this.btnBook.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnReader
             // 
-            this.button2.Location = new System.Drawing.Point(328, 281);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 38);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Add Reader";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnReader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnReader.Location = new System.Drawing.Point(331, 334);
+            this.btnReader.Name = "btnReader";
+            this.btnReader.Size = new System.Drawing.Size(129, 38);
+            this.btnReader.TabIndex = 1;
+            this.btnReader.Text = "Add Reader";
+            this.btnReader.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnData
             // 
-            this.button3.Location = new System.Drawing.Point(328, 160);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(129, 38);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "See Data";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnData.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnData.Location = new System.Drawing.Point(331, 213);
+            this.btnData.Name = "btnData";
+            this.btnData.Size = new System.Drawing.Size(129, 38);
+            this.btnData.TabIndex = 2;
+            this.btnData.Text = "See Data";
+            this.btnData.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnBorrow
             // 
-            this.button4.Location = new System.Drawing.Point(328, 101);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(129, 38);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Borrow Book";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnBorrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnBorrow.Location = new System.Drawing.Point(331, 154);
+            this.btnBorrow.Name = "btnBorrow";
+            this.btnBorrow.Size = new System.Drawing.Size(129, 38);
+            this.btnBorrow.TabIndex = 3;
+            this.btnBorrow.Text = "Borrow Book";
+            this.btnBorrow.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.lblTime);
+            this.panel1.Controls.Add(this.lblDate);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.lblMainMenu);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(806, 92);
+            this.panel1.TabIndex = 4;
+            // 
+            // lblMainMenu
+            // 
+            this.lblMainMenu.AutoSize = true;
+            this.lblMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMainMenu.ForeColor = System.Drawing.Color.White;
+            this.lblMainMenu.Location = new System.Drawing.Point(304, 26);
+            this.lblMainMenu.Name = "lblMainMenu";
+            this.lblMainMenu.Size = new System.Drawing.Size(187, 39);
+            this.lblMainMenu.TabIndex = 5;
+            this.lblMainMenu.Text = "Main Menu";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(649, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(139, 75);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.White;
+            this.lblDate.Location = new System.Drawing.Point(12, 9);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(63, 29);
+            this.lblDate.TabIndex = 7;
+            this.lblDate.Text = "Date";
+            this.lblDate.Click += new System.EventHandler(this.lblDate_Click);
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(12, 47);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(69, 29);
+            this.lblTime.TabIndex = 8;
+            this.lblTime.Text = "Time";
             // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnBorrow);
+            this.Controls.Add(this.btnData);
+            this.Controls.Add(this.btnReader);
+            this.Controls.Add(this.btnBook);
             this.Name = "frmMainMenu";
-            this.Text = "frmMainMeu";
+            this.Text = "Main Menu";
             this.Load += new System.EventHandler(this.frmMainMenu_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnBook;
+        private System.Windows.Forms.Button btnReader;
+        private System.Windows.Forms.Button btnData;
+        private System.Windows.Forms.Button btnBorrow;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblMainMenu;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
