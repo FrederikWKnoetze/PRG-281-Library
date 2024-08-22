@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace Library
 {
-    public partial class Login : Form
+    public partial class frmMainMenu : Form
     {
-        public Login()
+        public frmMainMenu()
         {
             InitializeComponent();
+            StartPosition=FormStartPosition.CenterScreen;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void frmMainMenu_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
