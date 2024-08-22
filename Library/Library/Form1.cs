@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 using System.IO;
 using System.Net.NetworkInformation;
+using System.Data.SqlClient;
 
 namespace Library
 {
@@ -26,9 +27,9 @@ namespace Library
             //check to see if database admin exsists if not create it
             if (File.Exists("admin.sqlite"))
             {
-               // MessageBox.Show("file exsisst");
-               //test mesage
-            }else
+                // MessageBox.Show("file exsisst");
+                //test mesage
+            } else
             {
                 SQLiteConnection.CreateFile("admin.sqlite");
             }
@@ -57,24 +58,14 @@ namespace Library
             //for this to work will need more code.
 
             //creates table is it does not exsist
-
-
-             
-
             sql = "Create table if not exists test (name varchar(20), numbers int)";
             mycmd = new SQLiteCommand(sql, myconn);
             mycmd.ExecuteNonQuery();
 
 
-
-
-
-
-
-
             //there is enough dummy data
             sql = "Insert into test (name,numbers) values ('testname',9000)";
-            mycmd = new SQLiteCommand(sql,myconn);
+            mycmd = new SQLiteCommand(sql, myconn);
             mycmd.ExecuteNonQuery();
             sql = "Insert into test (name,numbers) values ('testname1',9001)";
             mycmd = new SQLiteCommand(sql, myconn);
@@ -90,8 +81,8 @@ namespace Library
             // SQLiteDataReader reader = mycmd.ExecuteReader();
             //get data into datagrid
             sql = "select * from test";
-            mycmd= new SQLiteCommand(sql, myconn);
-            SQLiteDataAdapter adapter=new SQLiteDataAdapter(mycmd);
+            mycmd = new SQLiteCommand(sql, myconn);
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter(mycmd);
             DataTable data = new DataTable();
             adapter.Fill(data);
             dataGridView1.DataSource = data;
@@ -102,27 +93,89 @@ namespace Library
             //    MessageBox.Show("Name: " + reader["name"] + "\tScore: " + reader["numbers"]);
             //}
 
+            ////////Gideon CODE\\\\\\\\\
+            sql = "DROP TABLE IF EXISTS tblReadersTest";
+
+            using (SQLiteCommand cmdDeleteTable = new SQLiteCommand(sql, myconn))
+            {
+                cmdDeleteTable.ExecuteNonQuery();
+                MessageBox.Show("TBL deleted");
+            }
+
+
+            sql = "CREATE TABLE IF NOT EXISTS tblReadersTest (ID  VARCHAR(30), ReaderName VARCHAR(30))";
+            using (SQLiteCommand cmdReaders = new SQLiteCommand(sql, myconn)) // Renamed to cmdReaders
+            {
+                cmdReaders.ExecuteNonQuery();
+            }
+
+            // Insert dummy data into 'tblReaders'
+            Reader Gideon = new Reader("012345", "Gideon");
+
+            // Prepare the SQL query to insert the Reader object
+            sql = @"INSERT INTO tblReadersTest (ID, ReaderName) 
+               VALUES (@ID, @ReaderName)";
+
+            // Use a parameterized query to avoid SQL injection
+            using (SQLiteCommand cmdInsertReader = new SQLiteCommand(sql, myconn))
+            {
+                // Add parameters for ID and ReaderName
+                cmdInsertReader.Parameters.AddWithValue("@ID", Gideon.ID);
+                cmdInsertReader.Parameters.AddWithValue("@ReaderName", Gideon.Name);
+
+                // Execute the query
+                cmdInsertReader.ExecuteNonQuery();
+            }
+            // Fetch data from 'tblReaders' table and display in DataGridView2
+            sql = "SELECT * FROM tblReadersTest";
+            using (SQLiteCommand cmdSelectReaders = new SQLiteCommand(sql, myconn)) // Renamed to cmdSelectReaders
+            {
+                SQLiteDataAdapter adapterReaders = new SQLiteDataAdapter(cmdSelectReaders);
+                DataTable readerData = new DataTable();
+                adapterReaders.Fill(readerData);
+                dataGridView1.DataSource = readerData;
+            }
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
-            for (int i = 0; i < 3; i++)
-            {
-                int TempID = random.Next(10000,99999);
-                Reader Test = new Reader(TempID.ToString(),"Test");
-                
-            }
-            Reader Gideon = new Reader("12345", "Gideon");
-            foreach (Reader reader in Reader.AllReaders)
-            {
-                string testID = textBox1.Text;
-                string testName = textBox2.Text;
+            // Connection string (update with your database details)
+            string connectionString = "Data Source=admin.sqlite;Version=3;";
 
-                if (testID == reader.ID && testName == reader.Name)
+            // SQL query with parameters
+            string query = "SELECT COUNT(*) FROM tblReadersTest WHERE ID = @EnteredID AND ReaderName = @EnteredName";
+
+            // Use SQLiteConnection instead of SqlConnection
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(query, connection))
+            {
+                // Add parameters with the entered values
+                command.Parameters.AddWithValue("@EnteredID", textBox1.Text);
+                command.Parameters.AddWithValue("@EnteredName", textBox2.Text);
+
+                try
                 {
+                    connection.Open();
+                    int userCount = Convert.ToInt32(command.ExecuteScalar());
 
-                    MessageBox.Show($"ID: {reader.ID}, Name: {reader.Name}");
+                    // If count is greater than 0, the ID and name are correct
+                    // Implement your logic here, for example:
+                    if (userCount > 0)
+                    {
+                        // Authentication successful
+                        MessageBox.Show("ID and Name are correct.");
+                    }
+                    else
+                    {
+                        // Authentication failed
+                        MessageBox.Show("Invalid ID or Name.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle any errors that might have occurred
+                    MessageBox.Show("Error: " + ex.Message);
                 }
             }
         }
@@ -132,8 +185,8 @@ namespace Library
             if (textBox1.Text == "ID")
             {
                 textBox1.Text = "";
+                textBox1.ForeColor = Color.Black;
             }
-            textBox1.ForeColor = Color.Black;
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
@@ -145,12 +198,30 @@ namespace Library
             }
             else
             {
-                textBox1.ForeColor= Color.Black;
+                textBox1.ForeColor = Color.Black;
             }
-
-            
-
         }
 
+        private void textBox2_Enter(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "Name")
+            {
+                textBox2.Text = "";
+                textBox2.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                textBox2.Text = "Name";
+                textBox2.ForeColor = Color.Silver;
+            }
+            else
+            {
+                textBox2.ForeColor = Color.Black;
+            }
+        }
     }
-}
+} 
