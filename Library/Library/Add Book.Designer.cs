@@ -31,6 +31,7 @@ namespace Library
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdd_Book));
             this.btnAddBook = new System.Windows.Forms.Button();
             this.edtBookName = new System.Windows.Forms.TextBox();
@@ -44,6 +45,7 @@ namespace Library
             this.lblMainMenu = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.lblAdded = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -199,6 +201,12 @@ namespace Library
             this.lblAdded.Size = new System.Drawing.Size(0, 16);
             this.lblAdded.TabIndex = 7;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmAdd_Book
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,5 +245,6 @@ namespace Library
         private Label lblMainMenu;
         private Button btnBack;
         private Label lblAdded;
+        private Timer timer1;
     }
 }
