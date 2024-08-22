@@ -11,6 +11,7 @@ using System.Data.SQLite;
 using System.IO;
 using System.Net.NetworkInformation;
 using System.Data.SqlClient;
+using System.Threading;
 
 namespace Library
 {
@@ -135,6 +136,13 @@ namespace Library
                 adapterReaders.Fill(readerData);
                 dataGridView1.DataSource = readerData;
             }
+            this.Hide();// Show the new form
+            frmAdd_Book newForm = new frmAdd_Book(); // Create instance of the new form
+            newForm.Show();
+            
+            
+
+
         }
 
 
@@ -177,6 +185,7 @@ namespace Library
                     // Handle any errors that might have occurred
                     MessageBox.Show("Error: " + ex.Message);
                 }
+
             }
         }
 
