@@ -25,8 +25,8 @@ namespace Library
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            frmAdd_Book Temp = new frmAdd_Book();
-            Temp.Show();
+            frmMainMenu frmMainMenu = new frmMainMenu();
+            frmMainMenu.Show();
 
 
             //Database code Start
