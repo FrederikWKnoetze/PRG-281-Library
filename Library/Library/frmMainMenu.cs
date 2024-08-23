@@ -36,5 +36,14 @@ namespace Library
             lblDate.Text = DateTime.Now.ToShortDateString();
             lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
         }
+
+        private void btnBook_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmAdd_Book frmAdd_Book = new frmAdd_Book();
+            frmAdd_Book.Show();
+
+
+        }
     }
 }

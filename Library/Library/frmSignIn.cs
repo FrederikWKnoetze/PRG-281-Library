@@ -25,6 +25,10 @@ namespace Library
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            frmMainMenu frmMainMenu = new frmMainMenu();
+            frmMainMenu.Show();
+
            handler.CreateDatabase();
             
         }

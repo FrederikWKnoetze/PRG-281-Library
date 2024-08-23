@@ -226,5 +226,12 @@ namespace Library
                 cmbGenre.ForeColor= Color.Black;
             }
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMainMenu frmMainMenu = new frmMainMenu();
+            frmMainMenu.Show();
+        }
     }
 }

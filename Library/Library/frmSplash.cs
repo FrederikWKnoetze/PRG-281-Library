@@ -28,12 +28,7 @@ namespace Library
             timer.Tick += ontimeout;
             timer.Start();
         }
-        private void frmSplash_Load(object sender, EventArgs e)
-        {
-
-
-            
-        }
+        
         private void ontimeout(Object sender, EventArgs e)
         {
             timer.Stop();
