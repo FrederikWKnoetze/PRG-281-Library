@@ -80,7 +80,7 @@ namespace Library
             mycmd=new SQLiteCommand(sql, myconn);
             mycmd.ExecuteNonQuery();
             //create table of books
-            sql = "CREATE TABLE IF NOT EXISTS tblBooks(bookID INTEGER PRIMARY KEY AUTOINCREMENT,isbn varchar(13), title varchar(40) NOT NULL, author varchar(40) NOT NULL)";
+            sql = "CREATE TABLE IF NOT EXISTS tblBooks(bookID INTEGER PRIMARY KEY AUTOINCREMENT,isbn varchar(13), title varchar(40) NOT NULL, author varchar(40) NOT NULL, borrowed INTEGER )";
             mycmd = new SQLiteCommand(sql, myconn);
             mycmd.ExecuteNonQuery();
             //Create table of book genres
@@ -126,26 +126,26 @@ namespace Library
 
             //creation of dummy data for tblbooks inputting isbn code auther name and book title
             sql = @"
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('1234567890123', 'Book Title 1', 'John Doe');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('2345678901234', 'Book Title 2', 'Jane Smith');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('3456789012345', 'Book Title 3', 'Alice Johnson');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('4567890123456', 'Book Title 4', 'Bob Williams');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('5678901234567', 'Book Title 5', 'Charlie Brown');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('6789012345678', 'Book Title 6', 'David Jones');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('7890123456789', 'Book Title 7', 'Emma Garcia');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('8901234567890', 'Book Title 8', 'Fiona Martinez');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('9012345678901', 'Book Title 9', 'George Hernandez');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('0123456789012', 'Book Title 10', 'Hannah Moore');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('1123456789013', 'Book Title 11', 'Ian Taylor');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('2123456789014', 'Book Title 12', 'Julia Anderson');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('3123456789015', 'Book Title 13', 'Kevin Thomas');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('4123456789016', 'Book Title 14', 'Laura Jackson');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('5123456789017', 'Book Title 15', 'Michael White');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('6123456789018', 'Book Title 16', 'Nina Lewis');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('7123456789019', 'Book Title 17', 'Oscar Walker');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('8123456789020', 'Book Title 18', 'Paula Hall');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('9123456789021', 'Book Title 19', 'Quincy Allen');
-    INSERT INTO tblBooks(isbn, title, author) VALUES ('0134567890123', 'Book Title 20', 'Rachel Lee');
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('1234567890123', 'Book Title 1', 'Author 1', 1);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('2345678901234', 'Book Title 2', 'Author 2', 1);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('3456789012345', 'Book Title 3', 'Author 3', 1);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('4567890123456', 'Book Title 4', 'Author 4', 1);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('5678901234567', 'Book Title 5', 'Author 5', 1);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('6789012345678', 'Book Title 6', 'Author 6', 1);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('7890123456789', 'Book Title 7', 'Author 7', 1);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('8901234567890', 'Book Title 8', 'Author 8', 1);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('9012345678901', 'Book Title 9', 'Author 9', 1);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('0123456789012', 'Book Title 10', 'Author 10', 1);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('1123456789013', 'Book Title 11', 'Author 11', 0);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('2123456789014', 'Book Title 12', 'Author 12', 0);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('3123456789015', 'Book Title 13', 'Author 13', 0);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('4123456789016', 'Book Title 14', 'Author 14', 0);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('5123456789017', 'Book Title 15', 'Author 15', 0);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('6123456789018', 'Book Title 16', 'Author 16', 0);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('7123456789019', 'Book Title 17', 'Author 17', 0);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('8123456789020', 'Book Title 18', 'Author 18', 0);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('9123456789021', 'Book Title 19', 'Author 19', 0);
+    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('0234567890122', 'Book Title 20', 'Author 20', 0);
 ";
             mycmd = new SQLiteCommand(sql, myconn);
             mycmd.ExecuteNonQuery();
@@ -176,6 +176,7 @@ namespace Library
             mycmd = new SQLiteCommand(sql, myconn);
             mycmd.ExecuteNonQuery();
 
+            // 
              sql = @"
     INSERT INTO tblBookGenres(genre, bookID) VALUES ('Action', 1);
     INSERT INTO tblBookGenres(genre, bookID) VALUES ('Adventure', 2);
@@ -201,6 +202,7 @@ namespace Library
             mycmd = new SQLiteCommand(sql, myconn);
             mycmd.ExecuteNonQuery();
 
+            //
             sql = @"
     INSERT INTO tblReaderBooks(bookID, readerID) VALUES (1, 1);
     INSERT INTO tblReaderBooks(bookID, readerID) VALUES (2, 2);
@@ -224,16 +226,19 @@ namespace Library
 
 
 
-            sql = "Select * from tblReaders";
-            mycmd = new SQLiteCommand(sql, myconn);
+            //sql = "Select * from tblReaders";
+            //mycmd = new SQLiteCommand(sql, myconn);
 
-            using (var reader = mycmd.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    MessageBox.Show(reader["firstname"].ToString());
-                }
-            }
+            //using (var reader = mycmd.ExecuteReader())
+            //{
+            //    while (reader.Read())
+            //    {
+            //        MessageBox.Show(reader["firstname"].ToString());
+            //    }
+            //}
+
+
+
 
                 //sql = "Insert into test (name,numbers) values ('testname',9000)";
                 //mycmd = new SQLiteCommand(sql, myconn);
