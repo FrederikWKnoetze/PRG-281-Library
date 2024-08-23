@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,7 +21,20 @@ namespace Library
 
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
+            
+        }
 
+
+
+        private void lblDate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToShortDateString();
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
         }
     }
 }
