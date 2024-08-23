@@ -50,10 +50,6 @@ namespace Library
             mycmd = new SQLiteCommand(sql, myconn);
             mycmd.ExecuteNonQuery();
 
-            //composite table to see what books arre taken out by who
-            sql = "CREATE TABLE IF NOT EXISTS tblReaderBook()";
-            mycmd = new SQLiteCommand(sql, myconn);
-            mycmd.ExecuteNonQuery();
 
 
 
@@ -142,39 +138,5 @@ namespace Library
 
 
         }
-
-        public List<Reader> GetReaderList()
-        {
-            List<Reader> mylist = new List<Reader>();
-
-            string sql = "SELECT * FROM tblReaders";
-            SQLiteCommand mycmd = new SQLiteCommand(sql, myconn);
-
-            SQLiteDataReader myreader = mycmd.ExecuteReader();
-
-            while (myreader.Read())
-            {
-                List<Book> booklist = new List<Book>();
-                string tempsql = "Select * from tblBooks where ReaderID=" + myreader["ID"].ToString() + "";
-                SQLiteCommand tempcmd = new SQLiteCommand(tempsql, myconn);
-                SQLiteDataReader tempreader = tempcmd.ExecuteReader();
-                while (tempreader.Read())
-                {
-                    Book tempBook = new Book(tempreader["ID"].ToString(),);
-                    
-                }
-
-
-                Reader tempReader = new Reader(myreader["ID"].ToString(), myreader["Name"].ToString());
-                mylist.Add(tempReader);
-
-            }
-            return mylist;
-        }
-        public List<Book> GetBookList() 
-        {
-            
-        }
-
     }
 }
