@@ -9,9 +9,9 @@ namespace Library
     internal class Reader
     {
         private string id;
-        private string name;
+        private string firstname;
+        private string lastname;
         private List<Book> books;
-        private static List<Reader> allReaders = new List<Reader>();
 
 
         public string ID
@@ -20,10 +20,16 @@ namespace Library
             set { id = value; }
         }
 
-        public string Name
+        public string FirstName
         {
-            get { return name; }
-            set { name = value; }
+            get { return firstname; }
+            set { firstname = value; }
+        }
+
+        public string LastName
+        {
+            get { return lastname; }
+            set { lastname = value; }
         }
 
         public List<Book> Books
@@ -32,16 +38,12 @@ namespace Library
             set { books = value; }
         }
 
-        public static List<Reader> AllReaders
-        {
-            get { return allReaders; }
-        }
-        public Reader(string id, string name)
+        public Reader(string id, string firstName, string lastName)
         {
             this.id = id;
-            this.name = name;
+            this.firstname = firstName;
+            this.lastname = lastName;
             this.books = new List<Book>();
-            allReaders.Add(this);
         }
     }
 }
