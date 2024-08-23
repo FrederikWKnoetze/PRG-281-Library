@@ -10,6 +10,7 @@ using System.Net.NetworkInformation;
 using System.Data.SqlClient;
 using System.Data;
 using System.Data.Entity;
+using System.Windows.Forms;
 
 namespace Library
 {
@@ -60,6 +61,13 @@ namespace Library
                 SQLiteConnection.CreateFile("LibraryData.sqlite");
             }
 
+
+            //this is temp remember to delete
+            SQLiteConnection.CreateFile("LibraryData.sqlite");
+
+
+
+
             //open connection to database so it can be accsesed
             myconn.Open();
             string sql = "";
@@ -68,12 +76,142 @@ namespace Library
 
 
             //Create table of readers
-            sql = "CREATE TABLE IF NOT EXISTS tblReaders(id varcar(13) NOT NULL PRIMARY KEY, firstname varchar(40), lastname varchar(40))";
+            sql = "CREATE TABLE IF NOT EXISTS tblReaders(readerID INTEGER PRIMARY KEY AUTOINCREMENT, firstname varchar(40) NOT NULL, lastname varchar(40) NOT NULL)";
             mycmd=new SQLiteCommand(sql, myconn);
             mycmd.ExecuteNonQuery();
-
             //create table of books
-            sql = "CREATE TABLE IF NOT EXISTS tblBooks(isbn varchar(13), title varchar(40), author varchar(40))";
+            sql = "CREATE TABLE IF NOT EXISTS tblBooks(bookID INTEGER PRIMARY KEY AUTOINCREMENT,isbn varchar(13), title varchar(40) NOT NULL, author varchar(40) NOT NULL)";
+            mycmd = new SQLiteCommand(sql, myconn);
+            mycmd.ExecuteNonQuery();
+            //Create table of book genres
+            //not space effecient by my sanity effecient
+            sql = "CREATE TABLE IF NOT EXISTS tblBookGenres(genreID INTEGER PRIMARY KEY AUTOINCREMENT, genre TEXT, bookID INTEGER NOT NULL, FOREIGN KEY(bookID) REFERENCES tblBooks(bookID))";
+            mycmd = new SQLiteCommand(sql, myconn);
+            mycmd.ExecuteNonQuery();
+            //create table of reader books
+            sql = "CREATE TABLE IF NOT EXISTS tblReaderBooks(readerbookID INTEGER PRIMARY KEY AUTOINCREMENT,bookID INTEGER NOT NULL, readerID INTEGER NOT NULL, FOREIGN KEY(readerID) REFERENCES tblReaders(readerID), FOREIGN KEY(bookID) REFERENCES tblBooks(bookID))";
+            mycmd = new SQLiteCommand(sql, myconn);
+            mycmd.ExecuteNonQuery();
+
+
+            //on program start run this on a thread to put it into objects
+
+
+            //Creation of dummy data for talbe readers inputting firstname and lastname
+            sql = @"
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('Sannie', 'Koen');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('John', 'Doe');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('Jane', 'Smith');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('Alice', 'Johnson');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('Bob', 'Williams');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('Charlie', 'Brown');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('David', 'Jones');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('Emma', 'Garcia');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('Fiona', 'Martinez');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('George', 'Hernandez');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('Hannah', 'Moore');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('Ian', 'Taylor');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('Julia', 'Anderson');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('Kevin', 'Thomas');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('Laura', 'Jackson');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('Michael', 'White');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('Nina', 'Lewis');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('Oscar', 'Walker');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('Paula', 'Hall');
+    INSERT INTO tblReaders(firstname, lastname) VALUES ('Quincy', 'Allen');
+";
+            mycmd = new SQLiteCommand(sql, myconn);
+            mycmd.ExecuteNonQuery();
+
+
+            //creation of dummy data for tblbooks inputting isbn code auther name and book title
+            sql = @"
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('1234567890123', 'Book Title 1', 'John Doe');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('2345678901234', 'Book Title 2', 'Jane Smith');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('3456789012345', 'Book Title 3', 'Alice Johnson');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('4567890123456', 'Book Title 4', 'Bob Williams');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('5678901234567', 'Book Title 5', 'Charlie Brown');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('6789012345678', 'Book Title 6', 'David Jones');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('7890123456789', 'Book Title 7', 'Emma Garcia');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('8901234567890', 'Book Title 8', 'Fiona Martinez');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('9012345678901', 'Book Title 9', 'George Hernandez');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('0123456789012', 'Book Title 10', 'Hannah Moore');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('1123456789013', 'Book Title 11', 'Ian Taylor');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('2123456789014', 'Book Title 12', 'Julia Anderson');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('3123456789015', 'Book Title 13', 'Kevin Thomas');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('4123456789016', 'Book Title 14', 'Laura Jackson');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('5123456789017', 'Book Title 15', 'Michael White');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('6123456789018', 'Book Title 16', 'Nina Lewis');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('7123456789019', 'Book Title 17', 'Oscar Walker');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('8123456789020', 'Book Title 18', 'Paula Hall');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('9123456789021', 'Book Title 19', 'Quincy Allen');
+    INSERT INTO tblBooks(isbn, title, author) VALUES ('0134567890123', 'Book Title 20', 'Rachel Lee');
+";
+            mycmd = new SQLiteCommand(sql, myconn);
+            mycmd.ExecuteNonQuery();
+
+            //creation of dummy data for tblbookgenres a book can have more than one genre
+            sql = @"
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Action', 1);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Drama', 2);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Fantasy', 3);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Science Fiction', 4);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Mystery', 5);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Romance', 6);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Thriller', 7);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Horror', 8);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Adventure', 9);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Historical', 10);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Comedy', 11);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Biography', 12);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Non-fiction', 13);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Poetry', 14);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Self-help', 15);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Philosophy', 16);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Religion', 17);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Science', 18);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Travel', 19);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Young Adult', 20);
+";
+            mycmd = new SQLiteCommand(sql, myconn);
+            mycmd.ExecuteNonQuery();
+
+             sql = @"
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Action', 1);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Adventure', 2);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Comedy', 3);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Crime', 4);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Drama', 5);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Fantasy', 6);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Historical Fiction', 7);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Horror', 8);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Mystery', 9);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Romance', 10);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Science Fiction', 11);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Thriller', 12);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Western', 13);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Biography', 14);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Non-fiction', 15);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Self-help', 16);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Philosophy', 17);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Religion', 18);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Science', 19);
+    INSERT INTO tblBookGenres(genre, bookID) VALUES ('Travel', 20);
+";
+            mycmd = new SQLiteCommand(sql, myconn);
+            mycmd.ExecuteNonQuery();
+
+            sql = @"
+    INSERT INTO tblReaderBooks(bookID, readerID) VALUES (1, 1);
+    INSERT INTO tblReaderBooks(bookID, readerID) VALUES (2, 2);
+    INSERT INTO tblReaderBooks(bookID, readerID) VALUES (3, 3);
+    INSERT INTO tblReaderBooks(bookID, readerID) VALUES (4, 4);
+    INSERT INTO tblReaderBooks(bookID, readerID) VALUES (5, 5);
+    INSERT INTO tblReaderBooks(bookID, readerID) VALUES (6, 6);
+    INSERT INTO tblReaderBooks(bookID, readerID) VALUES (7, 7);
+    INSERT INTO tblReaderBooks(bookID, readerID) VALUES (8, 8);
+    INSERT INTO tblReaderBooks(bookID, readerID) VALUES (9, 9);
+    INSERT INTO tblReaderBooks(bookID, readerID) VALUES (10, 10);";
             mycmd = new SQLiteCommand(sql, myconn);
             mycmd.ExecuteNonQuery();
 
@@ -84,13 +222,34 @@ namespace Library
 
 
 
-            //using (var reader = command.ExecuteReader())
-            //{
-            //    while (reader.Read())
-            //    {
-            //        string userName = reader["UserName"].ToString();
-            //        int age = int.Parse(reader["Age"].ToString());
-            //    }
+
+
+            sql = "Select * from tblReaders";
+            mycmd = new SQLiteCommand(sql, myconn);
+
+            using (var reader = mycmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    MessageBox.Show(reader["firstname"].ToString());
+                }
+            }
+
+                //sql = "Insert into test (name,numbers) values ('testname',9000)";
+                //mycmd = new SQLiteCommand(sql, myconn);
+                //mycmd.ExecuteNonQuery();
+
+
+
+
+
+                //using (var reader = command.ExecuteReader())
+                //{
+                //    while (reader.Read())
+                //    {
+                //        string userName = reader["UserName"].ToString();
+                //        int age = int.Parse(reader["Age"].ToString());
+                //    }
 
                 //How to create table
                 //sql = "Create table if not exists test (name varchar(20), numbers int)";
