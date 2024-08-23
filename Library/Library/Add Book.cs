@@ -88,30 +88,9 @@ namespace Library
 
         private void cmbGenre_DropDown(object sender, EventArgs e)
         {
-            this.cmbGenre.Items.Clear();
-            this.cmbGenre.Items.AddRange(new object[] {
-            "Fantasy",
-            "Science Fiction",
-            "Mystery",
-            "Romance",
-            "Thriller",
-            "Historical Fiction",
-            "Horror",
-            "Biography/Autobiography",
-            "Self-Help",
-            "History",
-            "Memoir",
-            "True Crime",
-            "Children’s Literature",
-            "Graphic Novels/Comics",
-            "Poetry"});
+            this.cmbGenre.ForeColor = Color.Black;
+            this.cmbGenre.Text = "";
         }
-
-        private void cmbGenre_SelectedValueChanged(object sender, EventArgs e)
-        {
-            cmbGenre.ForeColor = Color.Black;
-        }
-
         private void lblMainMenu_Click(object sender, EventArgs e)
         {
 
@@ -133,13 +112,14 @@ namespace Library
             bool authorCorrect = false;
             bool isbnCorrect = false;
             bool genreCorrect = false;
+            bool correctGenre = false;
             bool genreBlank = true;
             int countTrue = 0;
             string TempISBN = "";
             string nums = "0123456789";
             TempISBN = edtISBN.Text;
             int countCorrectNums = 0;
-
+            
             if (edtBookName.Text != "Book Name")
             {
                 nameCorrect = true;
@@ -175,6 +155,11 @@ namespace Library
                 genreCorrect = true;
                 countTrue += 1;
             }
+            if (cmbGenre.Items.Contains(cmbGenre.Text)) 
+            {
+                countTrue += 1;
+                correctGenre = true;
+            }
 
 
             if (nameCorrect == false)
@@ -197,8 +182,12 @@ namespace Library
             {
                 pnlGenre.BackColor = Color.Red;
             }
+            if(correctGenre == false)
+            {
+                pnlGenre.BackColor= Color.Red;
+            }
 
-            if (countTrue == 5)
+            if (countTrue == 6)
             {
                 MessageBox.Show("Book Added");
                 pnlBookName.BackColor = Color.White;
@@ -214,6 +203,28 @@ namespace Library
         {
             lblDate.Text = DateTime.Now.ToShortDateString();
             lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void cmbGenre_Enter(object sender, EventArgs e)
+        {
+            if (cmbGenre.Text == "Genre")
+            {
+                cmbGenre.Text = "";
+                cmbGenre.ForeColor = Color.Black;
+            }
+        }
+
+        private void cmbGenre_Leave(object sender, EventArgs e)
+        {
+            if (cmbGenre.Text == "")
+            {
+                cmbGenre.Text = "Genre";
+                cmbGenre.ForeColor = Color.Silver;
+            }
+            else
+            {
+                cmbGenre.ForeColor= Color.Black;
+            }
         }
     }
 }
