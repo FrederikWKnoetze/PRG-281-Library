@@ -49,7 +49,6 @@ namespace Library
             this.pnlBookName = new System.Windows.Forms.Panel();
             this.pnlGenre = new System.Windows.Forms.Panel();
             this.pnlISBN = new System.Windows.Forms.Panel();
-
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -108,11 +107,9 @@ namespace Library
             // 
             // cmbGenre
             // 
-            this.cmbGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGenre.ForeColor = System.Drawing.Color.Silver;
             this.cmbGenre.FormattingEnabled = true;
             this.cmbGenre.Items.AddRange(new object[] {
-            "Genre",
             "Fantasy",
             "Science Fiction",
             "Mystery",
@@ -132,9 +129,10 @@ namespace Library
             this.cmbGenre.Name = "cmbGenre";
             this.cmbGenre.Size = new System.Drawing.Size(121, 21);
             this.cmbGenre.TabIndex = 4;
+            this.cmbGenre.Text = "Genre";
             this.cmbGenre.DropDown += new System.EventHandler(this.cmbGenre_DropDown);
-            this.cmbGenre.SelectedValueChanged += new System.EventHandler(this.cmbGenre_SelectedValueChanged);
-            this.cmbGenre.SelectedIndex = 0;
+            this.cmbGenre.Enter += new System.EventHandler(this.cmbGenre_Enter);
+            this.cmbGenre.Leave += new System.EventHandler(this.cmbGenre_Leave);
             // 
             // panel1
             // 
@@ -248,6 +246,7 @@ namespace Library
             this.pnlISBN.Name = "pnlISBN";
             this.pnlISBN.Size = new System.Drawing.Size(123, 22);
             this.pnlISBN.TabIndex = 9;
+            // 
             // timer1
             // 
             this.timer1.Enabled = true;
