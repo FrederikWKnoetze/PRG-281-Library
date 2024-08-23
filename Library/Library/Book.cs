@@ -35,7 +35,7 @@ namespace Library
             set { genres = value; } 
         }
 
-        Book(string _ISBN, string _Author, string _Title, bool _Borrowed, List<string> _Genres)
+        public Book(string _ISBN, string _Title, string _Author, bool _Borrowed, List<string> _Genres)
         {
             this.isbn = _ISBN;
             this.title = _Title;
