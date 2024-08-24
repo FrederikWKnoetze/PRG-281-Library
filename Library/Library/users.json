@@ -1,8 +1,8 @@
 [
   {
     "Username": "admin",
-    "PasswordHash": "$2a$12$DvjyaEMq5koEKY29KuxBouHC5Y3JjqycH/Vsyb6ccuOw26K9il3JK",
-    "Salt": "$2a$12$DvjyaEMq5koEKY29KuxBou"
+    "PasswordHash": "$2a$12$dzy2zgbHtV7BP3HxWnxzbObSqg0CARG/77E2j17nOQd.ge.DNMNIO",
+    "Salt": "$2a$12$dzy2zgbHtV7BP3HxWnxzbO"
   },
   {
     "Username": "user",
