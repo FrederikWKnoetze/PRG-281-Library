@@ -1,0 +1,12 @@
+[
+  {
+    "Username": "admin",
+    "PasswordHash": "$2a$12$dzy2zgbHtV7BP3HxWnxzbObSqg0CARG/77E2j17nOQd.ge.DNMNIO",
+    "Salt": "$2a$12$dzy2zgbHtV7BP3HxWnxzbO"
+  },
+  {
+    "Username": "user",
+    "PasswordHash": "$2a$11$anotherHashedPasswordHere",
+    "Salt": "$2a$11$anotherSaltHere"
+  }
+]
