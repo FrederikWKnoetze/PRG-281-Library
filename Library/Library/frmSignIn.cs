@@ -160,7 +160,9 @@ namespace Library
                 string json = File.ReadAllText(usersFilePath);
                 return JsonConvert.DeserializeObject<List<User>>(json);
             }
+            MessageBox.Show("File not found");
             return new List<User>();
+            
         }
 
 
