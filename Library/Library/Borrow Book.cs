@@ -278,6 +278,9 @@ namespace Library
                     DataHandler.myconn.Close();
                 }
             }
+        private void Borrow_Book_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }
