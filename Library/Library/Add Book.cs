@@ -18,6 +18,11 @@ namespace Library
             InitializeComponent();
         }
 
+        private void Add_Book_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
         private void edtBookName_Enter(object sender, EventArgs e)
         {
             //skib

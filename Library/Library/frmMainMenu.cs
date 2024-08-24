@@ -62,5 +62,10 @@ namespace Library
             Add_Reader frmAddReader = new Add_Reader();
             frmAddReader.Show();
         }
+
+        private void frmMainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

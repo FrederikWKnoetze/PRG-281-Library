@@ -35,5 +35,10 @@ namespace Library
             frmMainMenu frmMainMenu = new frmMainMenu();
             frmMainMenu.Show();
         }
+
+        private void See_Data_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

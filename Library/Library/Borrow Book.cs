@@ -35,5 +35,10 @@ namespace Library
             lblDate.Text = DateTime.Now.ToShortDateString();
             lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
         }
+
+        private void Borrow_Book_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }
