@@ -43,22 +43,18 @@ namespace Library
             string username = edtID.Text;
             string password = edtPassword.Text;
 
-            // to generate sal hash and password hash to have it
-            //byte[] salt;
-            //new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
 
-            //var pbkdf2 = new Rfc2898DeriveBytes("admin", salt, 100000);
-            //byte[] hash = pbkdf2.GetBytes(20);
 
-            //byte[] hashBytes = new byte[36];
-            //Array.Copy(salt, 0, hashBytes, 0, 16);
-            //Array.Copy(hash, 0, hashBytes, 16, 20);
-            //string savedPasswordHash = Convert.ToBase64String(hashBytes);
-            //string savedhas = Convert.ToBase64String(salt);
-            //MessageBox.Show(savedhas);
-            //Clipboard.SetText(savedhas);
-            //MessageBox.Show(savedPasswordHash);
-            //Clipboard.SetText(savedPasswordHash);
+
+            //code to get password and password salt
+            //string salt2 = BCrypt.Net.BCrypt.GenerateSalt(12);
+            //string passwordhash = BCrypt.Net.BCrypt.HashPassword("admin", salt2);
+            //MessageBox.Show(salt2);
+            //Clipboard.SetText(salt2);
+            //MessageBox.Show(passwordhash);
+            //Clipboard.SetText(passwordhash);
+
+            //salt is probs uneccecary since the client and server are the same but whatever
 
             if (ValidateCredentials(username, password))
             {
@@ -143,6 +139,7 @@ namespace Library
                     string enteredHash = BCrypt.Net.BCrypt.HashPassword(password, user.Salt);
 
                     // Compare the entered hash with the stored hash
+                    // will return false if not the same
                     return user.PasswordHash == enteredHash;
                 }
 
@@ -150,12 +147,14 @@ namespace Library
             }
             catch (Exception ex)
             {
+                //error message duh
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
         private List<User> LoadUsers()
         {
+            //load file from json tino class user so as to be able to easily compare
             if (File.Exists(usersFilePath))
             {
                 string json = File.ReadAllText(usersFilePath);
@@ -167,6 +166,7 @@ namespace Library
 
         public class User
         {
+            //how the json info is stored in the program and retirieved
             public string Username { get; set; }
             public string PasswordHash { get; set; }
             public string Salt { get; set; }
