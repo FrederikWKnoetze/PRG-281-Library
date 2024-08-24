@@ -97,6 +97,12 @@
       <DependentUpon>Add Reader.cs</DependentUpon>
     </Compile>
     <Compile Include="Book.cs" />
+    <Compile Include="Borrow Book.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Borrow Book.Designer.cs">
+      <DependentUpon>Borrow Book.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataHandler.cs" />
     <Compile Include="frmMainMenu.cs">
       <SubType>Form</SubType>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Add Reader.resx">
       <DependentUpon>Add Reader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Borrow Book.resx">
+      <DependentUpon>Borrow Book.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainMenu.resx">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
