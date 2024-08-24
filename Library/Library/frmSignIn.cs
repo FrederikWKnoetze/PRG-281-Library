@@ -23,7 +23,7 @@ namespace Library
 
         //variables and data things
         DataHandler handler = new DataHandler();
-        private readonly string usersFilePath = "users.json";
+        private readonly string usersFilePath = Path.GetFullPath("users.json");
 
         public frmSignIn()
         {
@@ -42,9 +42,9 @@ namespace Library
             
             string username = edtID.Text;
             string password = edtPassword.Text;
-            string filename = "users.json";
-            string path = Path.GetFullPath(filename);
-            MessageBox.Show(path);
+            //string filename = "users.json";
+            //string path = Path.GetFullPath(filename);
+            //MessageBox.Show(path);
             //FileInfo f = new File(filename);
 
 
