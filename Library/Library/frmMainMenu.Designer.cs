@@ -48,7 +48,7 @@
             // 
             this.btnBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnBook.Location = new System.Drawing.Point(331, 274);
+            this.btnBook.Location = new System.Drawing.Point(339, 273);
             this.btnBook.Name = "btnBook";
             this.btnBook.Size = new System.Drawing.Size(129, 38);
             this.btnBook.TabIndex = 0;
@@ -60,7 +60,7 @@
             // 
             this.btnReader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnReader.Location = new System.Drawing.Point(331, 334);
+            this.btnReader.Location = new System.Drawing.Point(339, 333);
             this.btnReader.Name = "btnReader";
             this.btnReader.Size = new System.Drawing.Size(129, 38);
             this.btnReader.TabIndex = 1;
@@ -71,7 +71,7 @@
             // 
             this.btnData.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnData.Location = new System.Drawing.Point(331, 213);
+            this.btnData.Location = new System.Drawing.Point(339, 212);
             this.btnData.Name = "btnData";
             this.btnData.Size = new System.Drawing.Size(129, 38);
             this.btnData.TabIndex = 2;
@@ -82,7 +82,7 @@
             // 
             this.btnBorrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnBorrow.Location = new System.Drawing.Point(331, 154);
+            this.btnBorrow.Location = new System.Drawing.Point(339, 153);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(129, 38);
             this.btnBorrow.TabIndex = 3;
@@ -139,7 +139,7 @@
             this.lblMainMenu.AutoSize = true;
             this.lblMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMainMenu.ForeColor = System.Drawing.Color.White;
-            this.lblMainMenu.Location = new System.Drawing.Point(304, 26);
+            this.lblMainMenu.Location = new System.Drawing.Point(311, 28);
             this.lblMainMenu.Name = "lblMainMenu";
             this.lblMainMenu.Size = new System.Drawing.Size(187, 39);
             this.lblMainMenu.TabIndex = 5;

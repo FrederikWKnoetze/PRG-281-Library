@@ -62,7 +62,7 @@ namespace Library
             // 
             this.btnAddBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAddBook.Location = new System.Drawing.Point(326, 318);
+            this.btnAddBook.Location = new System.Drawing.Point(343, 318);
             this.btnAddBook.Name = "btnAddBook";
             this.btnAddBook.Size = new System.Drawing.Size(121, 37);
             this.btnAddBook.TabIndex = 0;
@@ -183,7 +183,7 @@ namespace Library
             this.lblMainMenu.AutoSize = true;
             this.lblMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMainMenu.ForeColor = System.Drawing.Color.White;
-            this.lblMainMenu.Location = new System.Drawing.Point(310, 27);
+            this.lblMainMenu.Location = new System.Drawing.Point(324, 28);
             this.lblMainMenu.Name = "lblMainMenu";
             this.lblMainMenu.Size = new System.Drawing.Size(166, 39);
             this.lblMainMenu.TabIndex = 5;
@@ -192,9 +192,10 @@ namespace Library
             // 
             // btnBack
             // 
+            this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnBack.Location = new System.Drawing.Point(326, 401);
+            this.btnBack.Location = new System.Drawing.Point(343, 401);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(121, 37);
             this.btnBack.TabIndex = 6;
@@ -207,7 +208,7 @@ namespace Library
             this.lblAdded.AutoSize = true;
             this.lblAdded.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdded.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblAdded.Location = new System.Drawing.Point(343, 371);
+            this.lblAdded.Location = new System.Drawing.Point(360, 371);
             this.lblAdded.Name = "lblAdded";
             this.lblAdded.Size = new System.Drawing.Size(0, 16);
             this.lblAdded.TabIndex = 7;
@@ -216,7 +217,7 @@ namespace Library
             // 
             this.pnlAuthor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlAuthor.Controls.Add(this.edtAuthor);
-            this.pnlAuthor.Location = new System.Drawing.Point(327, 234);
+            this.pnlAuthor.Location = new System.Drawing.Point(344, 234);
             this.pnlAuthor.Name = "pnlAuthor";
             this.pnlAuthor.Size = new System.Drawing.Size(123, 22);
             this.pnlAuthor.TabIndex = 8;
@@ -225,7 +226,7 @@ namespace Library
             // 
             this.pnlBookName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlBookName.Controls.Add(this.edtBookName);
-            this.pnlBookName.Location = new System.Drawing.Point(327, 206);
+            this.pnlBookName.Location = new System.Drawing.Point(344, 206);
             this.pnlBookName.Name = "pnlBookName";
             this.pnlBookName.Size = new System.Drawing.Size(123, 22);
             this.pnlBookName.TabIndex = 9;
@@ -234,7 +235,7 @@ namespace Library
             // 
             this.pnlGenre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlGenre.Controls.Add(this.cmbGenre);
-            this.pnlGenre.Location = new System.Drawing.Point(326, 262);
+            this.pnlGenre.Location = new System.Drawing.Point(343, 262);
             this.pnlGenre.Name = "pnlGenre";
             this.pnlGenre.Size = new System.Drawing.Size(123, 23);
             this.pnlGenre.TabIndex = 9;
@@ -243,7 +244,7 @@ namespace Library
             // 
             this.pnlISBN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlISBN.Controls.Add(this.edtISBN);
-            this.pnlISBN.Location = new System.Drawing.Point(326, 290);
+            this.pnlISBN.Location = new System.Drawing.Point(343, 290);
             this.pnlISBN.Name = "pnlISBN";
             this.pnlISBN.Size = new System.Drawing.Size(123, 22);
             this.pnlISBN.TabIndex = 9;
@@ -256,8 +257,10 @@ namespace Library
             // 
             // frmAdd_Book
             // 
+            this.AcceptButton = this.btnAddBook;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnBack;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pnlBookName);
             this.Controls.Add(this.pnlGenre);
