@@ -25,12 +25,7 @@ namespace Library
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            frmMainMenu frmMainMenu = new frmMainMenu();
-            frmMainMenu.Show();
-
            handler.CreateDatabase();
-            
         }
 
 
@@ -61,7 +56,9 @@ namespace Library
                     if (userCount > 0)
                     {
                         // Authentication successful
-                        MessageBox.Show("ID and Password are correct.");
+                        this.Hide();
+                        frmMainMenu menu = new frmMainMenu();
+                        menu.Show();
                     }
                     else
                     {
