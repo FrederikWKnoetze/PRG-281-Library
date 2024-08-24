@@ -23,7 +23,7 @@ namespace Library
 
         //variables and data things
         DataHandler handler = new DataHandler();
-        private readonly string usersFilePath = "users.json";
+        private readonly string usersFilePath = Path.Combine(Environment.CurrentDirectory, "users.json");
 
         public frmSignIn()
         {
