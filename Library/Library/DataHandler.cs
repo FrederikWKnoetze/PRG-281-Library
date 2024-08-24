@@ -23,30 +23,6 @@ namespace Library
         public static List<Reader> readerlist = new List<Reader>();
         public static List<Book> booklist = new List<Book>();
 
-        public static void CreateData()
-        {
-            /*
-            booklist.Add(new Book("111111111111", "A Song Of Ice And Fire", "Goerge", 0,new List<string>{"Famtasy","Action"}));
-            readerlist.Add(new Reader("111111111111", "Sannie", "Koen"));
-            readerlist.Add(new Reader("111111111111", "Sannie", "Koen"));
-            readerlist.Add(new Reader("111111111111", "Sannie", "Koen"));
-            readerlist.Add(new Reader("111111111111", "Sannie", "Koen"));
-            readerlist.Add(new Reader("111111111111", "Sannie", "Koen"));
-            readerlist.Add(new Reader("111111111111", "Sannie", "Koen"));*/
-            
-        }
-
-
-
-
-
-
-
-
-
-
-
- 
         public void CreateDatabase()
         {
             //Database code Start
@@ -330,11 +306,6 @@ namespace Library
 
                 //
                 //Database code End
-
-
-
-
-
-            }
+        }
     }
 }
