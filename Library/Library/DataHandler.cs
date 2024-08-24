@@ -25,13 +25,14 @@ namespace Library
 
         public static void CreateData()
         {
-            booklist.Add(new Book("111111111111", "A Song Of Ice And Fire", "Goerge", false,new List<string>{"Famtasy","Action"}));
+            /*
+            booklist.Add(new Book("111111111111", "A Song Of Ice And Fire", "Goerge", 0,new List<string>{"Famtasy","Action"}));
             readerlist.Add(new Reader("111111111111", "Sannie", "Koen"));
             readerlist.Add(new Reader("111111111111", "Sannie", "Koen"));
             readerlist.Add(new Reader("111111111111", "Sannie", "Koen"));
             readerlist.Add(new Reader("111111111111", "Sannie", "Koen"));
             readerlist.Add(new Reader("111111111111", "Sannie", "Koen"));
-            readerlist.Add(new Reader("111111111111", "Sannie", "Koen"));
+            readerlist.Add(new Reader("111111111111", "Sannie", "Koen"));*/
             
         }
 

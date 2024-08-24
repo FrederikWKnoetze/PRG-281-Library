@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -194,6 +195,7 @@ namespace Library
                 pnlAuthor.BackColor = Color.White;
                 pnlISBN.BackColor = Color.White;
                 pnlGenre.BackColor = Color.White;
+                InsertBook();
             }
 
 
@@ -232,6 +234,72 @@ namespace Library
             this.Hide();
             frmMainMenu frmMainMenu = new frmMainMenu();
             frmMainMenu.Show();
+        }
+        public void InsertBook()
+        {
+            try
+            {
+                // Check if the connection is properly initialized and not open already
+                if (DataHandler.myconn == null)
+                {
+                    DataHandler.myconn = new SQLiteConnection("Data Source=LibraryData.sqlite;Version=3;");
+                }
+
+                // Open the connection only if it is closed
+                if (DataHandler.myconn.State == System.Data.ConnectionState.Closed)
+                {
+                    DataHandler.myconn.Open();
+                }
+
+                // Insert book into the database
+                Book book = new Book(edtISBN.Text, edtBookName.Text, edtAuthor.Text, cmbGenre.Text, 1);
+                string sql = "INSERT INTO tblBooks (isbn, title, author, borrowed) VALUES (@isbn, @title, @author, @borrowed)";
+                SQLiteCommand cmd = new SQLiteCommand(sql, DataHandler.myconn);
+                cmd.Parameters.AddWithValue("@isbn", book.ISBN);
+                cmd.Parameters.AddWithValue("@title", book.Title);
+                cmd.Parameters.AddWithValue("@author", book.Author);
+                cmd.Parameters.AddWithValue("@borrowed", book.Borrowed);
+                cmd.ExecuteNonQuery();
+
+                //Just some testing to se if it works
+                sql = "SELECT * FROM tblBooks WHERE author = @AuthorName";
+                cmd.CommandText = sql;
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@AuthorName", "Gideon");
+
+                SQLiteDataReader reader = cmd.ExecuteReader();
+
+                string result = "";
+                while (reader.Read())
+                {
+                    result += $"Book ID: {reader["bookID"]}, ISBN: {reader["isbn"]}, Title: {reader["title"]}, Author: {reader["author"]}, Borrowed: {reader["borrowed"]}\n";
+                }
+
+                // Display results
+                if (string.IsNullOrEmpty(result))
+                {
+                    MessageBox.Show("No books found for the specified author.");
+                }
+                else
+                {
+                    MessageBox.Show(result);
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                // Display the error
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+            finally
+            {
+                // Closing the conn string for coding standards
+                if (DataHandler.myconn != null && DataHandler.myconn.State == System.Data.ConnectionState.Open)
+                {
+                    DataHandler.myconn.Close();
+                }
+            }
         }
     }
 }
