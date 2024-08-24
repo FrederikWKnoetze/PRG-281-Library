@@ -111,7 +111,6 @@
             this.MinimizeBox = false;
             this.Name = "frmSplash";
             this.Text = "frmSplash";
-            this.Load += new System.EventHandler(this.frmSplash_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
