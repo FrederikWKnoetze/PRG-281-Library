@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +12,8 @@ namespace Library
         private string isbn;
         private string title;
         private string author;
-        private bool borrowed;
-        private List<string> genres;
+        private int borrowed;
+        private string genres;
 
         public string ISBN
         {   get { return isbn; } 
@@ -26,22 +27,22 @@ namespace Library
         {   get { return author; }
             set { author = value; } 
         }
-        public bool Borrowed
+        public int Borrowed
         {   get { return borrowed; }
             set { borrowed = value; } 
         }
-        public List<string> Genres
+        public string Genres
         {   get { return genres; } 
             set { genres = value; } 
         }
 
-        public Book(string _ISBN, string _Title, string _Author, bool _Borrowed, List<string> _Genres)
+        public Book(string _ISBN, string _Title, string _Author, string _Genres, int _Borrowed)
         {
             this.isbn = _ISBN;
             this.title = _Title;
             this.author = _Author;
-            this.borrowed = _Borrowed;
             this.genres = _Genres;
+            this.borrowed = _Borrowed;
         }
     }
 }
