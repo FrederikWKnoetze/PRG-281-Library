@@ -24,8 +24,6 @@ namespace Library
             
         }
 
-
-
         private void lblDate_Click(object sender, EventArgs e)
         {
 
@@ -42,8 +40,27 @@ namespace Library
             this.Hide();
             frmAdd_Book frmAdd_Book = new frmAdd_Book();
             frmAdd_Book.Show();
+        }
 
+        private void btnBorrow_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Borrow_Book frmBorrowBook = new Borrow_Book();
+            frmBorrowBook.Show();
+        }
 
+        private void btnData_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            See_Data frmSeeData = new See_Data();
+            frmSeeData.Show();
+        }
+
+        private void btnReader_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Add_Reader frmAddReader = new Add_Reader();
+            frmAddReader.Show();
         }
     }
 }

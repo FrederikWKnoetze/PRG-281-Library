@@ -66,6 +66,7 @@
             this.btnReader.TabIndex = 1;
             this.btnReader.Text = "Add Reader";
             this.btnReader.UseVisualStyleBackColor = true;
+            this.btnReader.Click += new System.EventHandler(this.btnReader_Click);
             // 
             // btnData
             // 
@@ -77,6 +78,7 @@
             this.btnData.TabIndex = 2;
             this.btnData.Text = "See Data";
             this.btnData.UseVisualStyleBackColor = true;
+            this.btnData.Click += new System.EventHandler(this.btnData_Click);
             // 
             // btnBorrow
             // 
@@ -88,6 +90,7 @@
             this.btnBorrow.TabIndex = 3;
             this.btnBorrow.Text = "Borrow Book";
             this.btnBorrow.UseVisualStyleBackColor = true;
+            this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
             // 
             // panel1
             // 
