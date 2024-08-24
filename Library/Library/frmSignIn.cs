@@ -25,6 +25,7 @@ namespace Library
         DataHandler handler = new DataHandler();
         private readonly string usersFilePath = Path.Combine(Environment.CurrentDirectory, "users.json");
 
+
         public frmSignIn()
         {
             InitializeComponent();
@@ -42,6 +43,10 @@ namespace Library
             
             string username = edtID.Text;
             string password = edtPassword.Text;
+            //string filename = "users.json";
+            //string path = Path.GetFullPath(filename);
+            MessageBox.Show(Path.GetFullPath("users.json"));
+            //FileInfo f = new File(filename);
 
 
 
