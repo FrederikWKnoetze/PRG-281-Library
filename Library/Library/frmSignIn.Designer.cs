@@ -35,10 +35,10 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -112,16 +112,15 @@
             this.panel1.Size = new System.Drawing.Size(261, 437);
             this.panel1.TabIndex = 5;
             // 
-            // label1
+            // picLogo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 155);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(258, 156);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome to the\r\nLibrary\r\nManagement\r\nSystem";
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Location = new System.Drawing.Point(24, 15);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(216, 116);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 2;
+            this.picLogo.TabStop = false;
             // 
             // label2
             // 
@@ -132,6 +131,17 @@
             this.label2.Size = new System.Drawing.Size(69, 52);
             this.label2.TabIndex = 1;
             this.label2.Text = "Designed by:\r\nPieter\r\nGideon\r\nFrederik";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 155);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(258, 156);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Welcome to the\r\nLibrary\r\nManagement\r\nSystem";
             // 
             // label3
             // 
@@ -144,18 +154,9 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Login to your Account";
             // 
-            // picLogo
-            // 
-            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.Location = new System.Drawing.Point(24, 15);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(216, 116);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo.TabIndex = 2;
-            this.picLogo.TabStop = false;
-            // 
             // frmSignIn
             // 
+            this.AcceptButton = this.btnSignIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 431);

@@ -1,6 +1,6 @@
 ﻿namespace Library
 {
-    partial class See_Data
+    partial class Add_Reader
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(See_Data));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_Reader));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblSeeData = new System.Windows.Forms.Label();
+            this.lblAddReader = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -47,11 +47,11 @@
             this.panel1.Controls.Add(this.lblTime);
             this.panel1.Controls.Add(this.lblDate);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.lblSeeData);
-            this.panel1.Location = new System.Drawing.Point(0, -1);
+            this.panel1.Controls.Add(this.lblAddReader);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(806, 95);
-            this.panel1.TabIndex = 5;
+            this.panel1.Size = new System.Drawing.Size(806, 96);
+            this.panel1.TabIndex = 6;
             // 
             // lblTime
             // 
@@ -85,16 +85,16 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // lblSeeData
+            // lblAddReader
             // 
-            this.lblSeeData.AutoSize = true;
-            this.lblSeeData.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeeData.ForeColor = System.Drawing.Color.White;
-            this.lblSeeData.Location = new System.Drawing.Point(346, 27);
-            this.lblSeeData.Name = "lblSeeData";
-            this.lblSeeData.Size = new System.Drawing.Size(90, 39);
-            this.lblSeeData.TabIndex = 5;
-            this.lblSeeData.Text = "Data";
+            this.lblAddReader.AutoSize = true;
+            this.lblAddReader.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddReader.ForeColor = System.Drawing.Color.White;
+            this.lblAddReader.Location = new System.Drawing.Point(305, 27);
+            this.lblAddReader.Name = "lblAddReader";
+            this.lblAddReader.Size = new System.Drawing.Size(200, 39);
+            this.lblAddReader.TabIndex = 5;
+            this.lblAddReader.Text = "Add Reader";
             // 
             // timer1
             // 
@@ -104,9 +104,10 @@
             // 
             // btnBack
             // 
+            this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnBack.Location = new System.Drawing.Point(328, 401);
+            this.btnBack.Location = new System.Drawing.Point(335, 401);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(121, 37);
             this.btnBack.TabIndex = 7;
@@ -114,16 +115,17 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // See_Data
+            // Add_Reader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnBack;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
-            this.Name = "See_Data";
-            this.Text = "See_Data";
-            this.Load += new System.EventHandler(this.See_Data_Load);
+            this.Name = "Add_Reader";
+            this.Text = "Add_Reader";
+            this.Load += new System.EventHandler(this.Add_Reader_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -137,7 +139,7 @@
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblSeeData;
+        private System.Windows.Forms.Label lblAddReader;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnBack;
     }

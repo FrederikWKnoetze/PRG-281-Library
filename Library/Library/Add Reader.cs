@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Library
 {
-    public partial class See_Data : Form
+    public partial class Add_Reader : Form
     {
-        public See_Data()
+        public Add_Reader()
         {
             InitializeComponent();
         }
 
-        private void See_Data_Load(object sender, EventArgs e)
+        private void Add_Reader_Load(object sender, EventArgs e)
         {
             lblDate.Text = DateTime.Now.ToShortDateString();
             lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
