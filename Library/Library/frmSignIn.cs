@@ -42,6 +42,10 @@ namespace Library
             
             string username = edtID.Text;
             string password = edtPassword.Text;
+            string filename = "users.json";
+            string path = Path.GetFullPath(filename);
+            MessageBox.Show(path);
+            //FileInfo f = new File(filename);
 
 
 
