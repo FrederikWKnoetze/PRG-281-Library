@@ -252,7 +252,7 @@ namespace Library
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@readerID", edtReaderId.Text);
 
-                
+
                 int userCount = Convert.ToInt32(cmd.ExecuteScalar());
 
                 // If userCount is greater than 0, it means the user exists
@@ -261,7 +261,7 @@ namespace Library
                     MessageBox.Show("Valid user found.");
                     markAsBorrowed();
                 }
-                else 
+                else
                 {
                     MessageBox.Show("User is not found please make an Account");
                 }
@@ -278,6 +278,7 @@ namespace Library
                     DataHandler.myconn.Close();
                 }
             }
+        }
         private void Borrow_Book_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
