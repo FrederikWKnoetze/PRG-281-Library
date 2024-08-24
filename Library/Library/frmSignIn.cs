@@ -45,7 +45,9 @@ namespace Library
             string password = edtPassword.Text;
             //string filename = "users.json";
             //string path = Path.GetFullPath(filename);
-            MessageBox.Show(Path.GetFullPath("users.json"));
+            //MessageBox.Show(Path.GetFullPath("users.json"));
+            //MessageBox.Show(Path.GetFullPath("library"));
+            //MessageBox.Show(Directory.GetCurrentDirectory());
             //FileInfo f = new File(filename);
 
 
