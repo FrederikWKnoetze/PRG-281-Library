@@ -23,7 +23,10 @@ namespace Library
 
         //variables and data things
         DataHandler handler = new DataHandler();
-        private readonly string usersFilePath = Path.Combine(Environment.CurrentDirectory, "users.json");
+        private readonly static string parent1 = Directory.GetParent("users.json").ToString();
+        private readonly static string parent2 = Directory.GetParent(parent1).ToString();
+        private readonly static string parent3 = Directory.GetParent(parent2).ToString();
+        private readonly string usersFilePath = parent3 + @"\users.json";
 
 
         public frmSignIn()
@@ -49,6 +52,19 @@ namespace Library
             //MessageBox.Show(Path.GetFullPath("library"));
             //MessageBox.Show(Directory.GetCurrentDirectory());
             //FileInfo f = new File(filename);
+            //Directory.GetParent()
+            //string parent1= Directory.GetParent("users.json").ToString();
+           // string parent2= Directory.GetParent(parent1).ToString();
+            //string parent3= Directory.GetParent(parent2).ToString();
+            //string parent4= Directory.GetParent(parent3).ToString();
+            //string parent5= Directory.GetParent(parent4).ToString();
+            //MessageBox.Show(parent1);
+            //MessageBox.Show(parent2);
+            //MessageBox.Show(parent3+@"\users.json");
+            
+            //MessageBox.Show(parent4);
+            //MessageBox.Show(parent5);
+
 
 
 
