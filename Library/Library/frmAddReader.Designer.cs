@@ -37,6 +37,11 @@
             this.lblAddReader = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnBack = new System.Windows.Forms.Button();
+            this.edtFirstname = new System.Windows.Forms.TextBox();
+            this.lblFirstname = new System.Windows.Forms.Label();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.lblLastname = new System.Windows.Forms.Label();
+            this.edtLastname = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -115,12 +120,59 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // edtFirstname
+            // 
+            this.edtFirstname.Location = new System.Drawing.Point(335, 214);
+            this.edtFirstname.Name = "edtFirstname";
+            this.edtFirstname.Size = new System.Drawing.Size(121, 20);
+            this.edtFirstname.TabIndex = 8;
+            // 
+            // lblFirstname
+            // 
+            this.lblFirstname.AutoSize = true;
+            this.lblFirstname.Location = new System.Drawing.Point(369, 185);
+            this.lblFirstname.Name = "lblFirstname";
+            this.lblFirstname.Size = new System.Drawing.Size(52, 13);
+            this.lblFirstname.TabIndex = 9;
+            this.lblFirstname.Text = "Firstname";
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(335, 322);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(121, 37);
+            this.btnSubmit.TabIndex = 10;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // lblLastname
+            // 
+            this.lblLastname.AutoSize = true;
+            this.lblLastname.Location = new System.Drawing.Point(369, 252);
+            this.lblLastname.Name = "lblLastname";
+            this.lblLastname.Size = new System.Drawing.Size(53, 13);
+            this.lblLastname.TabIndex = 11;
+            this.lblLastname.Text = "Lastname";
+            // 
+            // edtLastname
+            // 
+            this.edtLastname.Location = new System.Drawing.Point(335, 279);
+            this.edtLastname.Name = "edtLastname";
+            this.edtLastname.Size = new System.Drawing.Size(121, 20);
+            this.edtLastname.TabIndex = 12;
+            // 
             // Add_Reader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnBack;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.edtLastname);
+            this.Controls.Add(this.lblLastname);
+            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.lblFirstname);
+            this.Controls.Add(this.edtFirstname);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
             this.Name = "Add_Reader";
@@ -131,6 +183,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -143,5 +196,10 @@
         private System.Windows.Forms.Label lblAddReader;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.TextBox edtFirstname;
+        private System.Windows.Forms.Label lblFirstname;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Label lblLastname;
+        private System.Windows.Forms.TextBox edtLastname;
     }
 }
