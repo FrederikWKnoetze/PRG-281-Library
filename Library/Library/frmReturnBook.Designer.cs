@@ -118,9 +118,11 @@
             // 
             // edtBookID
             // 
-            this.edtBookID.Location = new System.Drawing.Point(342, 192);
+            this.edtBookID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edtBookID.Location = new System.Drawing.Point(285, 189);
+            this.edtBookID.Multiline = true;
             this.edtBookID.Name = "edtBookID";
-            this.edtBookID.Size = new System.Drawing.Size(121, 20);
+            this.edtBookID.Size = new System.Drawing.Size(225, 34);
             this.edtBookID.TabIndex = 8;
             this.edtBookID.Text = "Book ID";
             // 
@@ -140,6 +142,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btnBack;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnReturn);

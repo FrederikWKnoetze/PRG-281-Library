@@ -260,6 +260,8 @@ namespace Library
             this.AcceptButton = this.btnAddBook;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btnBack;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pnlBookName);
@@ -272,8 +274,6 @@ namespace Library
             this.Controls.Add(this.btnAddBook);
             this.Name = "frmAdd_Book";
             this.Text = " ";
-
-
             this.Load += new System.EventHandler(this.frmAdd_Book_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
