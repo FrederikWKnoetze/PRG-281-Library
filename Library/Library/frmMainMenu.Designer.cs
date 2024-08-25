@@ -49,7 +49,7 @@
             // 
             this.btnBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnBook.Location = new System.Drawing.Point(339, 362);
+            this.btnBook.Location = new System.Drawing.Point(339, 367);
             this.btnBook.Name = "btnBook";
             this.btnBook.Size = new System.Drawing.Size(129, 38);
             this.btnBook.TabIndex = 0;
@@ -73,7 +73,7 @@
             // 
             this.btnData.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnData.Location = new System.Drawing.Point(339, 185);
+            this.btnData.Location = new System.Drawing.Point(339, 183);
             this.btnData.Name = "btnData";
             this.btnData.Size = new System.Drawing.Size(129, 38);
             this.btnData.TabIndex = 2;
@@ -85,7 +85,7 @@
             // 
             this.btnBorrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnBorrow.Location = new System.Drawing.Point(339, 126);
+            this.btnBorrow.Location = new System.Drawing.Point(339, 122);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(129, 38);
             this.btnBorrow.TabIndex = 3;
@@ -171,6 +171,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.panel1);

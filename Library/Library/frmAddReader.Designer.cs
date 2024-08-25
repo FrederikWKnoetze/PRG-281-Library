@@ -122,23 +122,30 @@
             // 
             // edtFirstname
             // 
-            this.edtFirstname.Location = new System.Drawing.Point(335, 214);
+            this.edtFirstname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edtFirstname.Location = new System.Drawing.Point(312, 150);
+            this.edtFirstname.Multiline = true;
             this.edtFirstname.Name = "edtFirstname";
-            this.edtFirstname.Size = new System.Drawing.Size(121, 20);
+            this.edtFirstname.Size = new System.Drawing.Size(170, 32);
             this.edtFirstname.TabIndex = 8;
             // 
             // lblFirstname
             // 
             this.lblFirstname.AutoSize = true;
-            this.lblFirstname.Location = new System.Drawing.Point(369, 185);
+            this.lblFirstname.BackColor = System.Drawing.Color.Transparent;
+            this.lblFirstname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblFirstname.Location = new System.Drawing.Point(350, 123);
             this.lblFirstname.Name = "lblFirstname";
-            this.lblFirstname.Size = new System.Drawing.Size(52, 13);
+            this.lblFirstname.Size = new System.Drawing.Size(93, 24);
             this.lblFirstname.TabIndex = 9;
             this.lblFirstname.Text = "Firstname";
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(335, 322);
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSubmit.Location = new System.Drawing.Point(335, 318);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(121, 37);
             this.btnSubmit.TabIndex = 10;
@@ -149,23 +156,30 @@
             // lblLastname
             // 
             this.lblLastname.AutoSize = true;
-            this.lblLastname.Location = new System.Drawing.Point(369, 252);
+            this.lblLastname.BackColor = System.Drawing.Color.Transparent;
+            this.lblLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblLastname.Location = new System.Drawing.Point(350, 226);
             this.lblLastname.Name = "lblLastname";
-            this.lblLastname.Size = new System.Drawing.Size(53, 13);
+            this.lblLastname.Size = new System.Drawing.Size(91, 24);
             this.lblLastname.TabIndex = 11;
             this.lblLastname.Text = "Lastname";
             // 
             // edtLastname
             // 
-            this.edtLastname.Location = new System.Drawing.Point(335, 279);
+            this.edtLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edtLastname.Location = new System.Drawing.Point(312, 253);
+            this.edtLastname.Multiline = true;
             this.edtLastname.Name = "edtLastname";
-            this.edtLastname.Size = new System.Drawing.Size(121, 20);
+            this.edtLastname.Size = new System.Drawing.Size(170, 32);
             this.edtLastname.TabIndex = 12;
             // 
             // Add_Reader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btnBack;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.edtLastname);
