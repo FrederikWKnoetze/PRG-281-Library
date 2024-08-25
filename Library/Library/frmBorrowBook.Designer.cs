@@ -39,16 +39,16 @@ namespace Library
             this.lblBorrowBook = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.edtISBN = new System.Windows.Forms.TextBox();
+            this.edtBookID = new System.Windows.Forms.TextBox();
             this.btnAddtoList = new System.Windows.Forms.Button();
             this.edtReaderId = new System.Windows.Forms.TextBox();
             this.btnCheckOut = new System.Windows.Forms.Button();
-            this.pnlISBN = new System.Windows.Forms.Panel();
+            this.pnlBookID = new System.Windows.Forms.Panel();
             this.pnlReaderID = new System.Windows.Forms.Panel();
             this.richBookList = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlISBN.SuspendLayout();
+            this.pnlBookID.SuspendLayout();
             this.pnlReaderID.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,16 +126,16 @@ namespace Library
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // edtISBN
+            // edtBookID
             // 
-            this.edtISBN.ForeColor = System.Drawing.Color.Silver;
-            this.edtISBN.Location = new System.Drawing.Point(1, 1);
-            this.edtISBN.Name = "edtISBN";
-            this.edtISBN.Size = new System.Drawing.Size(121, 20);
-            this.edtISBN.TabIndex = 9;
-            this.edtISBN.Text = "ISBN";
-            this.edtISBN.Enter += new System.EventHandler(this.edtISBN_Enter);
-            this.edtISBN.Leave += new System.EventHandler(this.edtISBN_Leave);
+            this.edtBookID.ForeColor = System.Drawing.Color.Silver;
+            this.edtBookID.Location = new System.Drawing.Point(1, 1);
+            this.edtBookID.Name = "edtBookID";
+            this.edtBookID.Size = new System.Drawing.Size(121, 20);
+            this.edtBookID.TabIndex = 9;
+            this.edtBookID.Text = "Book ID";
+            this.edtBookID.Enter += new System.EventHandler(this.edtBookID_Enter);
+            this.edtBookID.Leave += new System.EventHandler(this.edtBookID_Leave);
             // 
             // btnAddtoList
             // 
@@ -171,13 +171,13 @@ namespace Library
             this.btnCheckOut.UseVisualStyleBackColor = true;
             this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
-            // pnlISBN
+            // pnlBookID
             // 
-            this.pnlISBN.Controls.Add(this.edtISBN);
-            this.pnlISBN.Location = new System.Drawing.Point(339, 236);
-            this.pnlISBN.Name = "pnlISBN";
-            this.pnlISBN.Size = new System.Drawing.Size(123, 22);
-            this.pnlISBN.TabIndex = 13;
+            this.pnlBookID.Controls.Add(this.edtBookID);
+            this.pnlBookID.Location = new System.Drawing.Point(339, 236);
+            this.pnlBookID.Name = "pnlBookID";
+            this.pnlBookID.Size = new System.Drawing.Size(123, 22);
+            this.pnlBookID.TabIndex = 13;
             // 
             // pnlReaderID
             // 
@@ -206,7 +206,7 @@ namespace Library
             this.Controls.Add(this.richBookList);
             this.Controls.Add(this.btnAddtoList);
             this.Controls.Add(this.pnlReaderID);
-            this.Controls.Add(this.pnlISBN);
+            this.Controls.Add(this.pnlBookID);
             this.Controls.Add(this.btnCheckOut);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
@@ -217,8 +217,8 @@ namespace Library
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlISBN.ResumeLayout(false);
-            this.pnlISBN.PerformLayout();
+            this.pnlBookID.ResumeLayout(false);
+            this.pnlBookID.PerformLayout();
             this.pnlReaderID.ResumeLayout(false);
             this.pnlReaderID.PerformLayout();
             this.ResumeLayout(false);
@@ -234,11 +234,11 @@ namespace Library
         private System.Windows.Forms.Label lblBorrowBook;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.TextBox edtISBN;
+        private System.Windows.Forms.TextBox edtBookID;
         private System.Windows.Forms.Button btnAddtoList;
         private System.Windows.Forms.TextBox edtReaderId;
         private System.Windows.Forms.Button btnCheckOut;
-        private System.Windows.Forms.Panel pnlISBN;
+        private System.Windows.Forms.Panel pnlBookID;
         private System.Windows.Forms.Panel pnlReaderID;
         private System.Windows.Forms.RichTextBox richBookList;
     }

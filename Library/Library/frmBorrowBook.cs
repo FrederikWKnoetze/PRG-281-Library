@@ -42,23 +42,23 @@ namespace Library
 
         private void edtISBN_Enter(object sender, EventArgs e)
         {
-            if (edtISBN.Text == "ISBN")
+            if (edtBookID.Text == "ISBN")
             {
-                edtISBN.Text = "";
-                edtISBN.ForeColor = Color.Black;
+                edtBookID.Text = "";
+                edtBookID.ForeColor = Color.Black;
             }
         }
 
         private void edtISBN_Leave(object sender, EventArgs e)
         {
-            if (edtISBN.Text == "")
+            if (edtBookID.Text == "")
             {
-                edtISBN.Text = "ISBN";
-                edtISBN.ForeColor = Color.Silver;
+                edtBookID.Text = "ISBN";
+                edtBookID.ForeColor = Color.Silver;
             }
             else
             {
-                edtISBN.ForeColor = Color.Black;
+                edtBookID.ForeColor = Color.Black;
             }
         }
 
@@ -90,11 +90,11 @@ namespace Library
         }
         public void ValidateISBN()
         {
-            string TempISBN = edtISBN.Text;
+            string TempISBN = edtBookID.Text;
             string nums = "0123456789";
             int countCorrectNums = 0;
             bool isbnCorrect = false;
-            if (TempISBN.Length == 13)//loop to check if if all 13 characters is a number
+            if (TempISBN.Length == 8)//loop to check if if all 8 characters is a number
             {
                 for (int i = 0; i < TempISBN.Length; i++)
                 {
@@ -103,7 +103,7 @@ namespace Library
                         countCorrectNums += 1;
                     }
                 }
-                if (countCorrectNums == 13) // Check if all characters are digits
+                if (countCorrectNums == 8) // Check if all characters are digits
                 {
                     try
                     {
@@ -121,11 +121,11 @@ namespace Library
 
 
                         //Just some testing to se if it works
-                        string sql = "SELECT * FROM tblBooks WHERE isbn = @ISBN";
+                        string sql = "SELECT * FROM tblBooks WHERE bookID = @bookID";
                         SQLiteCommand cmd = new SQLiteCommand(sql, DataHandler.myconn);
                         cmd.CommandText = sql;
                         cmd.Parameters.Clear();
-                        cmd.Parameters.AddWithValue("@ISBN", edtISBN.Text);
+                        cmd.Parameters.AddWithValue("@bookID", int.Parse(edtBookID.Text));
                         SQLiteDataReader reader = cmd.ExecuteReader();
 
                         string result = "";
@@ -143,23 +143,32 @@ namespace Library
                         if (string.IsNullOrEmpty(result))
                         {
                             MessageBox.Show("This book does not exist");
-                            pnlISBN.BackColor = Color.Red;
+                            pnlBookID.BackColor = Color.Red;
                         }
                         else if (isBorrowed == true)
                         {
                             MessageBox.Show("This book is already borrowed.");
-                            pnlISBN.BackColor = Color.Red;
+                            pnlBookID.BackColor = Color.Red;
                         }
                         else
                         {
-                            MessageBox.Show(result);
-                            isbnCorrect = true;
-                            pnlISBN.BackColor = Color.White;
-                            richBookList.Visible = true;
-                            richBookList.AppendText(edtISBN.Text + Environment.NewLine);
-                            BorrowBook test = new BorrowBook(edtISBN.Text, 1);
-                            
-                            edtISBN.Text = "";
+                            if (edtReaderId.Text == "Reader ID" || edtReaderId.Text == "")
+                            {
+                                pnlReaderID.BackColor = Color.Red;
+                                MessageBox.Show("Please enter a user ID");
+                            }
+                            else
+                            {
+                                int tempReaderID = int.Parse(edtReaderId.Text);
+                                MessageBox.Show(result);
+                                isbnCorrect = true;
+                                pnlBookID.BackColor = Color.White;
+                                pnlReaderID.BackColor = Color.White;
+                                richBookList.Visible = true;
+                                richBookList.AppendText(edtBookID.Text + Environment.NewLine);
+                                BorrowBook test = new BorrowBook(int.Parse(edtBookID.Text), 1, tempReaderID);
+                                edtBookID.Text = "";
+                            }
                         }
 
                         reader.Close();
@@ -181,7 +190,7 @@ namespace Library
             }
             if (isbnCorrect == false)
             {
-                pnlISBN.BackColor = Color.Red;
+                pnlBookID.BackColor = Color.Red;
             }
         }
 
@@ -221,13 +230,13 @@ namespace Library
                 if (userCount > 0)
                 {
                     MessageBox.Show("Valid user found.");
-                    BorrowBook test = new BorrowBook("123",1);//inteface thing cannot be static so best option is that make a "temp" object to method can be called
+                    BorrowBook test = new BorrowBook(1,1,1);//inteface thing cannot be static so best option is that make a "temp" object to method can be called
                     test.UpdateBookDB();
                     richBookList.Text = "Book List:" + Environment.NewLine;
                     edtReaderId.Text = "";
                     edtReaderId.Focus();
                     edtReaderId.Focus();
-                    edtISBN.Focus();
+                    edtBookID.Focus();
                 }
                 else
                 {
@@ -258,6 +267,28 @@ namespace Library
         private void Borrow_Book_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void edtBookID_Enter(object sender, EventArgs e)
+        {
+            if (edtBookID.Text == "Book ID")
+            {
+                edtBookID.Text = "";
+                edtBookID.ForeColor = Color.Black;
+            }
+        }
+
+        private void edtBookID_Leave(object sender, EventArgs e)
+        {
+            if (edtBookID.Text == "")
+            {
+                edtBookID.Text = "Book ID";
+                edtBookID.ForeColor = Color.Silver;
+            }
+            else
+            {
+                edtBookID.ForeColor = Color.Black;
+            }
         }
     }
 }

@@ -103,7 +103,7 @@ namespace Library
 
             //creation of dummy data for tblbooks inputting isbn code auther name and book title
             sql = @"
-    INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('1234567890123', 'Book Title 1', 'Author 1', 1);
+    INSERT INTO tblBooks(bookID, isbn, title, author, borrowed) VALUES ('10000000','1234567890123', 'Book Title 1', 'Author 1', 1);
     INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('2345678901234', 'Book Title 2', 'Author 2', 1);
     INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('3456789012345', 'Book Title 3', 'Author 3', 1);
     INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('4567890123456', 'Book Title 4', 'Author 4', 1);
