@@ -78,6 +78,8 @@ namespace Library
                 //maak fancy pls pieter
                 MessageBox.Show("Invalid Lastname");
             }
+            //MessageBox.Show(firstname);
+            //MessageBox.Show(lastname);
             var myconn = DataHandler.myconn;
             if (flag1==true&&flag2==true)
             {
@@ -85,13 +87,13 @@ namespace Library
                 {
                     if (myconn != null)
                     {
-                        MessageBox.Show("connection working");
+                        //MessageBox.Show("connection working");
                         addReader(firstname, lastname);
                     }
                     else
                     {
                         DataHandler.myconn = new SQLiteConnection(DataHandler.connectionstring);
-                        MessageBox.Show("connection working");
+                        //MessageBox.Show("connection working");
                         addReader(firstname, lastname);
                     }
                 }
@@ -117,7 +119,8 @@ namespace Library
 
             try
             {
-                sql = "INSERT INTO tblReaders (firstname,lastname) VALUES ("+_firstname+","+_lastname+")";
+                //INSERT INTO tblReaders(firstname, lastname) VALUES ('Sannie', 'Koen');
+                sql = "INSERT INTO tblReaders (firstname,lastname) VALUES ('"+_firstname+"','"+_lastname+"')";
                 mycmd = new SQLiteCommand(sql, myconn);
                 mycmd.ExecuteNonQuery();
                 MessageBox.Show("Succsess added: " + _firstname + " " + _lastname);
