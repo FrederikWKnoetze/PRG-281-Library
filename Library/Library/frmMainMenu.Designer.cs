@@ -40,6 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblMainMenu = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnReturn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +49,7 @@
             // 
             this.btnBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnBook.Location = new System.Drawing.Point(339, 273);
+            this.btnBook.Location = new System.Drawing.Point(339, 389);
             this.btnBook.Name = "btnBook";
             this.btnBook.Size = new System.Drawing.Size(129, 38);
             this.btnBook.TabIndex = 0;
@@ -114,7 +115,6 @@
             this.lblTime.Size = new System.Drawing.Size(69, 29);
             this.lblTime.TabIndex = 8;
             this.lblTime.Text = "Time";
-            this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
             // 
             // lblDate
             // 
@@ -155,11 +155,24 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnReturn
+            // 
+            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnReturn.Location = new System.Drawing.Point(339, 271);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(129, 38);
+            this.btnReturn.TabIndex = 7;
+            this.btnReturn.Text = "Return Book";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnBorrow);
             this.Controls.Add(this.btnData);
@@ -188,5 +201,6 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnReturn;
     }
 }

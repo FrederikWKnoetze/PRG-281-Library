@@ -74,9 +74,12 @@ namespace Library
             System.Windows.Forms.Application.Exit();
         }
 
-        private void lblTime_Click(object sender, EventArgs e)
-        {
 
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmReturnBook frmReturnBook = new frmReturnBook();
+            frmReturnBook.Show();
         }
     }
 }
