@@ -230,6 +230,7 @@ namespace Library
                 edtPassword.Text = "";
                 edtPassword.ForeColor = Color.Black;
             }
+            edtPassword.PasswordChar = '*';
         }
 
         private void textBox2_Leave(object sender, EventArgs e)
@@ -253,6 +254,19 @@ namespace Library
         private void frmSignIn_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void btnSeePassword_Click(object sender, EventArgs e)
+        {
+            if (edtPassword.PasswordChar=='*')
+            {
+                edtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                edtPassword.PasswordChar= '*';
+            }
+
         }
     }
 } 

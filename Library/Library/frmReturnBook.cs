@@ -15,6 +15,26 @@ namespace Library
         public frmReturnBook()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void frmReturnBook_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
+        //make sure thing closes
+        private void frmReturnBook_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+        private void frmReturnBook_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

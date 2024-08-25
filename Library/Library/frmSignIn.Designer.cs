@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnSeePassword = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -154,12 +155,24 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Login to your Account";
             // 
+            // btnSeePassword
+            // 
+            this.btnSeePassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSeePassword.BackgroundImage")));
+            this.btnSeePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSeePassword.Location = new System.Drawing.Point(571, 250);
+            this.btnSeePassword.Name = "btnSeePassword";
+            this.btnSeePassword.Size = new System.Drawing.Size(29, 32);
+            this.btnSeePassword.TabIndex = 7;
+            this.btnSeePassword.UseVisualStyleBackColor = true;
+            this.btnSeePassword.Click += new System.EventHandler(this.btnSeePassword_Click);
+            // 
             // frmSignIn
             // 
             this.AcceptButton = this.btnSignIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 431);
+            this.Controls.Add(this.btnSeePassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblName);
@@ -193,6 +206,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Button btnSeePassword;
     }
 }
 

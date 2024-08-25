@@ -150,6 +150,9 @@
     <EmbeddedResource Include="frmMainMenu.resx">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReturnBook.resx">
+      <DependentUpon>frmReturnBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSeeData.resx">
       <DependentUpon>frmSeeData.cs</DependentUpon>
     </EmbeddedResource>
