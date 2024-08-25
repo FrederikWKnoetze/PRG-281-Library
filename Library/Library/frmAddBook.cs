@@ -16,6 +16,7 @@ namespace Library
         public frmAdd_Book()
         {
             InitializeComponent();
+
             StartPosition = FormStartPosition.CenterScreen;
         }
 
@@ -198,7 +199,9 @@ namespace Library
                 pnlAuthor.BackColor = Color.White;
                 pnlISBN.BackColor = Color.White;
                 pnlGenre.BackColor = Color.White;
-                InsertBook();
+                Book book = new Book(edtISBN.Text, edtBookName.Text, edtAuthor.Text, cmbGenre.Text, 0);
+                book.UpdateBookDB();
+
             }
 
 
@@ -238,6 +241,7 @@ namespace Library
             frmMainMenu frmMainMenu = new frmMainMenu();
             frmMainMenu.Show();
         }
+
         public void InsertBook()
         {
             try
