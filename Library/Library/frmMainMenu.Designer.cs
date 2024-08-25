@@ -49,7 +49,7 @@
             // 
             this.btnBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnBook.Location = new System.Drawing.Point(339, 389);
+            this.btnBook.Location = new System.Drawing.Point(339, 362);
             this.btnBook.Name = "btnBook";
             this.btnBook.Size = new System.Drawing.Size(129, 38);
             this.btnBook.TabIndex = 0;
@@ -61,7 +61,7 @@
             // 
             this.btnReader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnReader.Location = new System.Drawing.Point(339, 333);
+            this.btnReader.Location = new System.Drawing.Point(339, 306);
             this.btnReader.Name = "btnReader";
             this.btnReader.Size = new System.Drawing.Size(129, 38);
             this.btnReader.TabIndex = 1;
@@ -73,7 +73,7 @@
             // 
             this.btnData.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnData.Location = new System.Drawing.Point(339, 212);
+            this.btnData.Location = new System.Drawing.Point(339, 185);
             this.btnData.Name = "btnData";
             this.btnData.Size = new System.Drawing.Size(129, 38);
             this.btnData.TabIndex = 2;
@@ -85,7 +85,7 @@
             // 
             this.btnBorrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnBorrow.Location = new System.Drawing.Point(339, 153);
+            this.btnBorrow.Location = new System.Drawing.Point(339, 126);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(129, 38);
             this.btnBorrow.TabIndex = 3;
@@ -159,7 +159,7 @@
             // 
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnReturn.Location = new System.Drawing.Point(339, 271);
+            this.btnReturn.Location = new System.Drawing.Point(339, 244);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(129, 38);
             this.btnReturn.TabIndex = 7;
