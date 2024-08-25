@@ -84,11 +84,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add Book.cs">
+    <Compile Include="frmAddBook.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Add Book.Designer.cs">
-      <DependentUpon>Add Book.cs</DependentUpon>
+    <Compile Include="frmAddBook.Designer.cs">
+      <DependentUpon>frmAddBook.cs</DependentUpon>
     </Compile>
     <Compile Include="Add Reader.cs">
       <SubType>Form</SubType>
@@ -132,8 +132,8 @@
     <Compile Include="See Data.Designer.cs">
       <DependentUpon>See Data.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Add Book.resx">
-      <DependentUpon>Add Book.cs</DependentUpon>
+    <EmbeddedResource Include="frmAddBook.resx">
+      <DependentUpon>frmAddBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Add Reader.resx">
       <DependentUpon>Add Reader.cs</DependentUpon>
