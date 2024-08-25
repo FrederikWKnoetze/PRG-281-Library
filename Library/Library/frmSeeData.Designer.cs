@@ -37,14 +37,17 @@
             this.lblSeeData = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnBack = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.dgvOutput = new System.Windows.Forms.DataGridView();
+            this.btnBooks = new System.Windows.Forms.Button();
+            this.btnReaders = new System.Windows.Forms.Button();
+            this.btnBorrowed = new System.Windows.Forms.Button();
+            this.btnSearchReader = new System.Windows.Forms.Button();
+            this.edtReader = new System.Windows.Forms.TextBox();
+            this.btnSearchBook = new System.Windows.Forms.Button();
+            this.edtBook = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOutput)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -120,60 +123,91 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // dataGridView1
+            // dgvOutput
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(79, 141);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(370, 215);
-            this.dataGridView1.TabIndex = 8;
+            this.dgvOutput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOutput.Location = new System.Drawing.Point(79, 141);
+            this.dgvOutput.Name = "dgvOutput";
+            this.dgvOutput.Size = new System.Drawing.Size(486, 215);
+            this.dgvOutput.TabIndex = 8;
             // 
-            // button1
+            // btnBooks
             // 
-            this.button1.Location = new System.Drawing.Point(616, 141);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBooks.Location = new System.Drawing.Point(599, 128);
+            this.btnBooks.Name = "btnBooks";
+            this.btnBooks.Size = new System.Drawing.Size(121, 37);
+            this.btnBooks.TabIndex = 9;
+            this.btnBooks.Text = "See all Books";
+            this.btnBooks.UseVisualStyleBackColor = true;
+            this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
             // 
-            // button2
+            // btnReaders
             // 
-            this.button2.Location = new System.Drawing.Point(616, 190);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnReaders.Location = new System.Drawing.Point(599, 171);
+            this.btnReaders.Name = "btnReaders";
+            this.btnReaders.Size = new System.Drawing.Size(121, 37);
+            this.btnReaders.TabIndex = 10;
+            this.btnReaders.Text = "See all Readers";
+            this.btnReaders.UseVisualStyleBackColor = true;
+            this.btnReaders.Click += new System.EventHandler(this.btnReaders_Click);
             // 
-            // button3
+            // btnBorrowed
             // 
-            this.button3.Location = new System.Drawing.Point(616, 245);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnBorrowed.Location = new System.Drawing.Point(599, 214);
+            this.btnBorrowed.Name = "btnBorrowed";
+            this.btnBorrowed.Size = new System.Drawing.Size(121, 37);
+            this.btnBorrowed.TabIndex = 11;
+            this.btnBorrowed.Text = "See al borrowed Books";
+            this.btnBorrowed.UseVisualStyleBackColor = true;
+            this.btnBorrowed.Click += new System.EventHandler(this.btnBorrowed_Click);
             // 
-            // button4
+            // btnSearchReader
             // 
-            this.button4.Location = new System.Drawing.Point(616, 297);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSearchReader.Location = new System.Drawing.Point(599, 257);
+            this.btnSearchReader.Name = "btnSearchReader";
+            this.btnSearchReader.Size = new System.Drawing.Size(121, 37);
+            this.btnSearchReader.TabIndex = 12;
+            this.btnSearchReader.Text = "Search Reader";
+            this.btnSearchReader.UseVisualStyleBackColor = true;
+            this.btnSearchReader.Click += new System.EventHandler(this.btnSearchReader_Click);
+            // 
+            // edtReader
+            // 
+            this.edtReader.Location = new System.Drawing.Point(599, 300);
+            this.edtReader.Name = "edtReader";
+            this.edtReader.Size = new System.Drawing.Size(121, 20);
+            this.edtReader.TabIndex = 13;
+            // 
+            // btnSearchBook
+            // 
+            this.btnSearchBook.Location = new System.Drawing.Point(599, 326);
+            this.btnSearchBook.Name = "btnSearchBook";
+            this.btnSearchBook.Size = new System.Drawing.Size(121, 37);
+            this.btnSearchBook.TabIndex = 14;
+            this.btnSearchBook.Text = "Search Book";
+            this.btnSearchBook.UseVisualStyleBackColor = true;
+            this.btnSearchBook.Click += new System.EventHandler(this.btnSearchBook_Click);
+            // 
+            // edtBook
+            // 
+            this.edtBook.Location = new System.Drawing.Point(599, 369);
+            this.edtBook.Name = "edtBook";
+            this.edtBook.Size = new System.Drawing.Size(121, 20);
+            this.edtBook.TabIndex = 15;
             // 
             // See_Data
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.edtBook);
+            this.Controls.Add(this.btnSearchBook);
+            this.Controls.Add(this.edtReader);
+            this.Controls.Add(this.btnSearchReader);
+            this.Controls.Add(this.btnBorrowed);
+            this.Controls.Add(this.btnReaders);
+            this.Controls.Add(this.btnBooks);
+            this.Controls.Add(this.dgvOutput);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
             this.Name = "See_Data";
@@ -183,8 +217,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOutput)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -197,10 +232,13 @@
         private System.Windows.Forms.Label lblSeeData;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dgvOutput;
+        private System.Windows.Forms.Button btnBooks;
+        private System.Windows.Forms.Button btnReaders;
+        private System.Windows.Forms.Button btnBorrowed;
+        private System.Windows.Forms.Button btnSearchReader;
+        private System.Windows.Forms.TextBox edtReader;
+        private System.Windows.Forms.Button btnSearchBook;
+        private System.Windows.Forms.TextBox edtBook;
     }
 }

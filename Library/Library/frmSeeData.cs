@@ -47,5 +47,29 @@ namespace Library
             System.Windows.Forms.Application.Exit();
         }
 
+        private void btnBooks_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReaders_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBorrowed_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearchReader_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearchBook_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
