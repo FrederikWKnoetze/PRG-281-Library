@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,10 +16,16 @@ namespace Library
 
     public partial class Borrow_Book : Form
     {
+
+        private Thread splashThread;
+        private frmSplashValid splashForm;
+        private ManualResetEvent splashCloseEvent;
+
         public Borrow_Book()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+            splashCloseEvent = new ManualResetEvent(false);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -84,8 +91,30 @@ namespace Library
             }
         }
 
+        private void frmSplashValid()
+        {
+            splashForm = new frmSplashValid();
+            splashForm.Show();
+            while (!splashCloseEvent.WaitOne(100))
+            {
+                Application.DoEvents();
+            }
+
+            splashForm.Invoke(new Action(() => splashForm.Close()));
+        }
+
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
+            splashThread = new Thread(new ThreadStart(frmSplashValid));
+            splashThread.Start();
+
+            Thread.Sleep(1500);
+
+            splashCloseEvent.Set();
+
+            splashThread.Join();
+
+
             validUser();
         }
         public void ValidateISBN()
