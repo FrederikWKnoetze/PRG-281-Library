@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -46,30 +47,79 @@ namespace Library
         {
             System.Windows.Forms.Application.Exit();
         }
-
+        //sql = "select * from test";
+        //mycmd = new SQLiteCommand(sql, myconn);
+        //SQLiteDataAdapter adapter = new SQLiteDataAdapter(mycmd);
+        //DataTable data = new DataTable();
+        //adapter.Fill(data);
         private void btnBooks_Click(object sender, EventArgs e)
         {
-
+            string sql = "";
+            var myconn = DataHandler.myconn;
+            SQLiteCommand mycmd = new SQLiteCommand(sql, myconn);
+            sql = "SELECT * FROM tblBooks";
+            mycmd= new SQLiteCommand(sql, myconn);
+            SQLiteDataAdapter adapter= new SQLiteDataAdapter(mycmd);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            dgvOutput.DataSource = data;
+            
         }
 
         private void btnReaders_Click(object sender, EventArgs e)
         {
-
+            string sql = "";
+            var myconn = DataHandler.myconn;
+            SQLiteCommand mycmd = new SQLiteCommand(sql, myconn);
+            sql = "SELECT * FROM tblReaders";
+            mycmd = new SQLiteCommand(sql, myconn);
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter(mycmd);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            dgvOutput.DataSource = data;
         }
 
         private void btnBorrowed_Click(object sender, EventArgs e)
         {
-
+            string sql = "";
+            var myconn = DataHandler.myconn;
+            SQLiteCommand mycmd = new SQLiteCommand(sql, myconn);
+            sql = "SELECT firstname, lastname, title FROM tblBooks INNER JOIN tblReaderBooks ON tblBooks.bookID=tblReaderBooks.bookID INNER JOIN tblReaders ON tblReaderBooks.readerID=tblReaders.readerID group by firstname";// INNER JOIN tblReaders ON tblReaderBooks.readerID=tblReaders.readerID";
+            mycmd = new SQLiteCommand(sql, myconn);
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter(mycmd);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            dgvOutput.DataSource = data;
         }
 
         private void btnSearchReader_Click(object sender, EventArgs e)
         {
-
+            string input = "";
+            string sql = "";
+            var myconn = DataHandler.myconn;
+            SQLiteCommand mycmd = new SQLiteCommand(sql, myconn);
+            input=edtReader.Text;
+            sql = "SELECT * FROM tblReaders WHERE firstname like '%"+input+"%'";
+            mycmd = new SQLiteCommand(sql, myconn);
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter(mycmd);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            dgvOutput.DataSource = data;
         }
 
         private void btnSearchBook_Click(object sender, EventArgs e)
         {
-
+            string sql = "";
+            string input = "";
+            var myconn = DataHandler.myconn;
+            SQLiteCommand mycmd = new SQLiteCommand(sql, myconn);
+            input=edtBook.Text;
+            sql = "SELECT * FROM tblBooks WHERE title like '%" + input + "%'";
+            mycmd = new SQLiteCommand(sql, myconn);
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter(mycmd);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            dgvOutput.DataSource = data;
         }
     }
 }
