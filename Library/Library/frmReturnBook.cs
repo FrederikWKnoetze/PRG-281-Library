@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace Library
         public frmReturnBook()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void frmReturnBook_Load(object sender, EventArgs e)
@@ -45,5 +47,73 @@ namespace Library
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string ibookid;
+
+            ibookid = edtBookID.Text;
+
+            var myconn = DataHandler.myconn;
+            try
+            {
+                if (myconn != null)
+                {
+                    ReturnBook(ibookid);
+                }
+                else
+                {
+                    DataHandler.myconn = new SQLiteConnection(DataHandler.connectionstring);
+                    ReturnBook(ibookid);
+                }
+            }
+            catch (Exception )
+            {
+                MessageBox.Show("Connection not working");
+                throw;
+            }
+
+
+            void ReturnBook(string bookid)
+            {
+                string sql = "";
+                string sql1 = "";
+
+                //var myconn = DataHandler.myconn;
+                SQLiteCommand mycmd = new SQLiteCommand(sql, myconn);
+                SQLiteCommand mycmd1 = new SQLiteCommand(sql1, myconn);
+
+                sql = "Select * from tblBooks";
+                mycmd = new SQLiteCommand(sql, myconn);
+
+                using (var reader = mycmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (reader["bookID"].ToString() == bookid)
+                        {
+                            if (int.Parse(reader["borrowed"].ToString()) == 0)
+                            {
+                                MessageBox.Show("Book is already returned");
+                            }
+                            else
+                            {
+                                sql1 = "UPDATE tblBooks set borrow=0 WHERE bookID=" + bookid + "";
+                                mycmd1 = new SQLiteCommand(sql1, myconn);
+                                mycmd1.ExecuteNonQuery();
+                                sql = "DELETE * FROM tblReaderBooks WHERE bookiD=" + bookid + "";
+                                mycmd1 = new SQLiteCommand(sql1, myconn);
+                                mycmd1.ExecuteNonQuery();
+                                MessageBox.Show("Succsess");
+                            }
+
+                        }
+                        // MessageBox.Show(reader["firstname"].ToString());
+                    }
+                }
+
+            }
+        }
+
     }
 }

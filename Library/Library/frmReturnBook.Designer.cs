@@ -37,6 +37,8 @@
             this.lblReturnBook = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.edtBookID = new System.Windows.Forms.TextBox();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -113,12 +115,32 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             // 
+            // edtBookID
+            // 
+            this.edtBookID.Location = new System.Drawing.Point(342, 192);
+            this.edtBookID.Name = "edtBookID";
+            this.edtBookID.Size = new System.Drawing.Size(121, 20);
+            this.edtBookID.TabIndex = 8;
+            this.edtBookID.Text = "Book ID";
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(342, 248);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(121, 37);
+            this.btnReturn.TabIndex = 9;
+            this.btnReturn.Text = "Return Book";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmReturnBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnBack;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.edtBookID);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
             this.Name = "frmReturnBook";
@@ -130,6 +152,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -142,5 +165,7 @@
         private System.Windows.Forms.Label lblReturnBook;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox edtBookID;
+        private System.Windows.Forms.Button btnReturn;
     }
 }

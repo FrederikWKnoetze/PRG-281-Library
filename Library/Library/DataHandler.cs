@@ -100,7 +100,7 @@ namespace Library
             mycmd = new SQLiteCommand(sql, myconn);
             mycmd.ExecuteNonQuery();
 
-
+            //1 means true
             //creation of dummy data for tblbooks inputting isbn code auther name and book title
             sql = @"
     INSERT INTO tblBooks(isbn, title, author, borrowed) VALUES ('1234567890123', 'Book Title 1', 'Author 1', 1);
