@@ -6,6 +6,7 @@ using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,10 +14,16 @@ namespace Library
 {
     public partial class frmReturnBook : Form
     {
+
+        private Thread splashThread;
+        private frmSplashValid splashForm;
+        private ManualResetEvent splashCloseEvent;
+
         public frmReturnBook()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+            splashCloseEvent = new ManualResetEvent(false);
         }
 
         private void frmReturnBook_Load(object sender, EventArgs e)
@@ -48,8 +55,29 @@ namespace Library
             System.Windows.Forms.Application.Exit();
         }
 
+        private void frmSplashValid()
+        {
+            splashForm = new frmSplashValid();
+            splashForm.Show();
+            while (!splashCloseEvent.WaitOne(100))
+            {
+                Application.DoEvents();
+            }
+
+            splashForm.Invoke(new Action(() => splashForm.Close()));
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
+            splashThread = new Thread(new ThreadStart(frmSplashValid));
+            splashThread.Start();
+
+            Thread.Sleep(1500);
+
+            splashCloseEvent.Set();
+
+            splashThread.Join();
+
             string ibookid;
 
             ibookid = edtBookID.Text;

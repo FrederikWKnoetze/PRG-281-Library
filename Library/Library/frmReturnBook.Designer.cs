@@ -103,9 +103,9 @@
             this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnBack.Location = new System.Drawing.Point(342, 401);
+            this.btnBack.Location = new System.Drawing.Point(336, 401);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(121, 37);
+            this.btnBack.Size = new System.Drawing.Size(127, 37);
             this.btnBack.TabIndex = 7;
             this.btnBack.Text = "Go Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -125,9 +125,11 @@
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(342, 248);
+            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnReturn.Location = new System.Drawing.Point(336, 248);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(121, 37);
+            this.btnReturn.Size = new System.Drawing.Size(127, 37);
             this.btnReturn.TabIndex = 9;
             this.btnReturn.Text = "Return Book";
             this.btnReturn.UseVisualStyleBackColor = true;
