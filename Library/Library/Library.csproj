@@ -85,6 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BorrowBook.cs" />
+    <Compile Include="DeleteBook.cs" />
+    <Compile Include="DeleteData.cs" />
+    <Compile Include="DeleteUser.cs" />
     <Compile Include="frmAddBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +107,12 @@
     </Compile>
     <Compile Include="frmBorrowBook.Designer.cs">
       <DependentUpon>frmBorrowBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDeleteData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeleteData.Designer.cs">
+      <DependentUpon>frmDeleteData.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMainMenu.cs">
       <SubType>Form</SubType>
@@ -153,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBorrowBook.resx">
       <DependentUpon>frmBorrowBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeleteData.resx">
+      <DependentUpon>frmDeleteData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainMenu.resx">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
