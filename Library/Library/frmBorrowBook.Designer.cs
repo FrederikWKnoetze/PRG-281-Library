@@ -212,6 +212,7 @@ namespace Library
             this.Controls.Add(this.panel1);
             this.Name = "Borrow_Book";
             this.Text = "Borrow_Book";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Borrow_Book_FormClosed);
             this.Load += new System.EventHandler(this.Borrow_Book_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -10,14 +10,15 @@ using System.Windows.Forms;
 
 namespace Library
 {
-    public partial class Add_Reader : Form
+    public partial class See_Data : Form
     {
-        public Add_Reader()
+        public See_Data()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void Add_Reader_Load(object sender, EventArgs e)
+        private void See_Data_Load(object sender, EventArgs e)
         {
             lblDate.Text = DateTime.Now.ToShortDateString();
             lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
@@ -36,7 +37,12 @@ namespace Library
             frmMainMenu.Show();
         }
 
-        private void Add_Reader_FormClosing(object sender, FormClosingEventArgs e)
+        private void See_Data_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void See_Data_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }
