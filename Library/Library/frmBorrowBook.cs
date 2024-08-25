@@ -158,8 +158,9 @@ namespace Library
                             pnlISBN.BackColor = Color.White;
                             richBookList.Visible = true;
                             richBookList.AppendText(edtISBN.Text + Environment.NewLine);
+                            BorrowBook test = new BorrowBook(edtISBN.Text, 1);
+                            
                             edtISBN.Text = "";
-                            books.Add(edtISBN.Text);
                         }
 
                         reader.Close();
@@ -194,45 +195,6 @@ namespace Library
         {
             richBookList.AppendText(Environment.NewLine);
         }
-        public void markAsBorrowed()
-        {
-            if (books.Count >= 1)
-            {
-                try
-                {
-                    if (DataHandler.myconn == null)
-                    {
-                        DataHandler.myconn = new SQLiteConnection("Data Source=LibraryData.sqlite;Version=3;");
-                    }
-
-                    if (DataHandler.myconn.State == System.Data.ConnectionState.Closed)
-                    {
-                        DataHandler.myconn.Open();
-                    }
-                    foreach (var book in books)
-                    {
-                        string updateSql = "UPDATE tblBooks SET borrowed = 0 WHERE isbn = @ISBN";
-                        SQLiteCommand updateCmd = new SQLiteCommand(updateSql, DataHandler.myconn);
-                        updateCmd.Parameters.Clear();
-                        updateCmd.Parameters.AddWithValue("@ISBN", book);
-                        updateCmd.ExecuteNonQuery();
-                        MessageBox.Show("The book has been successfully updated to borrowed.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("An error occurred: " + ex.Message);
-                }
-                finally
-                {
-                    if (DataHandler.myconn != null && DataHandler.myconn.State == System.Data.ConnectionState.Open)
-                    {
-                        DataHandler.myconn.Close();
-                    }
-                }
-
-            }
-        }
         public void validUser()
         {
             try
@@ -260,7 +222,8 @@ namespace Library
                 if (userCount > 0)
                 {
                     MessageBox.Show("Valid user found.");
-                    markAsBorrowed();
+                    BorrowBook test = new BorrowBook("123",1);//inteface thing cannot be static so best option is that make a "temp" object to method can be called
+                    test.UpdateBookDB();
                 }
                 else
                 {
