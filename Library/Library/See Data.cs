@@ -15,6 +15,7 @@ namespace Library
         public See_Data()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void See_Data_Load(object sender, EventArgs e)
@@ -37,6 +38,11 @@ namespace Library
         }
 
         private void See_Data_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void See_Data_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }

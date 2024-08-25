@@ -272,6 +272,7 @@ namespace Library
             this.Controls.Add(this.btnAddBook);
             this.Name = "frmAdd_Book";
             this.Text = " ";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAdd_Book_FormClosed);
             this.Load += new System.EventHandler(this.frmAdd_Book_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

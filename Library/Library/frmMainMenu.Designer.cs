@@ -166,6 +166,7 @@
             this.Controls.Add(this.btnBook);
             this.Name = "frmMainMenu";
             this.Text = "Main Menu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMainMenu_FormClosed);
             this.Load += new System.EventHandler(this.frmMainMenu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

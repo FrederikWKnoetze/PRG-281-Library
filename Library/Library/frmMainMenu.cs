@@ -67,5 +67,10 @@ namespace Library
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void frmMainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

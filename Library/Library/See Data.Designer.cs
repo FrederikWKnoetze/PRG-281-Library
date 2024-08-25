@@ -123,6 +123,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "See_Data";
             this.Text = "See_Data";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.See_Data_FormClosed);
             this.Load += new System.EventHandler(this.See_Data_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -245,7 +245,12 @@ namespace Library
             }
         }
 
+        //make sure program closes when form closed
         private void frmSignIn_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+        private void frmSignIn_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }

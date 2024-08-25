@@ -15,6 +15,7 @@ namespace Library
         public Add_Reader()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void Add_Reader_Load(object sender, EventArgs e)
@@ -36,7 +37,15 @@ namespace Library
             frmMainMenu.Show();
         }
 
+
+
+
+        //both of these to make sure program closes when form is closed
         private void Add_Reader_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+        private void Add_Reader_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }

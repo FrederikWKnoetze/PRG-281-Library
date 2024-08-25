@@ -19,6 +19,7 @@ namespace Library
         public Borrow_Book()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -279,7 +280,15 @@ namespace Library
                 }
             }
         }
+
+
+        //make sure program exists when form is closed
         private void Borrow_Book_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void Borrow_Book_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }

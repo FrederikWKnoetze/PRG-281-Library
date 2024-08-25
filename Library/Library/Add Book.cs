@@ -16,12 +16,10 @@ namespace Library
         public frmAdd_Book()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void Add_Book_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            System.Windows.Forms.Application.Exit();
-        }
+
 
         private void edtBookName_Enter(object sender, EventArgs e)
         {
@@ -305,6 +303,16 @@ namespace Library
                     DataHandler.myconn.Close();
                 }
             }
+        }
+
+        //both of these to make sure that program exits when form is closed
+        private void frmAdd_Book_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+        private void Add_Book_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }
