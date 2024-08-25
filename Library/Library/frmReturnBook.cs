@@ -78,6 +78,7 @@ namespace Library
             {
                 string sql = "";
                 string sql1 = "";
+                bool found=false;
 
                 //var myconn = DataHandler.myconn;
                 SQLiteCommand mycmd = new SQLiteCommand(sql, myconn);
@@ -95,6 +96,7 @@ namespace Library
                             if (int.Parse(reader["borrowed"].ToString()) == 0)
                             {
                                 MessageBox.Show("Book is already returned");
+                                found = true;
                             }
                             else
                             {
@@ -105,11 +107,16 @@ namespace Library
                                 mycmd1 = new SQLiteCommand(sql1, myconn);
                                 mycmd1.ExecuteNonQuery();
                                 MessageBox.Show("Succsess");
+                                found = true;
                             }
 
                         }
                         // MessageBox.Show(reader["firstname"].ToString());
                     }
+                }
+                if (found==false)
+                {
+                    MessageBox.Show("Book not found");
                 }
 
             }
