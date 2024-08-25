@@ -150,5 +150,11 @@ namespace Library
             }
         }
 
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMainMenu frmMainMenu = new frmMainMenu();
+            frmMainMenu.Show();
+        }
     }
 }

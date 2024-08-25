@@ -61,7 +61,7 @@ namespace Library
             bool flag2 = false;
             firstname = edtFirstname.Text;
             lastname = edtLastname.Text;
-            if ((firstname != "Firstname") || (firstname != null) || (firstname != ""))
+            if ((firstname != "Firstname") && (firstname != null) && (firstname != ""))
             {
                 flag1 = true;
             } else
@@ -69,7 +69,7 @@ namespace Library
                 //maak fancy pls pieter
                 MessageBox.Show("Invalid Firstname");
             }
-            if ((lastname != "Lastname") || (lastname != null)|| (lastname !=""))
+            if ((lastname != "Lastname") && (lastname != null) && (lastname !=""))
             {
                 flag2 = true;
             }
