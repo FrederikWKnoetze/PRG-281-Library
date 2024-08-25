@@ -15,7 +15,6 @@ namespace Library
 
     public partial class Borrow_Book : Form
     {
-        public static List<string> books = new List<string>();
         public Borrow_Book()
         {
             InitializeComponent();
@@ -224,6 +223,11 @@ namespace Library
                     MessageBox.Show("Valid user found.");
                     BorrowBook test = new BorrowBook("123",1);//inteface thing cannot be static so best option is that make a "temp" object to method can be called
                     test.UpdateBookDB();
+                    richBookList.Text = "Book List:" + Environment.NewLine;
+                    edtReaderId.Text = "";
+                    edtReaderId.Focus();
+                    edtReaderId.Focus();
+                    edtISBN.Focus();
                 }
                 else
                 {

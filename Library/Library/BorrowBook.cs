@@ -47,6 +47,7 @@ namespace Library
                         updateCmd.ExecuteNonQuery();
                         MessageBox.Show("The book has been successfully updated to borrowed.");
                     }
+                    books.Clear();
                 }
                 catch (Exception ex)
                 {
