@@ -183,11 +183,11 @@ namespace Library
             this.lblMainMenu.AutoSize = true;
             this.lblMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMainMenu.ForeColor = System.Drawing.Color.White;
-            this.lblMainMenu.Location = new System.Drawing.Point(324, 28);
+            this.lblMainMenu.Location = new System.Drawing.Point(313, 27);
             this.lblMainMenu.Name = "lblMainMenu";
-            this.lblMainMenu.Size = new System.Drawing.Size(166, 39);
+            this.lblMainMenu.Size = new System.Drawing.Size(194, 39);
             this.lblMainMenu.TabIndex = 5;
-            this.lblMainMenu.Text = "Add Book";
+            this.lblMainMenu.Text = "Add a Book";
             this.lblMainMenu.Click += new System.EventHandler(this.lblMainMenu_Click);
             // 
             // btnBack

@@ -21,7 +21,8 @@ namespace Library
 
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
-            
+            lblDate.Text = DateTime.Now.ToShortDateString();
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
         private void lblDate_Click(object sender, EventArgs e)
@@ -61,6 +62,13 @@ namespace Library
             this.Hide();
             Add_Reader frmAddReader = new Add_Reader();
             frmAddReader.Show();
+        }
+
+        private void btnReturnBook_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Return_Book frmReturnBook = new Return_Book();
+            frmReturnBook.Show();
         }
     }
 }
