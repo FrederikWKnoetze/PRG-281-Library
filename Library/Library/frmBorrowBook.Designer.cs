@@ -139,9 +139,9 @@ namespace Library
             // 
             // btnAddtoList
             // 
-            this.btnAddtoList.Location = new System.Drawing.Point(339, 273);
+            this.btnAddtoList.Location = new System.Drawing.Point(339, 218);
             this.btnAddtoList.Name = "btnAddtoList";
-            this.btnAddtoList.Size = new System.Drawing.Size(121, 23);
+            this.btnAddtoList.Size = new System.Drawing.Size(123, 23);
             this.btnAddtoList.TabIndex = 10;
             this.btnAddtoList.Text = "Add Book To List";
             this.btnAddtoList.UseVisualStyleBackColor = true;
@@ -163,9 +163,9 @@ namespace Library
             this.btnCheckOut.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnCheckOut.Location = new System.Drawing.Point(337, 344);
+            this.btnCheckOut.Location = new System.Drawing.Point(337, 289);
             this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(121, 37);
+            this.btnCheckOut.Size = new System.Drawing.Size(125, 37);
             this.btnCheckOut.TabIndex = 12;
             this.btnCheckOut.Text = "Check Out";
             this.btnCheckOut.UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@ namespace Library
             // pnlBookID
             // 
             this.pnlBookID.Controls.Add(this.edtBookID);
-            this.pnlBookID.Location = new System.Drawing.Point(339, 236);
+            this.pnlBookID.Location = new System.Drawing.Point(339, 181);
             this.pnlBookID.Name = "pnlBookID";
             this.pnlBookID.Size = new System.Drawing.Size(123, 22);
             this.pnlBookID.TabIndex = 13;
@@ -182,14 +182,14 @@ namespace Library
             // pnlReaderID
             // 
             this.pnlReaderID.Controls.Add(this.edtReaderId);
-            this.pnlReaderID.Location = new System.Drawing.Point(339, 310);
+            this.pnlReaderID.Location = new System.Drawing.Point(339, 255);
             this.pnlReaderID.Name = "pnlReaderID";
             this.pnlReaderID.Size = new System.Drawing.Size(123, 22);
             this.pnlReaderID.TabIndex = 14;
             // 
             // richBookList
             // 
-            this.richBookList.Location = new System.Drawing.Point(514, 236);
+            this.richBookList.Location = new System.Drawing.Point(514, 181);
             this.richBookList.Name = "richBookList";
             this.richBookList.Size = new System.Drawing.Size(125, 144);
             this.richBookList.TabIndex = 15;
@@ -201,6 +201,8 @@ namespace Library
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btnBack;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.richBookList);

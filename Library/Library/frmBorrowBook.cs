@@ -20,12 +20,19 @@ namespace Library
         private Thread splashThread;
         private frmSplashValid splashForm;
         private ManualResetEvent splashCloseEvent;
+        public delegate void CheckOutHandler();
+        public event CheckOutHandler OnCheckOut;
 
         public Borrow_Book()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             splashCloseEvent = new ManualResetEvent(false);
+            OnCheckOut += ValidUserEventHandler;
+        }
+        private void ValidUserEventHandler()
+        {
+            validUser();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -114,10 +121,9 @@ namespace Library
 
             splashThread.Join();
 
-
-            validUser();
+            OnCheckOut?.Invoke();
         }
-        public void ValidateISBN()
+        public void ValidateBookID()
         {
             string TempISBN = edtBookID.Text;
             string nums = "0123456789";
@@ -225,7 +231,7 @@ namespace Library
 
         private void btnAddtoList_Click(object sender, EventArgs e)
         {
-            ValidateISBN();
+            ValidateBookID();
         }
 
         private void richBookList_VisibleChanged(object sender, EventArgs e)
