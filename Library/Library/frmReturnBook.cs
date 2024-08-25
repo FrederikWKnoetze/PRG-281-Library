@@ -15,17 +15,26 @@ namespace Library
         public frmReturnBook()
         {
             InitializeComponent();
-            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void frmReturnBook_Load(object sender, EventArgs e)
         {
-
+            lblDate.Text = DateTime.Now.ToShortDateString();
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToShortDateString();
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
 
-
-
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMainMenu frmMainMenu = new frmMainMenu();
+            frmMainMenu.Show();
+        }
 
         //make sure thing closes
         private void frmReturnBook_FormClosed(object sender, FormClosedEventArgs e)
