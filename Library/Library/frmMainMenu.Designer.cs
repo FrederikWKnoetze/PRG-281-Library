@@ -114,6 +114,7 @@
             this.lblTime.Size = new System.Drawing.Size(69, 29);
             this.lblTime.TabIndex = 8;
             this.lblTime.Text = "Time";
+            this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
             // 
             // lblDate
             // 

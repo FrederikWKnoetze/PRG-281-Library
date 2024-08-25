@@ -21,7 +21,8 @@ namespace Library
 
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
-            
+            lblDate.Text = DateTime.Now.ToShortDateString();
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
         private void lblDate_Click(object sender, EventArgs e)
@@ -71,6 +72,11 @@ namespace Library
         private void frmMainMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void lblTime_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
