@@ -21,7 +21,6 @@ namespace Library
         }
 
 
-
         private void edtBookName_Enter(object sender, EventArgs e)
         {
             //skib

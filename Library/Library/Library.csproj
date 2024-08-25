@@ -90,25 +90,31 @@
     <Compile Include="frmAddBook.Designer.cs">
       <DependentUpon>frmAddBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="Add Reader.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Add Reader.Designer.cs">
-      <DependentUpon>Add Reader.cs</DependentUpon>
-    </Compile>
     <Compile Include="Book.cs" />
-    <Compile Include="Borrow Book.cs">
+    <Compile Include="DataHandler.cs" />
+    <Compile Include="frmAddReader.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Borrow Book.Designer.cs">
-      <DependentUpon>Borrow Book.cs</DependentUpon>
+    <Compile Include="frmAddReader.Designer.cs">
+      <DependentUpon>frmAddReader.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataHandler.cs" />
+    <Compile Include="frmBorrowBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBorrowBook.Designer.cs">
+      <DependentUpon>frmBorrowBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMainMenu.Designer.cs">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeeData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeeData.Designer.cs">
+      <DependentUpon>frmSeeData.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSignIn.cs">
       <SubType>Form</SubType>
@@ -126,23 +132,20 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reader.cs" />
-    <Compile Include="See Data.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="See Data.Designer.cs">
-      <DependentUpon>See Data.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmAddBook.resx">
       <DependentUpon>frmAddBook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Add Reader.resx">
-      <DependentUpon>Add Reader.cs</DependentUpon>
+    <EmbeddedResource Include="frmAddReader.resx">
+      <DependentUpon>frmAddReader.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Borrow Book.resx">
-      <DependentUpon>Borrow Book.cs</DependentUpon>
+    <EmbeddedResource Include="frmBorrowBook.resx">
+      <DependentUpon>frmBorrowBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainMenu.resx">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeeData.resx">
+      <DependentUpon>frmSeeData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSignIn.resx">
       <DependentUpon>frmSignIn.cs</DependentUpon>
@@ -159,9 +162,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="See Data.resx">
-      <DependentUpon>See Data.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="bin\Debug\Library.exe.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
