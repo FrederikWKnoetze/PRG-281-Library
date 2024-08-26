@@ -54,27 +54,7 @@ namespace Library
             lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
-        private void edtISBN_Enter(object sender, EventArgs e)
-        {
-            if (edtBookID.Text == "ISBN")
-            {
-                edtBookID.Text = "";
-                edtBookID.ForeColor = Color.Black;
-            }
-        }
-
-        private void edtISBN_Leave(object sender, EventArgs e)
-        {
-            if (edtBookID.Text == "")
-            {
-                edtBookID.Text = "ISBN";
-                edtBookID.ForeColor = Color.Silver;
-            }
-            else
-            {
-                edtBookID.ForeColor = Color.Black;
-            }
-        }
+       
 
         private void edtReaderId_Enter(object sender, EventArgs e)
         {
@@ -125,9 +105,11 @@ namespace Library
         }
         public void ValidateBookID()
         {
+            string TempReader = edtReaderId.Text;
             string TempID = edtBookID.Text;
             string nums = "0123456789";
             int countCorrectNums = 0;
+            int countCorrectNumsReader = 0;
             bool isbnCorrect = false;
                 for (int i = 0; i < TempID.Length; i++)
                 {
@@ -138,59 +120,69 @@ namespace Library
                 }
                 if (countCorrectNums == TempID.Length) // Check if all characters are digits
                 {
-                    try
+                try
+                {
+                    // Check if the connection is properly initialized and not open already
+                    if (DataHandler.myconn == null)
                     {
-                        // Check if the connection is properly initialized and not open already
-                        if (DataHandler.myconn == null)
+                        DataHandler.myconn = new SQLiteConnection("Data Source=LibraryData.sqlite;Version=3;");
+                    }
+
+                    // Open the connection only if it is closed
+                    if (DataHandler.myconn.State == System.Data.ConnectionState.Closed)
+                    {
+                        DataHandler.myconn.Open();
+                    }
+
+
+                    //Just some testing to se if it works
+                    string sql = "SELECT * FROM tblBooks WHERE bookID = @bookID";
+                    SQLiteCommand cmd = new SQLiteCommand(sql, DataHandler.myconn);
+                    cmd.CommandText = sql;
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@bookID", int.Parse(edtBookID.Text));
+                    SQLiteDataReader reader = cmd.ExecuteReader();
+
+                    string result = "";
+                    bool isBorrowed = false;
+                    while (reader.Read())
+                    {
+                        result += $"Book ID: {reader["bookID"]}, ISBN: {reader["isbn"]}, Title: {reader["title"]}, Author: {reader["author"]}, Borrowed: {reader["borrowed"]}\n";
+                        if (reader["borrowed"].ToString() == "1")
                         {
-                            DataHandler.myconn = new SQLiteConnection("Data Source=LibraryData.sqlite;Version=3;");
+                            isBorrowed = true;
                         }
+                    }
 
-                        // Open the connection only if it is closed
-                        if (DataHandler.myconn.State == System.Data.ConnectionState.Closed)
+                    // Display results
+                    if (string.IsNullOrEmpty(result))
+                    {
+                        MessageBox.Show("This book does not exist");
+                        pnlBookID.BackColor = Color.Red;
+                    }
+                    else if (isBorrowed == true)
+                    {
+                        MessageBox.Show("This book is already borrowed.");
+                        pnlBookID.BackColor = Color.Red;
+                    }
+                    else
+                    {
+                        if (edtReaderId.Text == "Reader ID" || edtReaderId.Text == "")
                         {
-                            DataHandler.myconn.Open();
-                        }
+                            pnlReaderID.BackColor = Color.Red;
+                            MessageBox.Show("Please enter a user ID");
 
-
-                        //Just some testing to se if it works
-                        string sql = "SELECT * FROM tblBooks WHERE bookID = @bookID";
-                        SQLiteCommand cmd = new SQLiteCommand(sql, DataHandler.myconn);
-                        cmd.CommandText = sql;
-                        cmd.Parameters.Clear();
-                        cmd.Parameters.AddWithValue("@bookID", int.Parse(edtBookID.Text));
-                        SQLiteDataReader reader = cmd.ExecuteReader();
-
-                        string result = "";
-                        bool isBorrowed = false;
-                        while (reader.Read())
-                        {
-                            result += $"Book ID: {reader["bookID"]}, ISBN: {reader["isbn"]}, Title: {reader["title"]}, Author: {reader["author"]}, Borrowed: {reader["borrowed"]}\n";
-                            if (reader["borrowed"].ToString() == "1")
-                            {
-                                isBorrowed = true;
-                            }
-                        }
-
-                        // Display results
-                        if (string.IsNullOrEmpty(result))
-                        {
-                            MessageBox.Show("This book does not exist");
-                            pnlBookID.BackColor = Color.Red;
-                        }
-                        else if (isBorrowed == true)
-                        {
-                            MessageBox.Show("This book is already borrowed.");
-                            pnlBookID.BackColor = Color.Red;
                         }
                         else
                         {
-                            if (edtReaderId.Text == "Reader ID" || edtReaderId.Text == "")
+                            for (int i = 0; i < TempReader.Length; i++)
                             {
-                                pnlReaderID.BackColor = Color.Red;
-                                MessageBox.Show("Please enter a user ID");
+                                if (nums.Contains(TempReader[i]))
+                                {
+                                    countCorrectNumsReader += 1;
+                                }
                             }
-                            else
+                            if (countCorrectNumsReader == TempReader.Length)
                             {
                                 int tempReaderID = int.Parse(edtReaderId.Text);
                                 MessageBox.Show(result);
@@ -202,23 +194,29 @@ namespace Library
                                 BorrowBook test = new BorrowBook(int.Parse(edtBookID.Text), 1, tempReaderID);
                                 edtBookID.Text = "";
                             }
+                            else
+                            {
+                                pnlReaderID.BackColor = Color.Red;
+                                MessageBox.Show("Please enter a valid user ID");
+                            }
                         }
+                    }
 
-                        reader.Close();
-                    }
-                    catch (Exception ex)
+                    reader.Close();
+                }
+                catch (Exception ex)
+                { 
+                    // Display the error
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+                finally
+                {
+                    // Closing the conn string for coding standards
+                    if (DataHandler.myconn != null && DataHandler.myconn.State == System.Data.ConnectionState.Open)
                     {
-                        // Display the error
-                        MessageBox.Show("An error occurred: " + ex.Message);
+                        DataHandler.myconn.Close();
                     }
-                    finally
-                    {
-                        // Closing the conn string for coding standards
-                        if (DataHandler.myconn != null && DataHandler.myconn.State == System.Data.ConnectionState.Open)
-                        {
-                            DataHandler.myconn.Close();
-                        }
-                    }
+                }
             }
             if (isbnCorrect == false)
             {
