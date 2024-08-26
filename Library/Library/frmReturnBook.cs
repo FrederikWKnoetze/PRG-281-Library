@@ -91,7 +91,7 @@ namespace Library
                 }
                 else
                 {
-                    DataHandler.myconn = new SQLiteConnection(DataHandler.connectionstring);
+                    myconn = new SQLiteConnection(DataHandler.connectionstring);
                     myconn.Open();
                     ReturnBook(ibookid);
                 }
@@ -129,7 +129,7 @@ namespace Library
                             }
                             else
                             {
-                                sql1 = "UPDATE tblBooks set borrow=0 WHERE bookID=" + bookid + "";
+                                sql1 = "UPDATE tblBooks set borrowed=0 WHERE bookID=" + bookid + "";
                                 mycmd1 = new SQLiteCommand(sql1, myconn);
                                 mycmd1.ExecuteNonQuery();
                                 sql = "DELETE * FROM tblReaderBooks WHERE bookiD=" + bookid + "";

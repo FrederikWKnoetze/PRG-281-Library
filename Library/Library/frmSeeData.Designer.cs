@@ -58,7 +58,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lblSeeData);
             this.panel1.Location = new System.Drawing.Point(0, -1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1075, 117);
             this.panel1.TabIndex = 5;
@@ -91,7 +91,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(865, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(185, 92);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -121,7 +121,7 @@
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnBack.Location = new System.Drawing.Point(455, 494);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(161, 46);
             this.btnBack.TabIndex = 7;
@@ -133,7 +133,7 @@
             // 
             this.dgvOutput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOutput.Location = new System.Drawing.Point(53, 174);
-            this.dgvOutput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvOutput.Margin = new System.Windows.Forms.Padding(4);
             this.dgvOutput.Name = "dgvOutput";
             this.dgvOutput.RowHeadersWidth = 51;
             this.dgvOutput.Size = new System.Drawing.Size(680, 289);
@@ -144,7 +144,7 @@
             this.btnBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBooks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnBooks.Location = new System.Drawing.Point(799, 158);
-            this.btnBooks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBooks.Margin = new System.Windows.Forms.Padding(4);
             this.btnBooks.Name = "btnBooks";
             this.btnBooks.Size = new System.Drawing.Size(211, 46);
             this.btnBooks.TabIndex = 9;
@@ -157,7 +157,7 @@
             this.btnReaders.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReaders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnReaders.Location = new System.Drawing.Point(799, 210);
-            this.btnReaders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReaders.Margin = new System.Windows.Forms.Padding(4);
             this.btnReaders.Name = "btnReaders";
             this.btnReaders.Size = new System.Drawing.Size(211, 46);
             this.btnReaders.TabIndex = 10;
@@ -170,7 +170,7 @@
             this.btnBorrowed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrowed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnBorrowed.Location = new System.Drawing.Point(799, 263);
-            this.btnBorrowed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBorrowed.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrowed.Name = "btnBorrowed";
             this.btnBorrowed.Size = new System.Drawing.Size(211, 46);
             this.btnBorrowed.TabIndex = 11;
@@ -183,7 +183,7 @@
             this.btnSearchReader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchReader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnSearchReader.Location = new System.Drawing.Point(799, 316);
-            this.btnSearchReader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchReader.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchReader.Name = "btnSearchReader";
             this.btnSearchReader.Size = new System.Drawing.Size(211, 46);
             this.btnSearchReader.TabIndex = 12;
@@ -193,19 +193,22 @@
             // 
             // edtReader
             // 
+            this.edtReader.ForeColor = System.Drawing.Color.Silver;
             this.edtReader.Location = new System.Drawing.Point(799, 369);
-            this.edtReader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.edtReader.Margin = new System.Windows.Forms.Padding(4);
             this.edtReader.Name = "edtReader";
             this.edtReader.Size = new System.Drawing.Size(209, 22);
             this.edtReader.TabIndex = 13;
             this.edtReader.Text = "Firstname";
+            this.edtReader.Enter += new System.EventHandler(this.edtReader_Enter);
+            this.edtReader.Leave += new System.EventHandler(this.edtReader_Leave);
             // 
             // btnSearchBook
             // 
             this.btnSearchBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnSearchBook.Location = new System.Drawing.Point(799, 401);
-            this.btnSearchBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchBook.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchBook.Name = "btnSearchBook";
             this.btnSearchBook.Size = new System.Drawing.Size(211, 46);
             this.btnSearchBook.TabIndex = 14;
@@ -215,12 +218,15 @@
             // 
             // edtBook
             // 
+            this.edtBook.ForeColor = System.Drawing.Color.Silver;
             this.edtBook.Location = new System.Drawing.Point(799, 454);
-            this.edtBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.edtBook.Margin = new System.Windows.Forms.Padding(4);
             this.edtBook.Name = "edtBook";
             this.edtBook.Size = new System.Drawing.Size(209, 22);
             this.edtBook.TabIndex = 15;
             this.edtBook.Text = "Title";
+            this.edtBook.Enter += new System.EventHandler(this.edtBook_Enter);
+            this.edtBook.Leave += new System.EventHandler(this.edtBook_Leave);
             // 
             // See_Data
             // 
@@ -239,7 +245,7 @@
             this.Controls.Add(this.dgvOutput);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "See_Data";
             this.Text = "See_Data";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.See_Data_FormClosed);
