@@ -125,20 +125,18 @@ namespace Library
         }
         public void ValidateBookID()
         {
-            string TempISBN = edtBookID.Text;
+            string TempID = edtBookID.Text;
             string nums = "0123456789";
             int countCorrectNums = 0;
             bool isbnCorrect = false;
-            if (TempISBN.Length == 8)//loop to check if if all 8 characters is a number
-            {
-                for (int i = 0; i < TempISBN.Length; i++)
+                for (int i = 0; i < TempID.Length; i++)
                 {
-                    if (nums.Contains(TempISBN[i]))
+                    if (nums.Contains(TempID[i]))
                     {
                         countCorrectNums += 1;
                     }
                 }
-                if (countCorrectNums == 8) // Check if all characters are digits
+                if (countCorrectNums == TempID.Length) // Check if all characters are digits
                 {
                     try
                     {
@@ -221,7 +219,6 @@ namespace Library
                             DataHandler.myconn.Close();
                         }
                     }
-                }
             }
             if (isbnCorrect == false)
             {
