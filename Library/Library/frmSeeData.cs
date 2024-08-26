@@ -121,5 +121,50 @@ namespace Library
             adapter.Fill(data);
             dgvOutput.DataSource = data;
         }
+
+        private void edtReader_Enter(object sender, EventArgs e)
+        {
+            if (edtReader.Text=="Firstname")
+            {
+                edtReader.Text = "";
+                edtReader.ForeColor = Color.Black;
+            }
+
+        }
+
+        private void edtBook_Enter(object sender, EventArgs e)
+        {
+            if (edtBook.Text == "Title")
+            {
+                edtBook.Text = "";
+                edtBook.ForeColor = Color.Black;
+            }
+        }
+
+        private void edtReader_Leave(object sender, EventArgs e)
+        {
+            if (edtReader.Text == "")
+            {
+                edtReader.Text = "Firstname";
+                edtReader.ForeColor = Color.Silver;
+            }
+            else
+            {
+                edtReader.ForeColor = Color.Black;
+            }
+        }
+
+        private void edtBook_Leave(object sender, EventArgs e)
+        {
+            if (edtBook.Text == "")
+            {
+                edtBook.Text = "Firstname";
+                edtBook.ForeColor = Color.Silver;
+            }
+            else
+            {
+                edtBook.ForeColor = Color.Black;
+            }
+        }
     }
 }
