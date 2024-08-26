@@ -340,11 +340,13 @@ namespace Library
         }
 
         //both of these to make sure that program exits when form is closed
-        private void frmAdd_Book_FormClosed(object sender, FormClosedEventArgs e)
+
+        private void frmAdd_Book_FormClosed_1(object sender, FormClosedEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }
-        private void Add_Book_FormClosing(object sender, FormClosingEventArgs e)
+
+        private void frmAdd_Book_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }
