@@ -42,6 +42,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnDeleteData = new System.Windows.Forms.Button();
+            this.btnDeleteBook = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,9 +51,10 @@
             // 
             this.btnBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnBook.Location = new System.Drawing.Point(339, 367);
+            this.btnBook.Location = new System.Drawing.Point(447, 359);
+            this.btnBook.Margin = new System.Windows.Forms.Padding(4);
             this.btnBook.Name = "btnBook";
-            this.btnBook.Size = new System.Drawing.Size(129, 38);
+            this.btnBook.Size = new System.Drawing.Size(172, 47);
             this.btnBook.TabIndex = 0;
             this.btnBook.Text = "Add Book";
             this.btnBook.UseVisualStyleBackColor = true;
@@ -62,9 +64,10 @@
             // 
             this.btnReader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnReader.Location = new System.Drawing.Point(339, 306);
+            this.btnReader.Location = new System.Drawing.Point(215, 359);
+            this.btnReader.Margin = new System.Windows.Forms.Padding(4);
             this.btnReader.Name = "btnReader";
-            this.btnReader.Size = new System.Drawing.Size(129, 38);
+            this.btnReader.Size = new System.Drawing.Size(172, 47);
             this.btnReader.TabIndex = 1;
             this.btnReader.Text = "Add Reader";
             this.btnReader.UseVisualStyleBackColor = true;
@@ -74,9 +77,10 @@
             // 
             this.btnData.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnData.Location = new System.Drawing.Point(339, 183);
+            this.btnData.Location = new System.Drawing.Point(447, 227);
+            this.btnData.Margin = new System.Windows.Forms.Padding(4);
             this.btnData.Name = "btnData";
-            this.btnData.Size = new System.Drawing.Size(129, 38);
+            this.btnData.Size = new System.Drawing.Size(172, 47);
             this.btnData.TabIndex = 2;
             this.btnData.Text = "See Data";
             this.btnData.UseVisualStyleBackColor = true;
@@ -86,9 +90,10 @@
             // 
             this.btnBorrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnBorrow.Location = new System.Drawing.Point(339, 122);
+            this.btnBorrow.Location = new System.Drawing.Point(215, 227);
+            this.btnBorrow.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrow.Name = "btnBorrow";
-            this.btnBorrow.Size = new System.Drawing.Size(129, 38);
+            this.btnBorrow.Size = new System.Drawing.Size(172, 47);
             this.btnBorrow.TabIndex = 3;
             this.btnBorrow.Text = "Borrow Book";
             this.btnBorrow.UseVisualStyleBackColor = true;
@@ -102,8 +107,9 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lblMainMenu);
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(806, 92);
+            this.panel1.Size = new System.Drawing.Size(1075, 113);
             this.panel1.TabIndex = 4;
             // 
             // lblTime
@@ -111,9 +117,10 @@
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(12, 47);
+            this.lblTime.Location = new System.Drawing.Point(16, 58);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(69, 29);
+            this.lblTime.Size = new System.Drawing.Size(79, 36);
             this.lblTime.TabIndex = 8;
             this.lblTime.Text = "Time";
             // 
@@ -122,9 +129,10 @@
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.White;
-            this.lblDate.Location = new System.Drawing.Point(12, 9);
+            this.lblDate.Location = new System.Drawing.Point(16, 11);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(63, 29);
+            this.lblDate.Size = new System.Drawing.Size(76, 36);
             this.lblDate.TabIndex = 7;
             this.lblDate.Text = "Date";
             this.lblDate.Click += new System.EventHandler(this.lblDate_Click);
@@ -132,9 +140,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(649, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(865, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(139, 75);
+            this.pictureBox1.Size = new System.Drawing.Size(185, 92);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -144,9 +153,10 @@
             this.lblMainMenu.AutoSize = true;
             this.lblMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMainMenu.ForeColor = System.Drawing.Color.White;
-            this.lblMainMenu.Location = new System.Drawing.Point(311, 28);
+            this.lblMainMenu.Location = new System.Drawing.Point(415, 34);
+            this.lblMainMenu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMainMenu.Name = "lblMainMenu";
-            this.lblMainMenu.Size = new System.Drawing.Size(187, 39);
+            this.lblMainMenu.Size = new System.Drawing.Size(238, 52);
             this.lblMainMenu.TabIndex = 5;
             this.lblMainMenu.Text = "Main Menu";
             // 
@@ -160,9 +170,10 @@
             // 
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnReturn.Location = new System.Drawing.Point(339, 244);
+            this.btnReturn.Location = new System.Drawing.Point(677, 227);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(4);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(129, 38);
+            this.btnReturn.Size = new System.Drawing.Size(172, 47);
             this.btnReturn.TabIndex = 7;
             this.btnReturn.Text = "Return Book";
             this.btnReturn.UseVisualStyleBackColor = true;
@@ -178,23 +189,35 @@
             this.btnDeleteData.TabIndex = 8;
             this.btnDeleteData.Text = "Delete Data";
             this.btnDeleteData.UseVisualStyleBackColor = true;
-            this.btnDeleteData.Click += new System.EventHandler(this.btnDeleteData_Click);
+            // 
+            // btnDeleteBook
+            // 
+            this.btnDeleteBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnDeleteBook.Location = new System.Drawing.Point(677, 359);
+            this.btnDeleteBook.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteBook.Name = "btnDeleteBook";
+            this.btnDeleteBook.Size = new System.Drawing.Size(172, 47);
+            this.btnDeleteBook.TabIndex = 8;
+            this.btnDeleteBook.Text = "Delete Data";
+            this.btnDeleteBook.UseVisualStyleBackColor = true;
+            this.btnDeleteBook.Click += new System.EventHandler(this.btnDeleteBook_Click);
             // 
             // frmMainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnDeleteBook);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnBorrow);
             this.Controls.Add(this.btnData);
             this.Controls.Add(this.btnReader);
             this.Controls.Add(this.btnBook);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMainMenu";
             this.Text = "Main Menu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMainMenu_FormClosed);
@@ -220,5 +243,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnDeleteData;
+        private System.Windows.Forms.Button btnDeleteBook;
     }
 }

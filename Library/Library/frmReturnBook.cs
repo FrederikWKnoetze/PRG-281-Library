@@ -157,5 +157,27 @@ namespace Library
             frmMainMenu frmMainMenu = new frmMainMenu();
             frmMainMenu.Show();
         }
+
+        private void edtBookID_Enter(object sender, EventArgs e)
+        {
+            if (edtBookID.Text == "Book ID")
+            {
+                edtBookID.Text = "";
+                edtBookID.ForeColor = Color.Black;
+            }
+        }
+
+        private void edtBookID_Leave(object sender, EventArgs e)
+        {
+            if (edtBookID.Text == "")
+            {
+                edtBookID.Text = "Book ID";
+                edtBookID.ForeColor = Color.Silver;
+            }
+            else
+            {
+                edtBookID.ForeColor = Color.Black;
+            }
+        }
     }
 }

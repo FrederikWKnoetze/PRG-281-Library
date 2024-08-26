@@ -82,7 +82,7 @@ namespace Library
             frmReturnBook.Show();
         }
 
-        private void btnDeleteData_Click(object sender, EventArgs e)
+        private void btnDeleteBook_Click(object sender, EventArgs e)
         {
             this.Hide();
             frmDeleteData frmDeleteData = new frmDeleteData();

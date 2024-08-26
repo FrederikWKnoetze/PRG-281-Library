@@ -60,7 +60,7 @@ namespace Library
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lblBorrowBook);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1075, 118);
             this.panel1.TabIndex = 7;
@@ -93,7 +93,7 @@ namespace Library
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(865, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(185, 92);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -118,7 +118,7 @@ namespace Library
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnBack.Location = new System.Drawing.Point(449, 494);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(161, 46);
             this.btnBack.TabIndex = 8;
@@ -136,7 +136,7 @@ namespace Library
             // 
             this.edtBookID.ForeColor = System.Drawing.Color.Silver;
             this.edtBookID.Location = new System.Drawing.Point(1, 1);
-            this.edtBookID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.edtBookID.Margin = new System.Windows.Forms.Padding(4);
             this.edtBookID.Name = "edtBookID";
             this.edtBookID.Size = new System.Drawing.Size(160, 22);
             this.edtBookID.TabIndex = 9;
@@ -147,10 +147,12 @@ namespace Library
             // 
             // btnAddtoList
             // 
-            this.btnAddtoList.Location = new System.Drawing.Point(452, 268);
-            this.btnAddtoList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddtoList.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddtoList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAddtoList.Location = new System.Drawing.Point(452, 258);
+            this.btnAddtoList.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddtoList.Name = "btnAddtoList";
-            this.btnAddtoList.Size = new System.Drawing.Size(164, 28);
+            this.btnAddtoList.Size = new System.Drawing.Size(164, 39);
             this.btnAddtoList.TabIndex = 10;
             this.btnAddtoList.Text = "Add Book To List";
             this.btnAddtoList.UseVisualStyleBackColor = true;
@@ -160,7 +162,7 @@ namespace Library
             // 
             this.edtReaderId.ForeColor = System.Drawing.Color.Silver;
             this.edtReaderId.Location = new System.Drawing.Point(1, 1);
-            this.edtReaderId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.edtReaderId.Margin = new System.Windows.Forms.Padding(4);
             this.edtReaderId.Name = "edtReaderId";
             this.edtReaderId.Size = new System.Drawing.Size(160, 22);
             this.edtReaderId.TabIndex = 11;
@@ -175,7 +177,7 @@ namespace Library
             this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnCheckOut.Location = new System.Drawing.Point(449, 356);
-            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(4);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(167, 46);
             this.btnCheckOut.TabIndex = 12;
@@ -187,7 +189,7 @@ namespace Library
             // 
             this.pnlBookID.Controls.Add(this.edtBookID);
             this.pnlBookID.Location = new System.Drawing.Point(452, 223);
-            this.pnlBookID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlBookID.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBookID.Name = "pnlBookID";
             this.pnlBookID.Size = new System.Drawing.Size(164, 27);
             this.pnlBookID.TabIndex = 13;
@@ -196,7 +198,7 @@ namespace Library
             // 
             this.pnlReaderID.Controls.Add(this.edtReaderId);
             this.pnlReaderID.Location = new System.Drawing.Point(452, 314);
-            this.pnlReaderID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlReaderID.Margin = new System.Windows.Forms.Padding(4);
             this.pnlReaderID.Name = "pnlReaderID";
             this.pnlReaderID.Size = new System.Drawing.Size(164, 27);
             this.pnlReaderID.TabIndex = 14;
@@ -204,7 +206,7 @@ namespace Library
             // richBookList
             // 
             this.richBookList.Location = new System.Drawing.Point(685, 223);
-            this.richBookList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richBookList.Margin = new System.Windows.Forms.Padding(4);
             this.richBookList.Name = "richBookList";
             this.richBookList.Size = new System.Drawing.Size(165, 176);
             this.richBookList.TabIndex = 15;
@@ -227,7 +229,7 @@ namespace Library
             this.Controls.Add(this.btnCheckOut);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Borrow_Book";
             this.Text = "Borrow_Book";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Borrow_Book_FormClosed);
