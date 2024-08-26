@@ -158,7 +158,7 @@ namespace Library
         {
             if (edtBook.Text == "")
             {
-                edtBook.Text = "Firstname";
+                edtBook.Text = "Title";
                 edtBook.ForeColor = Color.Silver;
             }
             else
