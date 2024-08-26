@@ -92,14 +92,18 @@ namespace Library
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
+            splashCloseEvent.Reset();
+
             splashThread = new Thread(new ThreadStart(frmSplashValid));
             splashThread.Start();
 
-            Thread.Sleep(1500);
+            Thread.Sleep(500);
 
-            splashCloseEvent.Set();
+            splashCloseEvent.Set();  // Signal to close the splash screen
 
             splashThread.Join();
+
+            Validate();
 
             OnCheckOut?.Invoke();
         }
