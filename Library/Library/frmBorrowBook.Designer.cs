@@ -60,8 +60,9 @@ namespace Library
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lblBorrowBook);
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(806, 96);
+            this.panel1.Size = new System.Drawing.Size(1075, 118);
             this.panel1.TabIndex = 7;
             // 
             // lblTime
@@ -69,9 +70,10 @@ namespace Library
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(12, 47);
+            this.lblTime.Location = new System.Drawing.Point(16, 58);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(69, 29);
+            this.lblTime.Size = new System.Drawing.Size(79, 36);
             this.lblTime.TabIndex = 8;
             this.lblTime.Text = "Time";
             // 
@@ -80,18 +82,20 @@ namespace Library
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.White;
-            this.lblDate.Location = new System.Drawing.Point(12, 9);
+            this.lblDate.Location = new System.Drawing.Point(16, 11);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(63, 29);
+            this.lblDate.Size = new System.Drawing.Size(76, 36);
             this.lblDate.TabIndex = 7;
             this.lblDate.Text = "Date";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(649, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(865, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(139, 75);
+            this.pictureBox1.Size = new System.Drawing.Size(185, 92);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -101,9 +105,10 @@ namespace Library
             this.lblBorrowBook.AutoSize = true;
             this.lblBorrowBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBorrowBook.ForeColor = System.Drawing.Color.White;
-            this.lblBorrowBook.Location = new System.Drawing.Point(296, 27);
+            this.lblBorrowBook.Location = new System.Drawing.Point(395, 33);
+            this.lblBorrowBook.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBorrowBook.Name = "lblBorrowBook";
-            this.lblBorrowBook.Size = new System.Drawing.Size(215, 39);
+            this.lblBorrowBook.Size = new System.Drawing.Size(272, 52);
             this.lblBorrowBook.TabIndex = 5;
             this.lblBorrowBook.Text = "Borrow Book";
             // 
@@ -112,9 +117,10 @@ namespace Library
             this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnBack.Location = new System.Drawing.Point(337, 401);
+            this.btnBack.Location = new System.Drawing.Point(449, 494);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(121, 37);
+            this.btnBack.Size = new System.Drawing.Size(161, 46);
             this.btnBack.TabIndex = 8;
             this.btnBack.Text = "Go Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -130,18 +136,21 @@ namespace Library
             // 
             this.edtBookID.ForeColor = System.Drawing.Color.Silver;
             this.edtBookID.Location = new System.Drawing.Point(1, 1);
+            this.edtBookID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edtBookID.Name = "edtBookID";
-            this.edtBookID.Size = new System.Drawing.Size(121, 20);
+            this.edtBookID.Size = new System.Drawing.Size(160, 22);
             this.edtBookID.TabIndex = 9;
             this.edtBookID.Text = "Book ID";
+            this.edtBookID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.edtBookID.Enter += new System.EventHandler(this.edtBookID_Enter);
             this.edtBookID.Leave += new System.EventHandler(this.edtBookID_Leave);
             // 
             // btnAddtoList
             // 
-            this.btnAddtoList.Location = new System.Drawing.Point(339, 218);
+            this.btnAddtoList.Location = new System.Drawing.Point(452, 268);
+            this.btnAddtoList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddtoList.Name = "btnAddtoList";
-            this.btnAddtoList.Size = new System.Drawing.Size(123, 23);
+            this.btnAddtoList.Size = new System.Drawing.Size(164, 28);
             this.btnAddtoList.TabIndex = 10;
             this.btnAddtoList.Text = "Add Book To List";
             this.btnAddtoList.UseVisualStyleBackColor = true;
@@ -151,10 +160,12 @@ namespace Library
             // 
             this.edtReaderId.ForeColor = System.Drawing.Color.Silver;
             this.edtReaderId.Location = new System.Drawing.Point(1, 1);
+            this.edtReaderId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edtReaderId.Name = "edtReaderId";
-            this.edtReaderId.Size = new System.Drawing.Size(121, 20);
+            this.edtReaderId.Size = new System.Drawing.Size(160, 22);
             this.edtReaderId.TabIndex = 11;
             this.edtReaderId.Text = "Reader ID";
+            this.edtReaderId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.edtReaderId.Enter += new System.EventHandler(this.edtReaderId_Enter);
             this.edtReaderId.Leave += new System.EventHandler(this.edtReaderId_Leave);
             // 
@@ -163,9 +174,10 @@ namespace Library
             this.btnCheckOut.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnCheckOut.Location = new System.Drawing.Point(337, 289);
+            this.btnCheckOut.Location = new System.Drawing.Point(449, 356);
+            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(125, 37);
+            this.btnCheckOut.Size = new System.Drawing.Size(167, 46);
             this.btnCheckOut.TabIndex = 12;
             this.btnCheckOut.Text = "Check Out";
             this.btnCheckOut.UseVisualStyleBackColor = true;
@@ -174,24 +186,27 @@ namespace Library
             // pnlBookID
             // 
             this.pnlBookID.Controls.Add(this.edtBookID);
-            this.pnlBookID.Location = new System.Drawing.Point(339, 181);
+            this.pnlBookID.Location = new System.Drawing.Point(452, 223);
+            this.pnlBookID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlBookID.Name = "pnlBookID";
-            this.pnlBookID.Size = new System.Drawing.Size(123, 22);
+            this.pnlBookID.Size = new System.Drawing.Size(164, 27);
             this.pnlBookID.TabIndex = 13;
             // 
             // pnlReaderID
             // 
             this.pnlReaderID.Controls.Add(this.edtReaderId);
-            this.pnlReaderID.Location = new System.Drawing.Point(339, 255);
+            this.pnlReaderID.Location = new System.Drawing.Point(452, 314);
+            this.pnlReaderID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlReaderID.Name = "pnlReaderID";
-            this.pnlReaderID.Size = new System.Drawing.Size(123, 22);
+            this.pnlReaderID.Size = new System.Drawing.Size(164, 27);
             this.pnlReaderID.TabIndex = 14;
             // 
             // richBookList
             // 
-            this.richBookList.Location = new System.Drawing.Point(514, 181);
+            this.richBookList.Location = new System.Drawing.Point(685, 223);
+            this.richBookList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.richBookList.Name = "richBookList";
-            this.richBookList.Size = new System.Drawing.Size(125, 144);
+            this.richBookList.Size = new System.Drawing.Size(165, 176);
             this.richBookList.TabIndex = 15;
             this.richBookList.Text = "Book List: ";
             this.richBookList.Visible = false;
@@ -199,12 +214,12 @@ namespace Library
             // 
             // Borrow_Book
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btnBack;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.richBookList);
             this.Controls.Add(this.btnAddtoList);
             this.Controls.Add(this.pnlReaderID);
@@ -212,6 +227,7 @@ namespace Library
             this.Controls.Add(this.btnCheckOut);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Borrow_Book";
             this.Text = "Borrow_Book";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Borrow_Book_FormClosed);
