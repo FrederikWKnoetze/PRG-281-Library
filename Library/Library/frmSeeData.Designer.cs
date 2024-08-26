@@ -58,8 +58,9 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lblSeeData);
             this.panel1.Location = new System.Drawing.Point(0, -1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(806, 95);
+            this.panel1.Size = new System.Drawing.Size(1075, 117);
             this.panel1.TabIndex = 5;
             // 
             // lblTime
@@ -67,9 +68,10 @@
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(12, 47);
+            this.lblTime.Location = new System.Drawing.Point(16, 58);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(69, 29);
+            this.lblTime.Size = new System.Drawing.Size(79, 36);
             this.lblTime.TabIndex = 8;
             this.lblTime.Text = "Time";
             // 
@@ -78,18 +80,20 @@
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.White;
-            this.lblDate.Location = new System.Drawing.Point(12, 9);
+            this.lblDate.Location = new System.Drawing.Point(16, 11);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(63, 29);
+            this.lblDate.Size = new System.Drawing.Size(76, 36);
             this.lblDate.TabIndex = 7;
             this.lblDate.Text = "Date";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(649, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(865, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(139, 75);
+            this.pictureBox1.Size = new System.Drawing.Size(185, 92);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -99,9 +103,10 @@
             this.lblSeeData.AutoSize = true;
             this.lblSeeData.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSeeData.ForeColor = System.Drawing.Color.White;
-            this.lblSeeData.Location = new System.Drawing.Point(359, 26);
+            this.lblSeeData.Location = new System.Drawing.Point(479, 32);
+            this.lblSeeData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSeeData.Name = "lblSeeData";
-            this.lblSeeData.Size = new System.Drawing.Size(90, 39);
+            this.lblSeeData.Size = new System.Drawing.Size(114, 52);
             this.lblSeeData.TabIndex = 5;
             this.lblSeeData.Text = "Data";
             // 
@@ -115,9 +120,10 @@
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnBack.Location = new System.Drawing.Point(341, 401);
+            this.btnBack.Location = new System.Drawing.Point(455, 494);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(121, 37);
+            this.btnBack.Size = new System.Drawing.Size(161, 46);
             this.btnBack.TabIndex = 7;
             this.btnBack.Text = "Go Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -126,18 +132,21 @@
             // dgvOutput
             // 
             this.dgvOutput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOutput.Location = new System.Drawing.Point(40, 141);
+            this.dgvOutput.Location = new System.Drawing.Point(53, 174);
+            this.dgvOutput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvOutput.Name = "dgvOutput";
-            this.dgvOutput.Size = new System.Drawing.Size(510, 235);
+            this.dgvOutput.RowHeadersWidth = 51;
+            this.dgvOutput.Size = new System.Drawing.Size(680, 289);
             this.dgvOutput.TabIndex = 8;
             // 
             // btnBooks
             // 
             this.btnBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBooks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnBooks.Location = new System.Drawing.Point(599, 128);
+            this.btnBooks.Location = new System.Drawing.Point(799, 158);
+            this.btnBooks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBooks.Name = "btnBooks";
-            this.btnBooks.Size = new System.Drawing.Size(158, 37);
+            this.btnBooks.Size = new System.Drawing.Size(211, 46);
             this.btnBooks.TabIndex = 9;
             this.btnBooks.Text = "All Books";
             this.btnBooks.UseVisualStyleBackColor = true;
@@ -147,9 +156,10 @@
             // 
             this.btnReaders.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReaders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnReaders.Location = new System.Drawing.Point(599, 171);
+            this.btnReaders.Location = new System.Drawing.Point(799, 210);
+            this.btnReaders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReaders.Name = "btnReaders";
-            this.btnReaders.Size = new System.Drawing.Size(158, 37);
+            this.btnReaders.Size = new System.Drawing.Size(211, 46);
             this.btnReaders.TabIndex = 10;
             this.btnReaders.Text = "All Readers";
             this.btnReaders.UseVisualStyleBackColor = true;
@@ -159,9 +169,10 @@
             // 
             this.btnBorrowed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrowed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnBorrowed.Location = new System.Drawing.Point(599, 214);
+            this.btnBorrowed.Location = new System.Drawing.Point(799, 263);
+            this.btnBorrowed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBorrowed.Name = "btnBorrowed";
-            this.btnBorrowed.Size = new System.Drawing.Size(158, 37);
+            this.btnBorrowed.Size = new System.Drawing.Size(211, 46);
             this.btnBorrowed.TabIndex = 11;
             this.btnBorrowed.Text = "All borrowed Books";
             this.btnBorrowed.UseVisualStyleBackColor = true;
@@ -171,9 +182,10 @@
             // 
             this.btnSearchReader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchReader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSearchReader.Location = new System.Drawing.Point(599, 257);
+            this.btnSearchReader.Location = new System.Drawing.Point(799, 316);
+            this.btnSearchReader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchReader.Name = "btnSearchReader";
-            this.btnSearchReader.Size = new System.Drawing.Size(158, 37);
+            this.btnSearchReader.Size = new System.Drawing.Size(211, 46);
             this.btnSearchReader.TabIndex = 12;
             this.btnSearchReader.Text = "Search Reader";
             this.btnSearchReader.UseVisualStyleBackColor = true;
@@ -181,18 +193,21 @@
             // 
             // edtReader
             // 
-            this.edtReader.Location = new System.Drawing.Point(599, 300);
+            this.edtReader.Location = new System.Drawing.Point(799, 369);
+            this.edtReader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edtReader.Name = "edtReader";
-            this.edtReader.Size = new System.Drawing.Size(158, 20);
+            this.edtReader.Size = new System.Drawing.Size(209, 22);
             this.edtReader.TabIndex = 13;
+            this.edtReader.Text = "Firstname";
             // 
             // btnSearchBook
             // 
             this.btnSearchBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSearchBook.Location = new System.Drawing.Point(599, 326);
+            this.btnSearchBook.Location = new System.Drawing.Point(799, 401);
+            this.btnSearchBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchBook.Name = "btnSearchBook";
-            this.btnSearchBook.Size = new System.Drawing.Size(158, 37);
+            this.btnSearchBook.Size = new System.Drawing.Size(211, 46);
             this.btnSearchBook.TabIndex = 14;
             this.btnSearchBook.Text = "Search Book";
             this.btnSearchBook.UseVisualStyleBackColor = true;
@@ -200,18 +215,20 @@
             // 
             // edtBook
             // 
-            this.edtBook.Location = new System.Drawing.Point(599, 369);
+            this.edtBook.Location = new System.Drawing.Point(799, 454);
+            this.edtBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edtBook.Name = "edtBook";
-            this.edtBook.Size = new System.Drawing.Size(158, 20);
+            this.edtBook.Size = new System.Drawing.Size(209, 22);
             this.edtBook.TabIndex = 15;
+            this.edtBook.Text = "Title";
             // 
             // See_Data
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.edtBook);
             this.Controls.Add(this.btnSearchBook);
             this.Controls.Add(this.edtReader);
@@ -222,6 +239,7 @@
             this.Controls.Add(this.dgvOutput);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "See_Data";
             this.Text = "See_Data";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.See_Data_FormClosed);

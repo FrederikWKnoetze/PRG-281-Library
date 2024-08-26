@@ -92,6 +92,7 @@ namespace Library
                 else
                 {
                     DataHandler.myconn = new SQLiteConnection(DataHandler.connectionstring);
+                    myconn.Open();
                     ReturnBook(ibookid);
                 }
             }
