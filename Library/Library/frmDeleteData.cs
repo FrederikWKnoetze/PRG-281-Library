@@ -16,6 +16,7 @@ namespace Library
         public frmDeleteData()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         
@@ -92,10 +93,16 @@ namespace Library
             }
         }
 
+        //make sure application closes on close
         private void frmDeleteData_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }
+        private void frmDeleteData_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
 
         private void btnGoMenu_Click(object sender, EventArgs e)
         {
@@ -104,9 +111,10 @@ namespace Library
             frmMainMenu.Show();
         }
 
-        private void frmDeleteData_FormClosing(object sender, FormClosingEventArgs e)
+
+        private void frmDeleteData_Load(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+
         }
     }
 }

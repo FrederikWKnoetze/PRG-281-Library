@@ -38,10 +38,9 @@
             // 
             // bntdeleteUser
             // 
-            this.bntdeleteUser.Location = new System.Drawing.Point(401, 302);
-            this.bntdeleteUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bntdeleteUser.Location = new System.Drawing.Point(301, 245);
             this.bntdeleteUser.Name = "bntdeleteUser";
-            this.bntdeleteUser.Size = new System.Drawing.Size(100, 28);
+            this.bntdeleteUser.Size = new System.Drawing.Size(75, 23);
             this.bntdeleteUser.TabIndex = 0;
             this.bntdeleteUser.Text = "Delete User";
             this.bntdeleteUser.UseVisualStyleBackColor = true;
@@ -51,9 +50,8 @@
             // 
             this.edtDeleteData.ForeColor = System.Drawing.Color.Silver;
             this.edtDeleteData.Location = new System.Drawing.Point(1, 1);
-            this.edtDeleteData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edtDeleteData.Name = "edtDeleteData";
-            this.edtDeleteData.Size = new System.Drawing.Size(207, 22);
+            this.edtDeleteData.Size = new System.Drawing.Size(156, 20);
             this.edtDeleteData.TabIndex = 1;
             this.edtDeleteData.Text = "Insert BookID or Reader ID";
             this.edtDeleteData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -62,10 +60,9 @@
             // 
             // btnDeleteBook
             // 
-            this.btnDeleteBook.Location = new System.Drawing.Point(509, 302);
-            this.btnDeleteBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteBook.Location = new System.Drawing.Point(382, 245);
             this.btnDeleteBook.Name = "btnDeleteBook";
-            this.btnDeleteBook.Size = new System.Drawing.Size(100, 28);
+            this.btnDeleteBook.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteBook.TabIndex = 2;
             this.btnDeleteBook.Text = "Delete Book";
             this.btnDeleteBook.UseVisualStyleBackColor = true;
@@ -74,18 +71,16 @@
             // pnlID
             // 
             this.pnlID.Controls.Add(this.edtDeleteData);
-            this.pnlID.Location = new System.Drawing.Point(401, 246);
-            this.pnlID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlID.Location = new System.Drawing.Point(301, 200);
             this.pnlID.Name = "pnlID";
-            this.pnlID.Size = new System.Drawing.Size(211, 27);
+            this.pnlID.Size = new System.Drawing.Size(158, 22);
             this.pnlID.TabIndex = 3;
             // 
             // btnGoMenu
             // 
-            this.btnGoMenu.Location = new System.Drawing.Point(444, 389);
-            this.btnGoMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGoMenu.Location = new System.Drawing.Point(333, 316);
             this.btnGoMenu.Name = "btnGoMenu";
-            this.btnGoMenu.Size = new System.Drawing.Size(100, 28);
+            this.btnGoMenu.Size = new System.Drawing.Size(75, 23);
             this.btnGoMenu.TabIndex = 4;
             this.btnGoMenu.Text = "Go Back";
             this.btnGoMenu.UseVisualStyleBackColor = true;
@@ -93,18 +88,18 @@
             // 
             // frmDeleteData
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnGoMenu);
             this.Controls.Add(this.pnlID);
             this.Controls.Add(this.btnDeleteBook);
             this.Controls.Add(this.bntdeleteUser);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmDeleteData";
             this.Text = "frmDeleteData";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDeleteData_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmDeleteData_FormClosed);
+            this.Load += new System.EventHandler(this.frmDeleteData_Load);
             this.pnlID.ResumeLayout(false);
             this.pnlID.PerformLayout();
             this.ResumeLayout(false);
