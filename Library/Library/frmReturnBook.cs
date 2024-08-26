@@ -69,13 +69,12 @@ namespace Library
 
         private void button1_Click(object sender, EventArgs e)
         {
+            splashCloseEvent.Reset();
+
             splashThread = new Thread(new ThreadStart(frmSplashValid));
             splashThread.Start();
-
-            Thread.Sleep(1500);
-
-            splashCloseEvent.Set();
-
+            Thread.Sleep(500);
+            splashCloseEvent.Set();  // Signal to close the splash screen
             splashThread.Join();
 
             string ibookid;

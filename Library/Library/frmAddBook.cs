@@ -104,10 +104,7 @@ namespace Library
             this.cmbGenre.ForeColor = Color.Black;
             this.cmbGenre.Text = "";
         }
-        private void lblMainMenu_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void frmAdd_Book_Load(object sender, EventArgs e)
         {
@@ -117,15 +114,13 @@ namespace Library
 
         private void btnAddBook_Click(object sender, EventArgs e)
         {
+            splashCloseEvent.Reset();
+
             splashThread = new Thread(new ThreadStart(frmSplashValid));
             splashThread.Start();
-
-            Thread.Sleep(2000);
-
-            splashCloseEvent.Set();
-
+            Thread.Sleep(500);
+            splashCloseEvent.Set();  // Signal to close the splash screen
             splashThread.Join();
-
             Validate();
         }
 

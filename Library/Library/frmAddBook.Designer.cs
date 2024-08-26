@@ -191,7 +191,6 @@ namespace Library
             this.lblMainMenu.Size = new System.Drawing.Size(166, 39);
             this.lblMainMenu.TabIndex = 5;
             this.lblMainMenu.Text = "Add Book";
-            this.lblMainMenu.Click += new System.EventHandler(this.lblMainMenu_Click);
             // 
             // btnBack
             // 
