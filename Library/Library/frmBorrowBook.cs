@@ -106,6 +106,8 @@ namespace Library
             Validate();
 
             OnCheckOut?.Invoke();
+            richBookList.Visible = false;
+            richBookList.Text = "Book List:";
         }
         public void ValidateBookID()
         {
@@ -139,7 +141,7 @@ namespace Library
                     }
 
 
-                    //Just some testing to se if it works
+                    //Just some testing to se if book is borrowed
                     string sql = "SELECT * FROM tblBooks WHERE bookID = @bookID";
                     SQLiteCommand cmd = new SQLiteCommand(sql, DataHandler.myconn);
                     cmd.CommandText = sql;
@@ -186,22 +188,41 @@ namespace Library
                                     countCorrectNumsReader += 1;
                                 }
                             }
-                            if (countCorrectNumsReader == TempReader.Length)
+                            bool isDuplicate = false;
+                            foreach (BorrowBook book in BorrowBook.books)
                             {
-                                int tempReaderID = int.Parse(edtReaderId.Text);
-                                MessageBox.Show(result);
-                                isbnCorrect = true;
-                                pnlBookID.BackColor = Color.White;
-                                pnlReaderID.BackColor = Color.White;
-                                richBookList.Visible = true;
-                                richBookList.AppendText(edtBookID.Text + Environment.NewLine);
-                                BorrowBook test = new BorrowBook(int.Parse(edtBookID.Text), 1, tempReaderID);
-                                edtBookID.Text = "";
+                                // Check if the current book has the same BookID as the one being added
+                                if (book.bookID == int.Parse(edtBookID.Text))
+                                {
+                                    isDuplicate = true;
+                                    break; // Exit the loop as we found a duplicate
+                                }
+                            }
+
+                            if (isDuplicate)
+                            {
+                                // Notify the user that a duplicate was found
+                                MessageBox.Show("This book has already been borrowed by a reader.", "Duplicate BookID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                edtBookID.Text = ""; // Clear the input if needed
                             }
                             else
                             {
-                                pnlReaderID.BackColor = Color.Red;
-                                MessageBox.Show("Please enter a valid user ID");
+                                // Proceed only if there is no duplicate
+                                if (countCorrectNumsReader == TempReader.Length)
+                                {
+                                    int tempReaderID = int.Parse(edtReaderId.Text);
+                                    isbnCorrect = true;
+                                    pnlBookID.BackColor = Color.White;
+                                    pnlReaderID.BackColor = Color.White;
+                                    richBookList.Visible = true;
+                                    richBookList.AppendText(edtBookID.Text + Environment.NewLine);
+
+                                    // Add new book borrowing record
+                                    BorrowBook test = new BorrowBook(int.Parse(edtBookID.Text), 1, tempReaderID);
+                                    BorrowBook.books.Add(test); // Add to the list
+
+                                    edtBookID.Text = ""; // Clear the text field
+                                }
                             }
                         }
                     }
@@ -263,7 +284,6 @@ namespace Library
                 // If userCount is greater than 0, it means the user exists
                 if (userCount > 0)
                 {
-                    MessageBox.Show("Valid user found.");
                     BorrowBook test = new BorrowBook(1,1,1);//inteface thing cannot be static so best option is that make a "temp" object to method can be called
                     test.UpdateBookDB();
                     richBookList.Text = "Book List:" + Environment.NewLine;
