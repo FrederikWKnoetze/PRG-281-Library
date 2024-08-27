@@ -38,7 +38,7 @@ namespace Library
             }
 
             //this is temp remember to delete
-            SQLiteConnection.CreateFile("LibraryData.sqlite");
+            //SQLiteConnection.CreateFile("LibraryData.sqlite");
 
             //open connection to database so it can be accsesed
             myconn.Open();
