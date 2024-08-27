@@ -10,11 +10,15 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Library
 {
     public partial class Add_Reader : Form
     {
+        private Thread splashThread;
+        private frmSplashValid splashForm;
+        private ManualResetEvent splashCloseEvent;
         public Add_Reader()
         {
             InitializeComponent();
@@ -61,6 +65,15 @@ namespace Library
             bool flag2 = false;
             firstname = edtFirstname.Text;
             lastname = edtLastname.Text;
+
+            splashCloseEvent.Reset();
+
+            splashThread = new Thread(new ThreadStart(frmSplashValid));
+            splashThread.Start();
+            Thread.Sleep(500);
+            splashCloseEvent.Set();  // Signal to close the splash screen
+            splashThread.Join();
+
             if ((firstname != "Firstname") && (firstname != null) && (firstname != ""))
             {
                 flag1 = true;
@@ -133,6 +146,18 @@ namespace Library
 
 
 
+        }
+
+        private void frmSplashValid()
+        {
+            splashForm = new frmSplashValid();
+            splashForm.Show();
+            while (!splashCloseEvent.WaitOne(100))
+            {
+                Application.DoEvents();
+            }
+
+            splashForm.Invoke(new Action(() => splashForm.Close()));
         }
     }
 }
