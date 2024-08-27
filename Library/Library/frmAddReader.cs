@@ -16,13 +16,16 @@ namespace Library
 {
     public partial class Add_Reader : Form
     {
+
         private Thread splashThread;
         private frmSplashValid splashForm;
         private ManualResetEvent splashCloseEvent;
+
         public Add_Reader()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+            splashCloseEvent = new ManualResetEvent(false);
         }
 
         private void Add_Reader_Load(object sender, EventArgs e)

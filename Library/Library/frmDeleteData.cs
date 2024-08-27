@@ -23,6 +23,7 @@ namespace Library
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+            splashCloseEvent = new ManualResetEvent(false);
         }
 
 
