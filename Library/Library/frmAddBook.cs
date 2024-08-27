@@ -28,8 +28,6 @@ namespace Library
             splashCloseEvent = new ManualResetEvent(false);
         }
 
-        
-
         private void edtBookName_Enter(object sender, EventArgs e)
         {
             //skib
@@ -228,8 +226,6 @@ namespace Library
                 book.UpdateBookDB();
 
             }
-
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)

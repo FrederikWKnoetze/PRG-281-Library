@@ -13,8 +13,7 @@ using System.Data.Entity;
 using System.Windows.Forms;
 
 namespace Library
-{
-    
+{ 
     internal class DataHandler
     {
         public static string connectionstring = "Data Source=LibraryData.sqlite;Version=3;";
@@ -38,19 +37,14 @@ namespace Library
                 SQLiteConnection.CreateFile("LibraryData.sqlite");
             }
 
-
             //this is temp remember to delete
             SQLiteConnection.CreateFile("LibraryData.sqlite");
-
-
-
 
             //open connection to database so it can be accsesed
             myconn.Open();
             string sql = "";
 
             SQLiteCommand mycmd = new SQLiteCommand(sql, myconn);
-
 
             //Create table of readers
             sql = "CREATE TABLE IF NOT EXISTS tblReaders(readerID INTEGER PRIMARY KEY AUTOINCREMENT, firstname varchar(40) NOT NULL, lastname varchar(40) NOT NULL)";
@@ -70,9 +64,7 @@ namespace Library
             mycmd = new SQLiteCommand(sql, myconn);
             mycmd.ExecuteNonQuery();
 
-
             //on program start run this on a thread to put it into objects
-
 
             //Creation of dummy data for talbe readers inputting firstname and lastname
             sql = @"
@@ -193,15 +185,6 @@ namespace Library
     INSERT INTO tblReaderBooks(bookID, readerID) VALUES (10, 10);";
             mycmd = new SQLiteCommand(sql, myconn);
             mycmd.ExecuteNonQuery();
-
-
-
-
-
-
-
-
-
 
             //sql = "Select * from tblReaders";
             //mycmd = new SQLiteCommand(sql, myconn);

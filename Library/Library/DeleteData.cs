@@ -20,6 +20,5 @@ namespace Library
         {
             MessageBox.Show("Delete Data");
         }
-
     }
 }

@@ -28,7 +28,6 @@ namespace Library
         private readonly static string parent3 = Directory.GetParent(parent2).ToString();
         private readonly string usersFilePath = parent3 + @"\users.json";
 
-
         public frmSignIn()
         {
             InitializeComponent();
@@ -39,7 +38,6 @@ namespace Library
         {
            handler.CreateDatabase();
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {

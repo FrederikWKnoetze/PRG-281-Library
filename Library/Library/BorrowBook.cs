@@ -72,6 +72,7 @@ namespace Library
                                       "Book ID: " + reader["bookID"].ToString() + "\n" +
                                       "Reader ID: " + reader["readerID"].ToString() + "\n\n";
                         }
+
                         MessageBox.Show(result);
 
                     }
