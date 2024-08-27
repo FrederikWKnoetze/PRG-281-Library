@@ -15,41 +15,68 @@ namespace Library
         }
         public override void DeleteSelectedData()
         {
-            // Define SQL query to delete from tblReaderBooks based on readerID
-            string deleteReaderBooksSql = "DELETE FROM tblReaderBooks WHERE bookId = @bookId";
-            using (SQLiteCommand deleteReaderBooksCmd = new SQLiteCommand(deleteReaderBooksSql, DataHandler.myconn))
+            // First, retrieve the user information (Name, Surname) based on the provided ID
+            string title = string.Empty;
+            string author = string.Empty;
+            string selectBookSql = "SELECT title, author FROM tblBooks WHERE bookID = @bookID";
+            using (SQLiteCommand selectBook = new SQLiteCommand(selectBookSql, DataHandler.myconn))
             {
-                deleteReaderBooksCmd.Parameters.AddWithValue("@bookId", ID);
-                deleteReaderBooksCmd.ExecuteNonQuery();
-            }
+                selectBook.Parameters.AddWithValue("@bookID", ID);
 
-            // Define SQL query to delete from tblReaders based on readerID
-            string deleteReadersSql = "DELETE FROM tblBook WHERE bookId = @bookId";
-            using (SQLiteCommand deleteReadersCmd = new SQLiteCommand(deleteReadersSql, DataHandler.myconn))
-            {
-                deleteReadersCmd.Parameters.AddWithValue("@bookId", ID);
-                deleteReadersCmd.ExecuteNonQuery();
-            }
-
-            // Query to select all records from tblReaders
-            string selectSql = "SELECT * FROM tblBooks";
-            using (SQLiteCommand selectCmd = new SQLiteCommand(selectSql, DataHandler.myconn))
-            {
-                using (SQLiteDataReader reader = selectCmd.ExecuteReader())
+                using (SQLiteDataReader reader = selectBook.ExecuteReader())
                 {
-                    string result = "";
-                    while (reader.Read())
+                    if (reader.Read())
                     {
-                        // Replace index numbers with appropriate indexes of your columns
-                        string readerInfo = "Reader Book ID: " + reader.GetValue(0).ToString() + "\n" +
-                                            "bookID: " + reader.GetValue(1).ToString() + "\n" +
-                                            "Reader ID: " + reader.GetValue(2).ToString() + "\n\n";
-
-                        result += readerInfo;
+                        title = reader["title"].ToString();
+                        author = reader["author"].ToString();
                     }
-                    MessageBox.Show(result);
+                    else
+                    {
+                        MessageBox.Show("Book not found.");
+                        return; // Exit the method if user is not found
+                    }
                 }
-            }
+                // Display confirmation dialog with user ID, Name, and Surname
+                DialogResult dlgResult = MessageBox.Show($"Do you want to delete Book: {ID}, {title}, {author}?", "Confirmation", MessageBoxButtons.YesNo);
+                if (dlgResult == DialogResult.Yes)
+                {
+                    // Define SQL query to delete from tblReaderBooks based on readerID
+                    string deleteReaderBooksSql = "DELETE FROM tblReaderBooks WHERE bookId = @bookId";
+                    using (SQLiteCommand deleteReaderBooksCmd = new SQLiteCommand(deleteReaderBooksSql, DataHandler.myconn))
+                    {
+                        deleteReaderBooksCmd.Parameters.AddWithValue("@bookId", ID);
+                        deleteReaderBooksCmd.ExecuteNonQuery();
+                    }
+
+                    // Define SQL query to delete from tblReaders based on readerID
+                    string deleteReadersSql = "DELETE FROM tblBooks WHERE bookId = @bookId";
+                    using (SQLiteCommand deleteReadersCmd = new SQLiteCommand(deleteReadersSql, DataHandler.myconn))
+                    {
+                        deleteReadersCmd.Parameters.AddWithValue("@bookId", ID);
+                        deleteReadersCmd.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Book has succesfully been deleted");
+                    // Query to select all records from tblReaders
+                    string selectSql = "SELECT * FROM tblBooks";
+                    using (SQLiteCommand selectCmd = new SQLiteCommand(selectSql, DataHandler.myconn))
+                    {
+                        using (SQLiteDataReader reader = selectCmd.ExecuteReader())
+                        {
+                            string result = "";
+                            while (reader.Read())
+                            {
+                                // Replace index numbers with appropriate indexes of your columns
+                                string readerInfo = "Reader Book ID: " + reader.GetValue(0).ToString() + "\n" +
+                                                    "bookID: " + reader.GetValue(1).ToString() + "\n" +
+                                                    "Reader ID: " + reader.GetValue(2).ToString() + "\n\n";
+
+                                result += readerInfo;
+                            }
+                            MessageBox.Show(result);
+                        }
+                    }
+                }
+            }   
         }
     }
 }
