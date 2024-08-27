@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,13 +14,18 @@ namespace Library
 {
     public partial class frmDeleteData : Form
     {
+
+        private Thread splashThread;
+        private frmSplashValid splashForm;
+        private ManualResetEvent splashCloseEvent;
+
         public frmDeleteData()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
         }
 
-        
+
 
         private void edtDeleteData_Enter(object sender, EventArgs e)
         {
@@ -35,7 +41,7 @@ namespace Library
             if (edtDeleteData.Text == "")
             {
                 edtDeleteData.Text = "Insert BookID or Reader ID";
-                edtDeleteData.ForeColor= Color.Silver;
+                edtDeleteData.ForeColor = Color.Silver;
             }
             else
             {
@@ -48,6 +54,15 @@ namespace Library
             string testNums = "0123456789";
             string tempId = edtDeleteData.Text;
             bool onlyNums = true;
+
+            splashCloseEvent.Reset();
+
+            splashThread = new Thread(new ThreadStart(frmSplashValid));
+            splashThread.Start();
+            Thread.Sleep(500);
+            splashCloseEvent.Set();  // Signal to close the splash screen
+            splashThread.Join();
+
             for (int i = 0; i < tempId.Length; i++)
             {
                 if (testNums.Contains(tempId[i]) == false)
@@ -68,11 +83,32 @@ namespace Library
             }
         }
 
+        private void frmSplashValid()
+        {
+            splashForm = new frmSplashValid();
+            splashForm.Show();
+            while (!splashCloseEvent.WaitOne(100))
+            {
+                Application.DoEvents();
+            }
+
+            splashForm.Invoke(new Action(() => splashForm.Close()));
+        }
+
         private void btnDeleteBook_Click(object sender, EventArgs e)
         {
             string testNums = "0123456789";
             string tempId = edtDeleteData.Text;
             bool onlyNums = true;
+
+            splashCloseEvent.Reset();
+
+            splashThread = new Thread(new ThreadStart(frmSplashValid));
+            splashThread.Start();
+            Thread.Sleep(500);
+            splashCloseEvent.Set();  // Signal to close the splash screen
+            splashThread.Join();
+
             for (int i = 0; i < tempId.Length; i++)
             {
                 if (testNums.Contains(tempId[i]) == false)
