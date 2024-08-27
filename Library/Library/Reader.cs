@@ -13,7 +13,6 @@ namespace Library
         private string lastname;
         private List<Book> books;
 
-
         public string ID
         {
             get { return id; }

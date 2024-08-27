@@ -101,7 +101,6 @@ namespace Library
                 throw;
             }
 
-
             void ReturnBook(string bookid)
             {
                 string sql = "";
@@ -146,7 +145,6 @@ namespace Library
                 {
                     MessageBox.Show("Book not found");
                 }
-
             }
         }
 
