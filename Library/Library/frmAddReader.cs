@@ -108,8 +108,9 @@ namespace Library
                     }
                     else
                     {
-                        DataHandler.myconn = new SQLiteConnection(DataHandler.connectionstring);
+                        //DataHandler.myconn = new SQLiteConnection(DataHandler.connectionstring);
                         //MessageBox.Show("connection working");
+                        myconn.Open();
                         addReader(firstname, lastname);
                     }
                 }
