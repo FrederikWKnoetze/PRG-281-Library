@@ -280,13 +280,21 @@ namespace Library
                 // If userCount is greater than 0, it means the user exists
                 if (userCount > 0)
                 {
-                    BorrowBook test = new BorrowBook(1,1,1);//inteface thing cannot be static so best option is that make a "temp" object to method can be called
-                    test.UpdateBookDB();
-                    richBookList.Text = "Book List:" + Environment.NewLine;
-                    edtReaderId.Text = "";
-                    edtReaderId.Focus();
-                    edtReaderId.Focus();
-                    edtBookID.Focus();
+                    BorrowBook book = new BorrowBook(1,1,1);//inteface thing cannot be static so best option is that make a "temp" object to method can be called
+                    if (BorrowBook.books.Count > 1)
+                    {
+                        book.UpdateBookDB();
+                        richBookList.Text = "Book List:" + Environment.NewLine;
+                        edtReaderId.Text = "";
+                        edtReaderId.Focus();
+                        edtReaderId.Focus();
+                        edtBookID.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No book was selected for checkout list", "No book was selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        BorrowBook.books.Clear();
+                    }
                 }
                 else
                 {
