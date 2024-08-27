@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Library.Book" BaseTypeListCollapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQQAAAGAAgAYhAIACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Book.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Library.BorrowBook" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAQAAASAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>BorrowBook.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Library.DataHandler">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAgAAAAAAEAICAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library.DeleteBook">
+    <Position X="3" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DeleteBook.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library.DeleteData">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DeleteData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library.DeleteUser">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DeleteUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library.frmAdd_Book">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CASAgAICACCAQgAAAZCAIJSCAhAgIEFUAAMBAQhCAAQ=</HashCode>
+      <FileName>frmAddBook.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library.Add_Reader">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAACAAAAAAADKBAIQKQAAAIAFEAAAQIUBAAAA=</HashCode>
+      <FileName>frmAddReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library.Borrow_Book">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="Library.Borrow_Book.CheckOutHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>frmBorrowBook.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CAyAIAQAASAEAAAAABGAAZTioAlAIABUBAAAQRBAAAI=</HashCode>
+      <FileName>frmBorrowBook.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library.frmDeleteData">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gEAACEAEACSIAAAAIACCgIAKAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>frmDeleteData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library.frmMainMenu">
+    <Position X="19.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAMCQAEAAAIACAhAQCAAAAIAAUCEQCAQRBBBQ=</HashCode>
+      <FileName>frmMainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library.frmReturnBook">
+    <Position X="21" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CASAAAACAGAAAAAAABCAAYSCAAgAIIBFAEAAAQRAAAQ=</HashCode>
+      <FileName>frmReturnBook.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library.See_Data">
+    <Position X="29.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQUQAoAAAiAAAAIAIACAIIQDAIAAIQBGAAAEAQBAhAA=</HashCode>
+      <FileName>frmSeeData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library.frmSignIn">
+    <Position X="22.75" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Library.frmSignIn.User" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>frmSignIn.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AUAIAAgAACCAOBAEAACCACACAAAEAAAAgkZBAQgBAAg=</HashCode>
+      <FileName>frmSignIn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library.frmSplash">
+    <Position X="35" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAIAAAACAAIAAAAACAAAACAAAAAAAAAAAAAQBBAAQ=</HashCode>
+      <FileName>frmSplash.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library.frmSplashValid">
+    <Position X="31.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAAACAABACAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>frmSplashValid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library.Program">
+    <Position X="26.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library.Reader">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAhAgAAAAACAAAAAgAAAAAAAAAAAAAAAAgg=</HashCode>
+      <FileName>Reader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library.Properties.Resources">
+    <Position X="24.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library.Properties.Settings">
+    <Position X="28" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Library.IUpdateBookDB">
+    <Position X="33.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Book.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
