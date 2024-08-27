@@ -63,8 +63,8 @@ namespace Library
             }
             if (onlyNums == true)
             {
-                DeleteUser test = new DeleteUser(int.Parse(edtDeleteData.Text));
-                test.DeleteSelectedData();
+                DeleteUser user = new DeleteUser(int.Parse(tempId));
+                user.DeleteSelectedData();
             }
         }
 
@@ -88,8 +88,8 @@ namespace Library
             }
             if (onlyNums == true)
             {
-                DeleteUser test = new DeleteUser(int.Parse(edtDeleteData.Text));
-                test.DeleteSelectedData();
+                DeleteBook book = new DeleteBook(int.Parse(tempId));
+                book.DeleteSelectedData();
             }
         }
 
