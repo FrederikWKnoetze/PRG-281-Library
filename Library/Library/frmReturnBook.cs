@@ -86,6 +86,8 @@ namespace Library
             {
                 if (myconn != null)
                 {
+                    myconn.Close();
+                    myconn.Open();
                     ReturnBook(ibookid);
                 }
                 else
