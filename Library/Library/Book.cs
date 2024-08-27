@@ -74,7 +74,7 @@ namespace Library
                 cmd.Parameters.AddWithValue("@author", Author);
                 cmd.Parameters.AddWithValue("@borrowed", Borrowed);
                 cmd.ExecuteNonQuery();
-
+                
                 //Just some testing to se if it works
                 sql = "SELECT * FROM tblBooks WHERE author = @AuthorName";
                 cmd.CommandText = sql;
@@ -100,7 +100,6 @@ namespace Library
                 }
 
                 reader.Close();
-
             }
             catch (Exception ex)
             {

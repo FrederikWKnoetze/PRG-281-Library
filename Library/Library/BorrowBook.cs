@@ -47,7 +47,6 @@ namespace Library
                         updateCmd.Parameters.Clear();
                         updateCmd.Parameters.AddWithValue("@bookID", book.bookID);
                         updateCmd.ExecuteNonQuery();
-                        MessageBox.Show("The book has been successfully updated to borrowed.");
 
                         // Insert the book and reader information into tblReaderBooks
                         string insertSql = "INSERT INTO tblReaderBooks (bookID, readerID) VALUES (@bookID, @readerID)";
@@ -55,27 +54,8 @@ namespace Library
                         updateCmd.Parameters.AddWithValue("@bookID", book.bookID);
                         updateCmd.Parameters.AddWithValue("@readerID", book.readerID);
                         updateCmd.ExecuteNonQuery();
-
-                        // After the insert, select all records from tblReaderBooks and display them
-                        string selectSql = "SELECT * FROM tblReaderBooks";
-                        updateCmd = new SQLiteCommand(selectSql, DataHandler.myconn);
-                        SQLiteDataReader reader = updateCmd.ExecuteReader();
-
-                        // Initialize a string to hold the information
-                        string result = "";
-
-                        // Loop through the result set and append each record to the result string
-                        while (reader.Read())
-                        {
-                            // Read each field and format the output
-                            result += "Reader Book ID: " + reader["readerbookID"].ToString() + "\n" +
-                                      "Book ID: " + reader["bookID"].ToString() + "\n" +
-                                      "Reader ID: " + reader["readerID"].ToString() + "\n\n";
-                        }
-
-                        MessageBox.Show(result);
-
                     }
+                    MessageBox.Show("The Book/books has been set to Borrowed");
                     books.Clear();
                 }
                 catch (Exception ex)

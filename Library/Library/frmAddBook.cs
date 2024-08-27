@@ -288,32 +288,6 @@ namespace Library
                 cmd.Parameters.AddWithValue("@author", book.Author);
                 cmd.Parameters.AddWithValue("@borrowed", book.Borrowed);
                 cmd.ExecuteNonQuery();
-
-                //Just some testing to se if it works
-                sql = "SELECT * FROM tblBooks WHERE author = @AuthorName";
-                cmd.CommandText = sql;
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@AuthorName", "Gideon");
-
-                SQLiteDataReader reader = cmd.ExecuteReader();
-
-                string result = "";
-                while (reader.Read())
-                {
-                    result += $"Book ID: {reader["bookID"]}, ISBN: {reader["isbn"]}, Title: {reader["title"]}, Author: {reader["author"]}, Borrowed: {reader["borrowed"]}\n";
-                }
-
-                // Display results
-                if (string.IsNullOrEmpty(result))
-                {
-                    MessageBox.Show("No books found for the specified author.");
-                }
-                else
-                {
-                    MessageBox.Show(result);
-                }
-
-                reader.Close();
             }
             catch (Exception ex)
             {

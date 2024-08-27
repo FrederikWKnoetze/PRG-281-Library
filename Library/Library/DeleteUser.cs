@@ -17,70 +17,74 @@ namespace Library
 
         public override void DeleteSelectedData()
         {
-            // First, retrieve the user information (Name, Surname) based on the provided ID
-            string name = string.Empty;
-            string surname = string.Empty;
-
-            string selectUserSql = "SELECT firstname, lastname FROM tblReaders WHERE readerID = @readerID";
-            using (SQLiteCommand selectUserCmd = new SQLiteCommand(selectUserSql, DataHandler.myconn))
+            try
             {
-                selectUserCmd.Parameters.AddWithValue("@readerID", ID);
-
-                using (SQLiteDataReader reader = selectUserCmd.ExecuteReader())
+                if (DataHandler.myconn == null)
                 {
-                    if (reader.Read())
+                    DataHandler.myconn = new SQLiteConnection("Data Source=LibraryData.sqlite;Version=3;");
+                }
+
+                if (DataHandler.myconn.State == System.Data.ConnectionState.Closed)
+                {
+                    DataHandler.myconn.Open();
+                }
+                // First, retrieve the user information (Name, Surname) based on the provided ID
+                string name = string.Empty;
+                string surname = string.Empty;
+
+                string selectUserSql = "SELECT firstname, lastname FROM tblReaders WHERE readerID = @readerID";
+                using (SQLiteCommand selectUserCmd = new SQLiteCommand(selectUserSql, DataHandler.myconn))
+                {
+                    selectUserCmd.Parameters.AddWithValue("@readerID", ID);
+
+                    using (SQLiteDataReader reader = selectUserCmd.ExecuteReader())
                     {
-                        name = reader["firstname"].ToString();
-                        surname = reader["lastname"].ToString();
+                        if (reader.Read())
+                        {
+                            name = reader["firstname"].ToString();
+                            surname = reader["lastname"].ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("User not found.");
+                            return; // Exit the method if user is not found
+                        }
                     }
-                    else
+                }
+
+                // Display confirmation dialog with user ID, Name, and Surname
+                DialogResult dlgResult = MessageBox.Show($"Do you want to delete user: {ID}, {name} {surname}?", "Confirmation", MessageBoxButtons.YesNo);
+
+                if (dlgResult == DialogResult.Yes)
+                {
+                    // Delete from tblReaderBooks based on readerID
+                    string deleteReaderBooksSql = "DELETE FROM tblReaderBooks WHERE readerID = @readerID";
+                    using (SQLiteCommand deleteReaderBooksCmd = new SQLiteCommand(deleteReaderBooksSql, DataHandler.myconn))
                     {
-                        MessageBox.Show("User not found.");
-                        return; // Exit the method if user is not found
+                        deleteReaderBooksCmd.Parameters.AddWithValue("@readerID", ID);
+                        deleteReaderBooksCmd.ExecuteNonQuery();
                     }
+
+                    // Delete from tblReaders based on readerID
+                    string deleteReadersSql = "DELETE FROM tblReaders WHERE readerID = @readerID";
+                    using (SQLiteCommand deleteReadersCmd = new SQLiteCommand(deleteReadersSql, DataHandler.myconn))
+                    {
+                        deleteReadersCmd.Parameters.AddWithValue("@readerID", ID);
+                        deleteReadersCmd.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("User deleted successfully.");
                 }
             }
-
-            // Display confirmation dialog with user ID, Name, and Surname
-            DialogResult dlgResult = MessageBox.Show($"Do you want to delete user: {ID}, {name}, {surname}?", "Confirmation", MessageBoxButtons.YesNo);
-
-            if (dlgResult == DialogResult.Yes)
+            catch (Exception ex)
             {
-                // Delete from tblReaderBooks based on readerID
-                string deleteReaderBooksSql = "DELETE FROM tblReaderBooks WHERE readerID = @readerID";
-                using (SQLiteCommand deleteReaderBooksCmd = new SQLiteCommand(deleteReaderBooksSql, DataHandler.myconn))
-                {
-                    deleteReaderBooksCmd.Parameters.AddWithValue("@readerID", ID);
-                    deleteReaderBooksCmd.ExecuteNonQuery();
-                }
-
-                // Delete from tblReaders based on readerID
-                string deleteReadersSql = "DELETE FROM tblReaders WHERE readerID = @readerID";
-                using (SQLiteCommand deleteReadersCmd = new SQLiteCommand(deleteReadersSql, DataHandler.myconn))
-                {
-                    deleteReadersCmd.Parameters.AddWithValue("@readerID", ID);
-                    deleteReadersCmd.ExecuteNonQuery();
-                }
-
-                MessageBox.Show("User deleted successfully.");
+                MessageBox.Show("An error occurred: " + ex.Message);
             }
-            // Optional: display all remaining records in tblReaderBooks
-            string selectSql = "SELECT * FROM tblReaderBooks";
-            using (SQLiteCommand selectCmd = new SQLiteCommand(selectSql, DataHandler.myconn))
+            finally
             {
-                using (SQLiteDataReader reader = selectCmd.ExecuteReader())
+                if (DataHandler.myconn != null && DataHandler.myconn.State == System.Data.ConnectionState.Open)
                 {
-                    string result = "";
-
-                    while (reader.Read())
-                    {
-                        string readerInfo = "Reader Book ID: " + reader.GetValue(0).ToString() + "\n" +
-                                            "bookID: " + reader.GetValue(1).ToString() + "\n" +
-                                            "Reader ID: " + reader.GetValue(2).ToString() + "\n\n";
-                        result += readerInfo;
-                    }
-
-                    MessageBox.Show(result);
+                    DataHandler.myconn.Close();
                 }
             }
         }
