@@ -26,8 +26,6 @@ namespace Library
             splashCloseEvent = new ManualResetEvent(false);
         }
 
-
-
         private void edtDeleteData_Enter(object sender, EventArgs e)
         {
             if (edtDeleteData.Text == "Insert BookID or Reader ID")
@@ -140,14 +138,12 @@ namespace Library
             System.Windows.Forms.Application.Exit();
         }
 
-
         private void btnGoMenu_Click(object sender, EventArgs e)
         {
             this.Hide();
             frmMainMenu frmMainMenu = new frmMainMenu();
             frmMainMenu.Show();
         }
-
 
         private void frmDeleteData_Load(object sender, EventArgs e)
         {

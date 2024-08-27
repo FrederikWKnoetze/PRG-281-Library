@@ -12,6 +12,7 @@ namespace Library
     {
         public DeleteUser(int _Id) : base(_Id)
         {
+
         }
 
         public override void DeleteSelectedData()
