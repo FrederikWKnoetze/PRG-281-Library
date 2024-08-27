@@ -47,9 +47,6 @@ namespace Library
             frmMainMenu.Show();
         }
 
-
-
-
         //both of these to make sure program closes when form is closed
         private void Add_Reader_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -119,11 +116,9 @@ namespace Library
                     MessageBox.Show("Connection not working");
                     throw;
                 }
-            }
-            
-
-            
+            }    
         }
+
         public void addReader(string _firstname, string _lastname)
         {
             string sql = "";
@@ -146,10 +141,6 @@ namespace Library
             {
                 throw;
             }
-
-
-
-
         }
 
         private void frmSplashValid()

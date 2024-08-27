@@ -54,8 +54,6 @@ namespace Library
             lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
-       
-
         private void edtReaderId_Enter(object sender, EventArgs e)
         {
             if (edtReaderId.Text == "Reader ID")
@@ -107,6 +105,7 @@ namespace Library
 
             OnCheckOut?.Invoke();
         }
+
         public void ValidateBookID()
         {
             string TempReader = edtReaderId.Text;
@@ -137,7 +136,6 @@ namespace Library
                     {
                         DataHandler.myconn.Open();
                     }
-
 
                     //Just some testing to se if it works
                     string sql = "SELECT * FROM tblBooks WHERE bookID = @bookID";
@@ -205,7 +203,6 @@ namespace Library
                             }
                         }
                     }
-
                     reader.Close();
                 }
                 catch (Exception ex)
@@ -237,6 +234,7 @@ namespace Library
         {
             richBookList.AppendText(Environment.NewLine);
         }
+
         public void validUser()
         {
             try
@@ -256,7 +254,6 @@ namespace Library
                 SQLiteCommand cmd = new SQLiteCommand(sql, DataHandler.myconn);
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@readerID", edtReaderId.Text);
-
 
                 int userCount = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -290,7 +287,6 @@ namespace Library
                 }
             }
         }
-
 
         //make sure program exists when form is closed
         private void Borrow_Book_FormClosing(object sender, FormClosingEventArgs e)

@@ -135,7 +135,6 @@
             this.lblDate.Size = new System.Drawing.Size(76, 36);
             this.lblDate.TabIndex = 7;
             this.lblDate.Text = "Date";
-            this.lblDate.Click += new System.EventHandler(this.lblDate_Click);
             // 
             // pictureBox1
             // 
