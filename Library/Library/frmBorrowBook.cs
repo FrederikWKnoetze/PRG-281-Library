@@ -202,7 +202,7 @@ namespace Library
                             if (isDuplicate)
                             {
                                 // Notify the user that a duplicate was found
-                                MessageBox.Show("This book has already been borrowed by a reader.", "Duplicate BookID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("This book has selected.", "Duplicate BookID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 edtBookID.Text = ""; // Clear the input if needed
                             }
                             else
