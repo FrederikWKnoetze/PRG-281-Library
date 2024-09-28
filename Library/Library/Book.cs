@@ -75,31 +75,31 @@ namespace Library
                 cmd.Parameters.AddWithValue("@borrowed", Borrowed);
                 cmd.ExecuteNonQuery();
                 
-                //Just some testing to se if it works
-                sql = "SELECT * FROM tblBooks WHERE author = @AuthorName";
-                cmd.CommandText = sql;
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@AuthorName", "Gideon");
+                ////Just some testing to se if it works
+                //sql = "SELECT * FROM tblBooks WHERE author = @AuthorName";
+                //cmd.CommandText = sql;
+                //cmd.Parameters.Clear();
+                //cmd.Parameters.AddWithValue("@AuthorName", "Gideon");
 
-                SQLiteDataReader reader = cmd.ExecuteReader();
+                //SQLiteDataReader reader = cmd.ExecuteReader();
 
-                string result = "";
-                while (reader.Read())
-                {
-                    result += $"Book ID: {reader["bookID"]}, ISBN: {reader["isbn"]}, Title: {reader["title"]}, Author: {reader["author"]}, Borrowed: {reader["borrowed"]}\n";
-                }
+                //string result = "";
+                //while (reader.Read())
+                //{
+                //    result += $"Book ID: {reader["bookID"]}, ISBN: {reader["isbn"]}, Title: {reader["title"]}, Author: {reader["author"]}, Borrowed: {reader["borrowed"]}\n";
+                //}
 
-                // Display results
-                if (string.IsNullOrEmpty(result))
-                {
-                    MessageBox.Show("No books found for the specified author.");
-                }
-                else
-                {
-                    MessageBox.Show(result);
-                }
+                //// Display results
+                //if (string.IsNullOrEmpty(result))
+                //{
+                //    MessageBox.Show("No books found for the specified author.");
+                //}
+                //else
+                //{
+                //    MessageBox.Show(result);
+                //}
 
-                reader.Close();
+                //reader.Close();
             }
             catch (Exception ex)
             {
